@@ -14,15 +14,8 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('../assets/dist/css/adminlte.min.css') }}">
 </head>
-<!--
-`body` tag options:
 
-  Apply one or more of the following classes to to the body tag
-  to get the desired effect
 
-  * sidebar-collapse
-  * sidebar-mini
--->
 <body class="hold-transition sidebar-mini sidebar-collapse layout-fixed ">
   <div class="wrapper">
     <!-- Navbar -->

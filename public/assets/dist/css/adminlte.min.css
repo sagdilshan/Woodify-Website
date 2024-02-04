@@ -37117,7 +37117,9 @@ a.disabled.mailbox-attachment-close {
     border: 3px solid #adb5bd;
     margin: 0 auto;
     padding: 3px;
-    width: 100px
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
 }
 
 .profile-username {
@@ -46574,6 +46576,7 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 
 .img-circle {
     border-radius: 50%
+
 }
 
 .img-size-32,

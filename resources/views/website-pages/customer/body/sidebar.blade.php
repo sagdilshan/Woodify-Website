@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-light-lightblue elevation-4">
+<aside class="main-sidebar sidebar-dark-lightblue elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('customer.dashboard')}}" class="brand-link">
         <img src="../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -11,10 +11,13 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
+            <img class="img-circle elevation-2"  style="width: 35px;height: 35px;"
+                src="{{ !empty($profileData->photo) ? url('upload/customer_images/' . $profileData->photo) : url('upload/no_image.png') }}"
+                alt="Profile Picture">
         </div>
         <div class="info">
-          <a href="#" class="d-block"><span style="font-size: medium"> {{ Auth::user()->name }}</span></a>
+          <a href="{{ route('customer.profile') }}" class="d-block"><span style="font-size: medium"> {{ Auth::user()->name }}</span></a>
         </div>
       </div>
 
@@ -138,7 +141,14 @@
 
 
           <li class="nav-header mt-3 mb-2">ACTIONS</li>
-
+          <li class="nav-item">
+            <a href="{{ route('customer.profile') }}" class="nav-link">
+                <i class="nav-icon fa fa-user-circle"></i>
+                <p>
+                    Profile
+                </p>
+            </a>
+        </li>
           <li class="nav-item">
             <a href="{{route('customer.logout')}}" class="nav-link">
               <i class="nav-icon fa fa-power-off"></i>
@@ -147,6 +157,8 @@
               </p>
             </a>
           </li>
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

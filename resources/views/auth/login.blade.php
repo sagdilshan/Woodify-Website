@@ -118,7 +118,7 @@
     </form>
 
       <p class="mb-1">
-        <a href="#" style="color: black;">I Forgot My Password</a>
+        <a href="{{ route('password.request') }}" style="color: black;">I Forgot My Password</a>
       </p>
 
     </div>
