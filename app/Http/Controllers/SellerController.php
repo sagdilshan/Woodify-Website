@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class SellerController extends Controller
 {
@@ -39,6 +40,7 @@ class SellerController extends Controller
 
         if($request->file('photo')){
             $file = $request->file('photo');
+            @unlink(public_path('upload/seller_images/'. $data->photo)); //delete previous profile image
             $filename = date('YmdHi').$file->getClientOriginalName(); // 0215.a.gayathr.png
             $file->move(public_path('upload/seller_images'),$filename);
             $data['photo'] = $filename;
@@ -46,6 +48,44 @@ class SellerController extends Controller
 
         $data->save();
 
-        return redirect()->back();
+        $notification = array(
+            'message' =>'Seller Profile Updated Succssfully',
+            'alert-type'=> 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+    public function SellerUpdatePassword(Request $request){
+        //validation
+        $request->validate([
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed'
+        ]);
+
+        //match the old password
+
+        if (!Hash::check($request->old_password, auth::user()->password)) {
+
+            $notification = array(
+                'message' =>'Old Password Does not Match',
+                'alert-type'=> 'error'
+            );
+
+            return back()->with($notification);
+
+        }
+
+        //update the new password
+        User::whereId(auth()->user()->id)->update([
+            'password'=> Hash::make($request->new_password)
+        ]);
+
+        $notification = array(
+            'message' =>'Password Change Successfully',
+            'alert-type'=> 'success'
+        );
+
+        return back()->with($notification);
     }
 }

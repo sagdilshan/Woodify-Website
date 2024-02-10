@@ -1,4 +1,5 @@
 @extends('website-pages.customer.customer_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Customer Dashboard')
 @section('customer')
     <div class="content-wrapper ">
         <!-- Content Header (Page header) -->

@@ -1,4 +1,5 @@
 @extends('website-pages.seller.seller_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Seller Profile')
 @section('seller')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -70,6 +71,10 @@
 
                                     <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Settings</a>
                                     </li>
+
+                                    <li class="nav-item"><a class="nav-link" href="#changepassword" data-toggle="tab">Change
+                                        Password</a>
+                                </li>
                                 </ul>
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -189,6 +194,63 @@
                                             <div class="form-group row">
                                                 <div class="offset-sm-2 col-sm-10">
                                                     <button type="submit" class="btn btn-success">Save Changes</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="tab-pane" id="changepassword">
+                                        <form method="POST" action="{{route('seller.update.password')}}" class="form-horizontal"
+                                            enctype="multipart/form-data">
+                                            @csrf
+
+
+                                            <div class="form-group row">
+                                                <label for="oldpass" class="col-sm-2 col-form-label">Old
+                                                    Password</label>
+                                                <div class="col-sm-10">
+                                                    <input type="password"
+                                                        class="form-control @error('old_password') is-invalid @enderror"
+                                                        name="old_password" id="old_password"
+                                                        placeholder="Enter Your Old Password">
+
+                                                    @error('old_password')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="newpass" class="col-sm-2 col-form-label">New
+                                                    Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password"
+                                                            class="form-control @error('new_password') is-invalid @enderror"
+                                                            name="new_password" id="new_password"
+                                                            placeholder="Enter Your New Password">
+
+                                                        @error('new_password')
+                                                            <span class="text-danger">{{ $message }}</span>
+                                                        @enderror
+                                                    </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label for="cpassword" class="col-sm-2 col-form-label">Confirm
+                                                    Password</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="password"
+                                                            class="form-control"
+                                                            name="new_password_confirmation" id="new_password_confirmation"
+                                                            placeholder="Confirm Your New Password">
+
+
+                                                    </div>
+                                            </div>
+
+
+                                            <div class="form-group row">
+                                                <div class="offset-sm-2 col-sm-10">
+                                                    <button type="submit" class="btn btn-success">Update
+                                                        Password</button>
                                                 </div>
                                             </div>
                                         </form>

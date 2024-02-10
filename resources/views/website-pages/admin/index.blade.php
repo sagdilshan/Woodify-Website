@@ -1,4 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Admin Dashboard')
 @section('admin')
     <div class="content-wrapper ">
         <!-- Content Header (Page header) -->

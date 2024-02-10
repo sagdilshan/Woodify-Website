@@ -43,6 +43,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
+    Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
 }); // end group admin middlewere
 
@@ -52,6 +53,7 @@ Route::middleware(['auth','role:seller'])->group(function(){
     Route::get('/seller/logout', [SellerController::class, 'SellerLogout'])->name('seller.logout');
     Route::get('/seller/profile', [SellerController::class, 'SellerProfile'])->name('seller.profile');
     Route::post('/seller/profile/store', [SellerController::class, 'SellerProfileStore'])->name('seller.profile.store');
+    Route::post('/seller/update/password', [SellerController::class, 'SellerUpdatePassword'])->name('seller.update.password');
 }); // end group seller middlewere
 
 Route::middleware(['auth','role:customer'])->group(function(){
@@ -60,4 +62,5 @@ Route::middleware(['auth','role:customer'])->group(function(){
     Route::get('/customer/logout', [CustomerController::class, 'CustomerLogout'])->name('customer.logout');
     Route::get('/customer/profile', [CustomerController::class, 'CustomerProfile'])->name('customer.profile');
     Route::post('/customer/profile/store', [CustomerController::class, 'CustomerProfileStore'])->name('customer.profile.store');
+    Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('customer.update.password');
 }); // end group customer middlewere

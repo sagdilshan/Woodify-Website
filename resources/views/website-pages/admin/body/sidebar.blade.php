@@ -9,11 +9,15 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
+        @php
+            $id = Auth::user()->id;
+            $profileData = App\Models\User::find($id);
+        @endphp
 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
 
-                <img class="img-circle elevation-2"  style="width: 35px;height: 35px;
+                <img class="img-circle elevation-2" style="width: 35px;height: 35px;"
                     src="{{ !empty($profileData->photo) ? url('upload/admin_images/' . $profileData->photo) : url('upload/no_image.png') }}"
                     alt="Profile Picture">
             </div>
@@ -32,108 +36,52 @@
                 <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
                 <li class="nav-header mb-2">MAIN</li>
+
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-chart-pie"></i>
+                    <a href="pages/gallery.html" class="nav-link active">
+                        <i class="nav-icon far fa-image"></i>
                         <p>
-                            Charts
-                            <i class="right fas fa-angle-right"></i>
+                            Gallery
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/charts/chartjs.html" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>ChartJS</p>
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                    <a href="pages/gallery.html" class="nav-link ">
+                        <i class="nav-icon far fa-image"></i>
                         <p>
-                            UI Elements
-                            <i class="fas fa-angle-right right"></i>
+                            Gallery
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/UI/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Icons</p>
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-edit"></i>
+                    <a href="pages/gallery.html" class="nav-link ">
+                        <i class="nav-icon far fa-image"></i>
                         <p>
-                            Forms
-                            <i class="fas fa-angle-right right"></i>
+                            Gallery
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/forms/general.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>General Elements</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/forms/advanced.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Advanced Elements</p>
-                            </a>
-                        </li>
-
-                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-table"></i>
-                        <p>
-                            Tables
-                            <i class="fas fa-angle-right right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="pages/tables/simple.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Simple Tables</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/tables/data.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>DataTables</p>
-                            </a>
-                        </li>
 
-                    </ul>
-                </li>
                 <li class="nav-header mt-3 mb-2">EXAMPLES</li>
+
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
-                        <i class="nav-icon fas fa-calendar-alt"></i>
+                    <a href="pages/gallery.html" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
                         <p>
-                            Calendar
-                            <span class="badge badge-info right">2</span>
+                            Gallery
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link">
+                        <i class="nav-icon far fa-image"></i>
+                        <p>
+                            Gallery
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/gallery.html" class="nav-link ">
                         <i class="nav-icon far fa-image"></i>
                         <p>
                             Gallery
