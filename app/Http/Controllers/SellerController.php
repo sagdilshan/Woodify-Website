@@ -20,7 +20,7 @@ class SellerController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login');
+        return redirect('/');
     }
 
     public function SellerProfile(){
