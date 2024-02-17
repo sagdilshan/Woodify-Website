@@ -10,7 +10,7 @@
                         <ul>
                             <li><a href="#">Women</a></li>
                             <li><a href="#">Men</a></li>
-                            <li><a href="#">Kids</a></li>
+                            <li><a href="#">New</a></li>
                             <li><a href="#">Sportswear</a></li>
                             <li><a href="#">Sale</a></li>
                         </ul>
