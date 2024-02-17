@@ -54,15 +54,13 @@
                             @auth
                                 @if (Auth::user()->role == 'admin')
                                     <li><a href="{{ url('/admin/dashboard') }}">Dashboard</a></li>
-                                    <li><a>|</a></li>
+
                                     <li><a href="{{ route('admin.logout') }}">Logout</a></li>
                                 @elseif(Auth::user()->role == 'seller')
                                     <li><a href="{{ url('/seller/dashboard') }}">Dashboard</a></li>
-                                    <li><a>|</a></li>
                                     <li><a href="{{ route('seller.logout') }}">Logout</a></li>
                                 @elseif(Auth::user()->role == 'customer')
                                     <li><a href="{{ url('/customer/dashboard') }}">Dashboard</a></li>
-                                    <li><a>|</a></li>
                                     <li><a href="{{ route('customer.logout') }}">Logout</a></li>
                                 @endif
                             @else

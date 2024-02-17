@@ -8,7 +8,7 @@
 
     <div class="pageWrapper">
         <!--Search Form Drawer-->
-        
+
         <!--End Search Form Drawer-->
         <!--Top Header-->
         <!--End Top Header-->
@@ -41,12 +41,12 @@
                         <div class="blur-up lazyload bg-size">
                             <img class="blur-up lazyload bg-img"
                                 data-src="assetss/images/slideshow-banners/belle-banner2.jpg"
-                                src="assetss/images/slideshow-banners/belle-banner2.jpg" alt="Summer Bikini Collection"
+                                src="assetss/images/slideshow-banners/home9-banner1.jpg" alt="Summer Bikini Collection"
                                 title="Summer Bikini Collection" />
                             <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                                 <div class="slideshow__text-content bottom">
                                     <div class="wrap-caption center">
-                                        <h2 class="h1 mega-title slideshow__title">Summer Bikini Collection</h2>
+                                        <h2 class="h1 mega-title slideshow__title">Summer Dress Collection</h2>
                                         <span class="mega-subtitle slideshow__subtitle">Save up to 50% off this weekend
                                             only</span>
                                         <span class="btn">Shop now</span>
@@ -1279,8 +1279,8 @@
                     <div class="collection-grid">
                         <div class="collection-grid-item">
                             <a href="collection-page.html" class="collection-grid-item__link">
-                                <img data-src="assetss/images/collection/fashion.jpg"
-                                    src="assetss/images/collection/fashion.jpg" alt="Fashion"
+                                <img data-src="assetss/images/collection/shoes.jpg"
+                                    src="assetss/images/collection/shoes.jpg" alt="Fashion"
                                     class="blur-up lazyload" />
                                 <div class="collection-grid-item__title-wrapper">
                                     <h3 class="collection-grid-item__title btn btn--secondary no-border">Fashion</h3>
