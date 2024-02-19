@@ -427,7 +427,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder { opacity:1; -ms-fil
 
 .grid-view-item.style2 .grid-view-item__link { position:relative; overflow:hidden; margin:0 auto 15px; }
 .grid-view-item.style2 .grid-view-item__link { display:block; white-space:nowrap; opacity:1; }
-.grid-view-item.style2 .grid-view-item__image { display:inline-block; width:100%; margin:0 auto; vertical-align:middle; -ms-transition:all ease-out 0.4s; -webkit-transition:all ease-out 0.4s; transition:all ease-out 0.4s; }
+.grid-view-item.style2 .grid-view-item__image { display:inline-block; width:22rem; height: 29rem; margin:0 auto; vertical-align:middle; -ms-transition:all ease-out 0.4s; -webkit-transition:all ease-out 0.4s; transition:all ease-out 0.4s; }
 .grid-view-item.style2 .grid-view-item__link .hover { visibility:hidden; opacity:0; left:50%; top:50%; position:absolute; -ms-transform:translate(-50%, -50%); -webkit-transform:translate(-50%, -50%); transform:translate(-50%, -50%); }
 .grid-view-item.style2 .grid-view-item__link:hover .primary { opacity:0 !important; visibility:hidden; }
 .grid-view-item.style2 .grid-view-item__link:hover .hover:not(.variantImg) { opacity:1; visibility:visible; }

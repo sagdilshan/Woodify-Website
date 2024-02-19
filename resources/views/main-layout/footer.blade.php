@@ -38,14 +38,14 @@
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact-box">
                         <h4 class="h4">Contact Us</h4>
                         <ul class="addressFooter">
-                            <li><i class="icon anm anm-map-marker-al"></i>
+                            {{-- <li><i class="icon anm anm-map-marker-al"></i>
                                 <p>55 Gallaxy Enque,<br>2568 steet, 23568 NY</p>
-                            </li>
+                            </li> --}}
                             <li class="phone"><i class="icon anm anm-phone-s"></i>
-                                <p>(440) 000 000 0000</p>
+                                <p>(+94) 77 991 9634</p>
                             </li>
                             <li class="email"><i class="icon anm anm-envelope-l"></i>
-                                <p>sales@yousite.com</p>
+                                <p>admin@woodify.com</p>
                             </li>
                         </ul>
                     </div>
@@ -58,7 +58,7 @@
                     <!--Footer Copyright-->
                     <div
                         class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
-                        <span></span> <a href="https://www.gayathradilshan.site" target="_blank">S.A. Gayathra Dilshan</a></div>
+                        <span></span> <a href="https://www.gayathradilshan.site" target="_blank">Developed By S.A. Gayathra Dilshan</a></div>
                     <!--End Footer Copyright-->
                     <!--Footer Payment Icon-->
                     <div

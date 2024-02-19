@@ -35,6 +35,8 @@ require __DIR__.'/auth.php';
 
 
 
+Route::view('/shop','shop')->name('shop');
+
 
 //prevent unatherized access(illegale action.. seller log admin acc )
 Route::middleware(['auth','role:admin'])->group(function(){
@@ -63,4 +65,9 @@ Route::middleware(['auth','role:customer'])->group(function(){
     Route::get('/customer/profile', [CustomerController::class, 'CustomerProfile'])->name('customer.profile');
     Route::post('/customer/profile/store', [CustomerController::class, 'CustomerProfileStore'])->name('customer.profile.store');
     Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('customer.update.password');
+    Route::get('/cart', [CustomerController::class, 'Cart'])->name('cart');
+    Route::get('/checkout', [CustomerController::class, 'Checkout'])->name('checkout');
+
 }); // end group customer middlewere
+
+// Route::view('/cart','cart')->name('cart');

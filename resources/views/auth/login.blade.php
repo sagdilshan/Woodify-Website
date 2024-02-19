@@ -4,7 +4,7 @@
 
     <body class="page-template belle">
         <div class="pageWrapper">
-            <br><br><br><br>
+            <br><br><br>
             <!--Body Content-->
             <div id="page-content">
                 <!--Page Title-->
