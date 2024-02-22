@@ -104,9 +104,8 @@
                                                 value="tearm" required>
                                             I agree with the terms and conditions</label>
                                     </p>
-                                    <input type="button" name="checkout" id="cartCheckout"
-                                        onclick="redirectToCheckout()" class="btn btn--small-wide checkout"
-                                        value="Checkout">
+                                    <input type="button" name="checkout" id="cartCheckout" onclick="redirectToCheckout()"
+                                        class="btn btn--small-wide checkout" value="Checkout">
                                     <div class="paymnet-img"><img src="assetss/images/payment-img.jpg" alt="Payment">
                                     </div>
                                 </div>
