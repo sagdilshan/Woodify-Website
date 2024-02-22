@@ -38,14 +38,14 @@
                 <li class="nav-header mb-2">MAIN</li>
 
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link active">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon fa fa-home"></i>
                         <p>
-                            Gallery
+                            Overview
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a href="pages/gallery.html" class="nav-link ">
                         <i class="nav-icon far fa-image"></i>
                         <p>
@@ -87,7 +87,7 @@
                             Gallery
                         </p>
                     </a>
-                </li>
+                </li> --}}
 
 
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>

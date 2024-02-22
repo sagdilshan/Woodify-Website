@@ -40,11 +40,11 @@
             <div class="row">
                 <div class="col-10 col-sm-8 col-md-5 col-lg-4">
 
-                    <p class="phone-no">Contact : +94 77 99 19 634</p>
+                    <p class="phone-no">E<span style="text-transform: lowercase;">mail : admin@woodify.com</span></p>
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                     <div class="text-center">
-                        <p class="top-header_middle-text">Woodify - Crafting Dreams into Wooden Reality</p>
+                        <p class="top-header_middle-text" >Woodify - Crafting Dreams into Wooden Reality</p>
                     </div>
                 </div>
                 <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">

@@ -114,32 +114,21 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="text-left">Spike Jacket</td>
-                                                <td>$99</td>
+                                                <td class="text-left">Round Sofa</td>
+                                                <td>$40</td>
                                                 <td>1</td>
-                                                <td>$99</td>
+                                                <td>$40</td>
                                             </tr>
-                                            <tr>
-                                                <td class="text-left">Argon Sweater</td>
-                                                <td>$199</td>
-                                                <td>2</td>
-                                                <td>$298</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-left">Babydoll Bow Dress</td>
-                                                <td>$299</td>
-                                                <td>3</td>
-                                                <td>$398</td>
-                                            </tr>
+
                                         </tbody>
                                         <tfoot class="font-weight-600">
                                             <tr>
                                                 <td colspan="3" class="text-right">Shipping </td>
-                                                <td>$50.00</td>
+                                                <td>$10.00</td>
                                             </tr>
                                             <tr>
                                                 <td colspan="3" class="text-right">Total</td>
-                                                <td>$845.00</td>
+                                                <td>$50.00</td>
                                             </tr>
                                         </tfoot>
                                     </table>
