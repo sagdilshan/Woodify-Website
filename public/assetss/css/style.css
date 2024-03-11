@@ -555,7 +555,7 @@ a.quick-view { margin-bottom:5px !important; }
 .collection-box .collection-grid-item__title-wrapper { text-align:center; position:absolute; bottom:25px; width:100%; }
 .collection-box-style1 .collection-grid-item__title-wrapper { top:50%; bottom:auto; }
 .collection-box .collection-grid-item__title { position:relative; display:inline-block; width:auto; -ms-transition:all 0.5s ease-in-out; -webkit-transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out; }
-.collection-box .collection-grid-item__title.btn--secondary { background-color:#ededed; color:#000; border:0; }
+.collection-box .collection-grid-item__title.btn--secondary { background-color:#fac871; color:#000; border:0; }
 .collection-box-style1 .collection-grid-item__title.btn--secondary:hover { background-color:#000; color:#fff; border:0; }
 .collection-box .slick-arrow, .collection-grid-4item .slick-arrow { opacity:0; visibility:hidden; width:30px; height:30px; }
 .collection-box:hover .slick-arrow, .collection-grid-4item:hover .slick-arrow { color:#000; opacity:1; visibility:visible; }
