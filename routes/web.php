@@ -96,6 +96,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 
+    Route::controller(RoleController::class)->group(function () {
+
+        Route::get('/admin/all/roles', 'AllRoles')->name('all.roles');
+        Route::get('/admin/add/roles', 'AddRoles')->name('add.roles');
+        Route::post('/admin/store/roles', 'StoreRoles')->name('store.roles');
+        Route::get('/admin/edit/roles/{id}', 'EditRoles')->name('edit.roles');
+        Route::post('/admin/update/roles', 'UpdateRoles')->name('update.roles');
+        Route::get('/admin/delete/roles/{id}', 'DeleteRoles')->name('delete.roles');
+
+    });
+
 }); // end group admin middlewere
 
 

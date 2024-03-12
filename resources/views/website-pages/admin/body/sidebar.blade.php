@@ -58,7 +58,16 @@
                     <a href="{{route('all.permission')}}" class="nav-link {{ Route::is('all.permission') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-lock"></i>
                         <p>
-                            Permission
+                            Permissions
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('all.roles')}}" class="nav-link {{ Route::is('all.roles') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-tasks"></i>
+                        <p>
+                            Roles
                         </p>
                     </a>
                 </li>

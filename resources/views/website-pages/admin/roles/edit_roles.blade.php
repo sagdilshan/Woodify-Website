@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Add Permission')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Edit Roles')
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Add Permission</h1>
+                        <h1>Add Roles</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('all.permission') }}">Back</a></li>
-                            <li class="breadcrumb-item active">Add Permission</li>
+                            <li class="breadcrumb-item"><a href="{{ route('all.roles') }}">Back</a></li>
+                            <li class="breadcrumb-item active">Add Roles</li>
                         </ol>
                     </div>
                 </div>
@@ -36,17 +36,17 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{route('update.permission')}}"
+                                        <form method="POST" action="{{route('update.roles')}}"
                                             class="form-horizontal" >
                                             @csrf
                                             <input type="hidden" class="form-control" name="id"
-                                            value="{{$permissions->id}}" >
+                                            value="{{$roles->id}}" >
 
                                             <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">Permission Name</label>
+                                                <label for="inputName" class="col-sm-2 col-form-label">Role Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                                        value="{{$permissions->name}}">
+                                                        value="{{$roles->name}}" required>
 
                                                         @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -54,20 +54,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
-                                                <label for="groupName" class="col-sm-2 col-form-label">Group Name</label>
-                                                <div class="col-sm-10">
-                                                    <select class="form-control" name="group_name" >
-                                                        <option selected="" disabled="">Select Group</option>
-                                                        <option value="category" {{$permissions->group_name == 'category' ? 'selected' : ''}}>Category</option>
-                                                        <option value="product" {{$permissions->group_name == 'product' ? 'selected' : ''}}>Product</option>
-                                                      </select>
 
-                                                        @error('group_name')
-                                                        <span class="text-danger">{{ $message }}</span>
-                                                    @enderror
-                                                </div>
-                                            </div>
 
 
 
