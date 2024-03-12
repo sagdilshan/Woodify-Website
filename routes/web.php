@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +71,32 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::get('/checkout', [CustomerController::class, 'Checkout'])->name('checkout');
 
 }); // end group customer middlewere
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::controller(CategoryController::class)->group(function () {
+
+        Route::get('/admin/all/category', 'AllCategory')->name('all.category');
+        Route::get('/admin/add/category', 'AddCategory')->name('add.category');
+        Route::post('/admin/store/category', 'StoreCategory')->name('store.category');
+        Route::get('/admin/edit/category/{id}', 'EditCategory')->name('edit.category');
+        Route::post('/admin/update/category', 'UpdateCategory')->name('update.category');
+        Route::get('/admin/delete/category/{id}', 'DeleteCategory')->name('delete.category');
+
+    });
+
+    // Role permission
+    Route::controller(RoleController::class)->group(function () {
+
+        Route::get('/admin/all/permission', 'AllPermission')->name('all.permission');
+        Route::get('/admin/add/permission', 'AddPermission')->name('add.permission');
+        Route::post('/admin/store/permission', 'StorePermission')->name('store.permission');
+        Route::get('/admin/edit/permission/{id}', 'EditPermission')->name('edit.permission');
+        Route::post('/admin/update/permission', 'UpdatePermission')->name('update.permission');
+        Route::get('/admin/delete/permission/{id}', 'DeletePermission')->name('delete.permission');
+
+    });
+
+}); // end group admin middlewere
 
 
 
