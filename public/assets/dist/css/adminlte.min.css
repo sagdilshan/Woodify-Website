@@ -46590,7 +46590,9 @@ select.form-control-sm~.select2-container--default .select2-selection--multiple 
 }
 
 .img-size-50 {
-    width: 50px
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
 
 .img-size-32 {
