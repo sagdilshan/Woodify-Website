@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2024 at 06:59 PM
+-- Generation Time: Mar 13, 2024 at 08:59 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -225,19 +225,20 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `ph
 (1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'SBvDpCwNMrSU2Z9BKjSrN3BAk9k74O9bp2aRlB7cJiTxrEUX4Ghgv5yQdZi2', '2024-01-23 05:10:40', '2024-02-21 12:11:51'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202402100911user8-128x128.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-02-10 03:41:26'),
 (3, 'Main Customer', 'customer', 'customer@gmail.com', NULL, '202402100707pexels-tuấn-kiệt-jr-1468379.jpg', '117', 'Panadura', 'customer', 'active', '$2y$12$BPnXaUkjkggGRt0FIiisWujaPHH20UZqWqGlmYASzr/qQm43KPb6y', NULL, '2024-01-23 12:48:54', '2024-02-10 03:25:43'),
-(4, 'Wilfred Trantow', 'devyn99', 'pdonnelly@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '336.895.4828', '147 Corkery Circle\nCronahaven, OH 26257', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
+(4, 'Wilfred Trvanto', 'devyn99', 'pdonnelly@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '336.895.48133', '147 Corkery Circle\nCronahaven, OH 26257', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-13 14:04:32'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
 (6, 'Alvera Hodkiewicz', 'towne.carolyn', 'avery.predovic@example.org', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0044dd?text=voluptatum', '+18653845876', '961 Annetta Camp\nMarcosland, IA 02729', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', '95jdzemOt3', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
-(7, 'Mr. Bennett Huel', 'josh29', 'sadye18@example.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/007722?text=aliquid', '+1 (415) 843-0888', '47611 Julien Stream\nPort Georgianaberg, FL 12782', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'lMxoR68M3l', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
+(7, 'Mr. Bennett Huel', 'josh29', 'sadye18@example.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/007722?text=aliquid', '+1 (415) 843-0888', '47611 Julien Stream\nPort Georgianaberg, FL 12782', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'lMxoR68M3l', '2024-02-02 01:54:52', '2024-03-13 14:25:46'),
 (8, 'Rudy Mayert', 'myles94', 'ddenesik@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/006655?text=iure', '+1.216.814.9356', '73178 Kemmer Vista Suite 490\nRolfsonton, OR 53184-6986', 'seller', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'jsRPb3T7Bd', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
 (9, 'Dilshan', NULL, 'dilshan@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG', NULL, '2024-02-02 01:57:07', '2024-02-02 01:57:07'),
-(10, 'Sandun', NULL, 'sandun@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.', NULL, '2024-02-16 08:22:51', '2024-02-16 08:22:51'),
+(10, 'Sandun', NULL, 'sandun@gmail.com', NULL, NULL, '0711722633', NULL, 'admin', 'active', '$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.', NULL, '2024-02-16 08:22:51', '2024-03-13 14:25:35'),
 (11, 'fsgdywg', NULL, 'sasd@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$Q2m6nDdX8jfuMIgX1QuTaOvqnNPMOsSIN2pfaalBkv2Jp90VSNoB6', NULL, '2024-02-16 08:23:32', '2024-02-16 08:23:32'),
 (12, 'dddd', NULL, 'dddd@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.', NULL, '2024-02-16 08:27:13', '2024-02-16 08:27:13'),
 (13, 'fffffaaa', NULL, 'fffffaaa@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$zhauqtkYU415rUzprizu1uSUptFVYlG6OAlo9b1NlqfgeKQ.yBnjK', NULL, '2024-02-16 08:29:35', '2024-02-16 08:29:35'),
 (14, 'ddss', NULL, 'ddsss@gmail.com', NULL, NULL, '1752', NULL, 'customer', 'active', '$2y$12$uFVxOL9jV6SoRr/LtGax1e.GtPY6s6q4C7Rrom5FWcYbqg8NPmG22', NULL, '2024-02-16 08:36:18', '2024-02-16 08:36:18'),
 (15, 'Gayathra Dilshan', NULL, 'gayathradilshan1@gmail.com', NULL, NULL, '0779919634', NULL, 'customer', 'active', '$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi', NULL, '2024-02-21 12:04:30', '2024-02-21 12:04:30'),
-(16, 'Gayathra Dilshan', NULL, 'dilshan2024@gmail.com', NULL, NULL, '0772780727', NULL, 'admin', 'active', '$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu', NULL, '2024-03-12 12:09:28', '2024-03-12 12:09:28');
+(16, 'Gayathra Dilshan', NULL, 'dilshan2024@gmail.com', NULL, NULL, '0772780727', NULL, 'admin', 'active', '$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu', NULL, '2024-03-12 12:09:28', '2024-03-12 12:09:28'),
+(18, 'test2', NULL, 'test2@gmail.com', NULL, NULL, '0385898565', NULL, 'seller', 'active', '$2y$12$eQG6/VSeq06.hGRlGiQPVu99j1HYfX0QG7FokqSlgzERI03.rWkoS', NULL, '2024-03-13 12:41:36', '2024-03-13 12:41:36');
 
 --
 -- Indexes for dumped tables
@@ -362,7 +363,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Constraints for dumped tables
