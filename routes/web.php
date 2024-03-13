@@ -107,6 +107,18 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 
+    //admin user all route
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/admin/all/admin', 'AllAdmin')->name('all.admin');
+        Route::get('/admin/add/users', 'AddUsers')->name('add.users');
+        Route::post('/admin/store/users', 'StoreUsers')->name('store.users');
+        Route::get('/admin/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+        Route::post('/admin/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
+        Route::get('/admin/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
+
+    });
+
 }); // end group admin middlewere
 
 

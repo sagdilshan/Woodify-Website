@@ -71,54 +71,30 @@
                         </p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{route('all.admin')}}" class="nav-link {{ Route::is('all.admin') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-user"></i>
                         <p>
-                            Gallery
+                            Manage Admin
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-header mt-3 mb-2">EXAMPLES</li>
+                <li class="nav-item">
+                    <a href="{{route('add.users')}}" class="nav-link {{ Route::is('add.users') ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-user"></i>
+                        <p>
+                            Add Users
+                        </p>
+                    </a>
+                </li>
 
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li> --}}
 
 
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.profile') }}" class="nav-link">
+                    <a href="{{ route('admin.profile') }}" class="nav-link {{ Route::is('admin.profile') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-user-circle"></i>
                         <p>
                             Profile
