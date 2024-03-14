@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Admin ')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Customers')
 @section('admin')
 
 
@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>All Admins</h1>
+                        <h1>All Customers</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">All Admins</li>
+                            <li class="breadcrumb-item active">All Customers</li>
                         </ol>
                     </div>
                 </div>
@@ -29,7 +29,8 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-end">
-                                <a href="{{ route('add.users') }}" class="btn btn-success">Add Admin</a>
+                                <a href="{{ route('add.users') }}" class="btn btn-success">Add Customers</a>
+
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -46,14 +47,13 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($alladmin as $key => $item)
+                                        @foreach ($allcustomer as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                {{-- <td><img src="{{ !empty($item->photo) ? url('upload/admin_images/' . $item->photo) : url('upload/no_image.png') }}"
-                                                        class="img-circle img-size-64 mr-2"></td> --}}
+
                                                         <td>
-                                                            @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
-                                                                <img src="{{ url('upload/admin_images/' . $item->photo) }}" class="img-circle img-size-50 mr-2">
+                                                            @if (!empty($item->photo) && file_exists(public_path('upload/customer_images/' . $item->photo)))
+                                                                <img src="{{ url('upload/customer_images/' . $item->photo) }}" class="img-circle img-size-50 mr-2">
                                                             @else
                                                                 <img src="{{ url('upload/no_image.png') }}" class="img-circle img-size-50 mr-2">
                                                             @endif
@@ -76,9 +76,9 @@
 
 
                                                 <td>
-                                                    <a href="{{ route('edit.admin', $item->id) }}"
+                                                    <a href="{{ route('edit.customer', $item->id) }}"
                                                         class="btn btn-outline-info">Edit</a>
-                                                    <a href="{{ route('delete.admin', $item->id) }}"
+                                                    <a href="{{ route('delete.customer', $item->id) }}"
                                                         class="btn btn-outline-danger" id="delete">Delete</a>
                                                 </td>
 

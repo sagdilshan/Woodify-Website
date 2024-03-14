@@ -11,8 +11,23 @@ use Spatie\Permission\Models\Role;
 class AdminController extends Controller
 {
     public function AdminDashboard()
-    {
-        return view('website-pages.admin.index');
+    {   $fakeTotalcustomers = 0;
+        $realTotaladmins = User::where('role', 'admin')->count();
+        $totaladmins = $fakeTotalcustomers + $realTotaladmins;
+        $formattedTotaladmins = number_format($totaladmins);
+
+
+        $fakeTotalSellers = 0;// Fake number
+        $realTotalSellers = User::where('role', 'seller')->count(); // Real count of sellers
+        $totalsellers = $fakeTotalSellers + $realTotalSellers;// Combine fake number and real count
+        $formattedTotalSellers = number_format($totalsellers); // Format the total sellers number with commas for thousands separators
+
+        $fakeTotalcustomers = 0;
+        $realTotalcustomers = User::where('role', 'customer')->count();
+        $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
+        $formattedTotalcustomers = number_format($totalcustomers);
+
+        return view('website-pages.admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers'));
     }
 
     public function AdminLogout(Request $request)
@@ -178,6 +193,119 @@ class AdminController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    //customers all methods//
+
+    public function AllCustomer()
+    {
+        $allcustomer = User::where('role', 'customer')->get();
+        return view('website-pages.admin.manage-users.all_customer', compact('allcustomer'));
+    }
+
+    public function EditCustomer($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::distinct()->pluck('role'); // Assuming Role is your model for roles
+        $statuses = User::distinct()->pluck('status'); // Fetch unique status values from the users table
+        return view('website-pages.admin.manage-users.edit_customer', compact('user', 'roles', 'statuses'));
+    }
+
+    public function UpdateCustomer(Request $request, $id)
+    {
+
+
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = $request->role;
+        $user->status = $request->status;
+
+        $user->save();
+
+
+
+        $notification = array(
+            'message' => 'Customer Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.customer')->with($notification);
+
+    }
+
+    public function DeleteCustomer($id)
+    {
+
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'Customer Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+
+    //customers all methods//
+
+    public function AllSeller()
+    {
+        $allseller = User::where('role', 'seller')->get();
+        return view('website-pages.admin.manage-users.all_seller', compact('allseller'));
+    }
+
+    public function EditSeller($id)
+    {
+        $user = User::findOrFail($id);
+        $roles = User::distinct()->pluck('role'); // Assuming Role is your model for roles
+        $statuses = User::distinct()->pluck('status'); // Fetch unique status values from the users table
+        return view('website-pages.admin.manage-users.edit_seller', compact('user', 'roles', 'statuses'));
+    }
+
+    public function UpdateSeller(Request $request, $id)
+    {
+
+
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone = $request->phone;
+        $user->role = $request->role;
+        $user->status = $request->status;
+
+        $user->save();
+
+
+
+        $notification = array(
+            'message' => 'Seller Details Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.seller')->with($notification);
+
+    }
+
+    public function DeleteSeller($id)
+    {
+
+        $user = User::findOrFail($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'Seller Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+
 
 
 

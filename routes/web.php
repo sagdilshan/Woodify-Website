@@ -7,6 +7,7 @@ use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\RoleController;
+use App\Http\Controllers\DatabaseExportController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,10 +45,13 @@ Route::view('/shop', 'shop')->name('shop');
 Route::middleware(['auth', 'role:admin'])->group(function () {
 
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
     Route::get('/admin/logout', [AdminController::class, 'AdminLogout'])->name('admin.logout');
     Route::get('/admin/profile', [AdminController::class, 'AdminProfile'])->name('admin.profile');
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
+
+    Route::get('/admin/export-database', [DatabaseExportController::class, 'exportDatabase'])->name('database.export');
 
 }); // end group admin middlewere
 
@@ -118,6 +122,28 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/admin/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
 
     });
+
+    //customer user all route
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/admin/all/customer', 'AllCustomer')->name('all.customer');
+        Route::get('/admin/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
+        Route::post('/admin/update/customer/{id}', 'UpdateCustomer')->name('update.customer');
+        Route::get('/admin/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
+
+    });
+
+    //seller user all route
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/admin/all/seller', 'AllSeller')->name('all.seller');
+        Route::get('/admin/edit/seller/{id}', 'EditSeller')->name('edit.seller');
+        Route::post('/admin/update/seller/{id}', 'UpdateSeller')->name('update.seller');
+        Route::get('/admin/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
+
+    });
+
+
 
 }); // end group admin middlewere
 
