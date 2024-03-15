@@ -12,18 +12,19 @@ class AdminController extends Controller
 {
     public function AdminDashboard()
     {   $fakeTotalcustomers = 0;
-        $realTotaladmins = User::where('role', 'admin')->count();
+        $realTotaladmins = User::where('role', 'admin')->where('status', 'active')->count();
         $totaladmins = $fakeTotalcustomers + $realTotaladmins;
         $formattedTotaladmins = number_format($totaladmins);
 
 
         $fakeTotalSellers = 0;// Fake number
-        $realTotalSellers = User::where('role', 'seller')->count(); // Real count of sellers
+        $realTotalSellers = User::where('role', 'seller')->where('status', 'active')->count();// Real count of sellers
         $totalsellers = $fakeTotalSellers + $realTotalSellers;// Combine fake number and real count
         $formattedTotalSellers = number_format($totalsellers); // Format the total sellers number with commas for thousands separators
 
         $fakeTotalcustomers = 0;
-        $realTotalcustomers = User::where('role', 'customer')->count();
+        $realTotalcustomers = User::where('role', 'customer')->where('status', 'active')->count();
+        // User::where('role', 'customer')->count();
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 08:59 PM
+-- Generation Time: Mar 15, 2024 at 07:50 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -222,23 +222,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'SBvDpCwNMrSU2Z9BKjSrN3BAk9k74O9bp2aRlB7cJiTxrEUX4Ghgv5yQdZi2', '2024-01-23 05:10:40', '2024-02-21 12:11:51'),
-(2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202402100911user8-128x128.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-02-10 03:41:26'),
-(3, 'Main Customer', 'customer', 'customer@gmail.com', NULL, '202402100707pexels-tuấn-kiệt-jr-1468379.jpg', '117', 'Panadura', 'customer', 'active', '$2y$12$BPnXaUkjkggGRt0FIiisWujaPHH20UZqWqGlmYASzr/qQm43KPb6y', NULL, '2024-01-23 12:48:54', '2024-02-10 03:25:43'),
-(4, 'Wilfred Trvanto', 'devyn99', 'pdonnelly@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '336.895.48133', '147 Corkery Circle\nCronahaven, OH 26257', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-13 14:04:32'),
+(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', '9R4sPrxqIUufZDA8ZkR0Lf8F0AMPh2BZC86oTJj4cbvJY3b7Bdeuw9zmPivo', '2024-01-23 05:10:40', '2024-02-21 12:11:51'),
+(2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202402100911user8-128x128.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-13 23:14:25'),
+(3, 'Main Customer', 'customer', 'customer@gmail.com', NULL, '202402100707pexels-tuấn-kiệt-jr-1468379.jpg', '117', 'Panadura', 'customer', 'active', '$2y$12$BPnXaUkjkggGRt0FIiisWujaPHH20UZqWqGlmYASzr/qQm43KPb6y', NULL, '2024-01-23 12:48:54', '2024-03-13 23:02:02'),
+(4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
-(6, 'Alvera Hodkiewicz', 'towne.carolyn', 'avery.predovic@example.org', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0044dd?text=voluptatum', '+18653845876', '961 Annetta Camp\nMarcosland, IA 02729', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', '95jdzemOt3', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
-(7, 'Mr. Bennett Huel', 'josh29', 'sadye18@example.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/007722?text=aliquid', '+1 (415) 843-0888', '47611 Julien Stream\nPort Georgianaberg, FL 12782', 'admin', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'lMxoR68M3l', '2024-02-02 01:54:52', '2024-03-13 14:25:46'),
-(8, 'Rudy Mayert', 'myles94', 'ddenesik@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/006655?text=iure', '+1.216.814.9356', '73178 Kemmer Vista Suite 490\nRolfsonton, OR 53184-6986', 'seller', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'jsRPb3T7Bd', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
-(9, 'Dilshan', NULL, 'dilshan@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG', NULL, '2024-02-02 01:57:07', '2024-02-02 01:57:07'),
-(10, 'Sandun', NULL, 'sandun@gmail.com', NULL, NULL, '0711722633', NULL, 'admin', 'active', '$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.', NULL, '2024-02-16 08:22:51', '2024-03-13 14:25:35'),
-(11, 'fsgdywg', NULL, 'sasd@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$Q2m6nDdX8jfuMIgX1QuTaOvqnNPMOsSIN2pfaalBkv2Jp90VSNoB6', NULL, '2024-02-16 08:23:32', '2024-02-16 08:23:32'),
-(12, 'dddd', NULL, 'dddd@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.', NULL, '2024-02-16 08:27:13', '2024-02-16 08:27:13'),
-(13, 'fffffaaa', NULL, 'fffffaaa@gmail.com', NULL, NULL, NULL, NULL, 'customer', 'active', '$2y$12$zhauqtkYU415rUzprizu1uSUptFVYlG6OAlo9b1NlqfgeKQ.yBnjK', NULL, '2024-02-16 08:29:35', '2024-02-16 08:29:35'),
-(14, 'ddss', NULL, 'ddsss@gmail.com', NULL, NULL, '1752', NULL, 'customer', 'active', '$2y$12$uFVxOL9jV6SoRr/LtGax1e.GtPY6s6q4C7Rrom5FWcYbqg8NPmG22', NULL, '2024-02-16 08:36:18', '2024-02-16 08:36:18'),
-(15, 'Gayathra Dilshan', NULL, 'gayathradilshan1@gmail.com', NULL, NULL, '0779919634', NULL, 'customer', 'active', '$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi', NULL, '2024-02-21 12:04:30', '2024-02-21 12:04:30'),
-(16, 'Gayathra Dilshan', NULL, 'dilshan2024@gmail.com', NULL, NULL, '0772780727', NULL, 'admin', 'active', '$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu', NULL, '2024-03-12 12:09:28', '2024-03-12 12:09:28'),
-(18, 'test2', NULL, 'test2@gmail.com', NULL, NULL, '0385898565', NULL, 'seller', 'active', '$2y$12$eQG6/VSeq06.hGRlGiQPVu99j1HYfX0QG7FokqSlgzERI03.rWkoS', NULL, '2024-03-13 12:41:36', '2024-03-13 12:41:36');
+(9, 'Dilshan', NULL, 'dilshan@gmail.com', NULL, NULL, '55998555', NULL, 'customer', 'active', '$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG', NULL, '2024-02-02 01:57:07', '2024-03-14 06:15:24'),
+(10, 'Sandun Pathmika', NULL, 'sandun@gmail.com', NULL, NULL, '0711722633', NULL, 'admin', 'deactive', '$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.', NULL, '2024-02-16 08:22:51', '2024-03-14 23:43:09'),
+(11, 'Denush', NULL, 'denush@gmail.com', NULL, NULL, '015544121', NULL, 'customer', 'active', '$2y$12$Q2m6nDdX8jfuMIgX1QuTaOvqnNPMOsSIN2pfaalBkv2Jp90VSNoB6', NULL, '2024-02-16 08:23:32', '2024-03-14 06:15:46'),
+(12, 'Saritha', NULL, 'saritha@gmail.com', NULL, NULL, '0778958566', NULL, 'customer', 'deactive', '$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.', NULL, '2024-02-16 08:27:13', '2024-03-14 06:16:02'),
+(15, 'Gayathra Dilshan', NULL, 'gayathradilshan1@gmail.com', NULL, NULL, '0779919634', NULL, 'customer', 'deactive', '$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi', NULL, '2024-02-21 12:04:30', '2024-03-14 23:43:49'),
+(16, 'Gayathra Dilshan', 'sagdilshan', 'dilshan2024@gmail.com', NULL, '202403132020IMG-20211221-WA0006.jpg', '0772780727', 'Panadura', 'admin', 'active', '$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu', NULL, '2024-03-12 12:09:28', '2024-03-14 23:44:03'),
+(22, 'Test1', NULL, 'test1@gmail.com', NULL, NULL, '0188554412', NULL, 'seller', 'deactive', '$2y$12$gmIJ8en3Cx0Nte8TXk3VbeaPGcnhJcToJC5QAK1iV6ejkvnTfhdua', NULL, '2024-03-14 05:10:20', '2024-03-14 06:15:03'),
+(24, 'Test3', NULL, 'test3@gmail.com', NULL, NULL, '0778954789', NULL, 'customer', 'active', '$2y$12$Njybd5aF5YuY0njT8zKHzOGD3rZwIT7ewgs3I4EOB1ZzQQxJorKj6', NULL, '2024-03-14 23:40:59', '2024-03-14 23:40:59'),
+(25, 'test4', NULL, 'test4@gmail.com', NULL, NULL, '147895656955', NULL, 'customer', 'active', '$2y$12$ILrUGP3eA78EOJ/1MkTg2edAZO8nA2ceXRnlMZH3KgMVweg1Y1nLO', NULL, '2024-03-14 23:41:30', '2024-03-14 23:41:30'),
+(26, 'test5', NULL, 'test5@gmail.com', NULL, NULL, '1458756985', NULL, 'customer', 'active', '$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12', NULL, '2024-03-14 23:41:56', '2024-03-14 23:41:56'),
+(27, 'tese8', NULL, 'test8@gmail.com', NULL, NULL, '0778485789', NULL, 'customer', 'deactive', '$2y$12$8ljry8XmKYi72DgNfTvHreq/dW2YoEtT0Lc9IAjAJnBKvsRdv1Gfu', NULL, '2024-03-14 23:46:37', '2024-03-14 23:47:04');
 
 --
 -- Indexes for dumped tables
@@ -363,7 +362,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- Constraints for dumped tables
