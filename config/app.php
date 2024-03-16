@@ -143,7 +143,10 @@ return [
         'driver' => 'file',
         // 'store' => 'redis',
     ],
-
+    
+    'paths' => [
+        resource_path('lang'),
+    ],
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers

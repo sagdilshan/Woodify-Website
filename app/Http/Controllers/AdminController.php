@@ -199,7 +199,11 @@ class AdminController extends Controller
 
     public function AllCustomer()
     {
-        $allcustomer = User::where('role', 'customer')->get();
+        // $allcustomer = User::where('role', 'customer')->get();
+        $allcustomer = User::where('role', 'customer')
+        ->orderBy('created_at', 'desc')
+        ->get();
+
         return view('website-pages.admin.manage-users.all_customer', compact('allcustomer'));
     }
 
@@ -256,6 +260,9 @@ class AdminController extends Controller
     public function AllSeller()
     {
         $allseller = User::where('role', 'seller')->get();
+        // $allseller = User::where('role', 'seller')
+        // ->orderBy('created_at', 'desc')
+        // ->get();
         return view('website-pages.admin.manage-users.all_seller', compact('allseller'));
     }
 
