@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-sm-4 col-md-4 col-lg-4 d-none d-lg-none d-md-block d-lg-block">
                     <div class="text-center">
-                        <p class="top-header_middle-text" >Woodify - Crafting Dreams into Wooden Reality</p>
+                        <p class="top-header_middle-text">Woodify - Crafting Dreams into Wooden Reality</p>
                     </div>
                 </div>
                 <div class="col-2 col-sm-4 col-md-3 col-lg-4 text-right">
@@ -107,12 +107,36 @@
                                 </a>
 
                             </li>
+                            <li class="lvl1 parent dropdown"><a href="#" style="font-size: 1rem;">Category <i
+                                        class="anm anm-angle-down-l"></i></a>
+                                <ul class="dropdown">
+                                    <li><a href="cart-variant1.html" class="site-nav">Cart Page <i
+                                                class="anm anm-angle-right-l"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="cart-variant1.html" class="site-nav">Cart Variant1</a></li>
+                                            <li><a href="cart-variant2.html" class="site-nav">Cart Variant2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="compare-variant1.html" class="site-nav">Compare Product <i
+                                                class="anm anm-angle-right-l"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="compare-variant1.html" class="site-nav">Compare Variant1</a>
+                                            </li>
+                                            <li><a href="compare-variant2.html" class="site-nav">Compare Variant2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                            </li>
                             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}"
                                     style="font-size: 1rem;">Shop </a>
                             </li>
+
                             <li class="lvl1 parent megamenu"><a href="#" style="font-size: 1rem;">About Us </a>
                             </li>
-                            <li class="lvl1 parent dropdown"><a href="#" style="font-size: 1rem;">Contact Us </a>
+                            <li class="lvl1 parent dropdown"><a href="#" style="font-size: 1rem;">Contact Us
+                                </a>
 
                             </li>
 
@@ -147,8 +171,8 @@
                         @auth
                             @if (Auth::user()->role == 'admin')
                                 <div class="site-cart">
-                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i class="icon fa fa-power-off"
-                                            style="font-size: 1.5rem;"></i></a>
+                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i
+                                            class="icon fa fa-power-off" style="font-size: 1.5rem;"></i></a>
 
                                 </div>
                             @elseif(Auth::user()->role == 'seller')
@@ -195,6 +219,24 @@
             <li class="lvl1 parent megamenu"><a href="{{ url('/') }}">Home </a>
 
             </li>
+            <li class="lvl1 parent megamenu"><a href="#">Category <i class="anm anm-plus-l"></i></a>
+                <ul style="display: none;">
+                  <li><a href="#" class="site-nav">Shop Pages<i class="anm anm-plus-l"></i></a>
+                    <ul>
+                      <li><a href="shop-left-sidebar.html" class="site-nav">Left Sidebar</a></li>
+                      <li><a href="shop-right-sidebar.html" class="site-nav">Right Sidebar</a></li>
+
+                    </ul>
+                  </li>
+                  <li><a href="#" class="site-nav">Shop Features<i class="anm anm-plus-l"></i></a>
+                    <ul>
+                      <li><a href="shop-left-sidebar.html" class="site-nav">Product Countdown </a></li>
+                      <li><a href="shop-right-sidebar.html" class="site-nav">Infinite Scrolling</a></li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </li>
             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}">Shop </a>
 
             </li>

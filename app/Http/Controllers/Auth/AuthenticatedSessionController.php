@@ -9,6 +9,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Session;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -31,16 +32,42 @@ class AuthenticatedSessionController extends Controller
 
         //check role and pass valid dashboard
         $url = '';
-        if($request->user()->role === 'admin'){
+        if ($request->user()->role === 'admin' ) {
             $url = 'admin/dashboard';
-        }elseif($request->user()->role === 'seller'){
+        } elseif ($request->user()->role === 'seller') {
             $url = 'seller/dashboard';
-        }elseif($request->user()->role === 'customer'){
+        } elseif ($request->user()->role === 'customer') {
             $url = 'customer/dashboard';
         }
 
         return redirect()->intended($url);
     }
+
+
+
+
+    // public function store(LoginRequest $request): RedirectResponse
+    // {
+    //     $request->authenticate();
+
+    //     $request->session()->regenerate();
+
+    //     // Check the user's role and redirect to the appropriate dashboard
+    //     $userRole = $request->user()->role;
+    //     $url = '';
+
+    //     if ($userRole === 'admin') {
+    //         $url = 'admin/dashboard';
+    //     } elseif ($userRole === 'seller') {
+    //         $url = 'seller/dashboard';
+    //     } elseif ($userRole === 'customer') {
+    //         $url = 'customer/dashboard';
+    //     }
+
+    //     return redirect()->intended($url);
+    // }
+
+
 
     /**
      * Destroy an authenticated session.
