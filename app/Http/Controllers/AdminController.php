@@ -276,8 +276,6 @@ class AdminController extends Controller
 
     public function UpdateSeller(Request $request, $id)
     {
-
-
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
