@@ -42,13 +42,13 @@
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Followers</b> <a class="float-right">1,322</a>
+                                        <b>My All Orders</b> <a class="float-right">25</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Following</b> <a class="float-right">543</a>
+                                        <b>Completed Orders</b> <a class="float-right">15</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Friends</b> <a class="float-right">13,287</a>
+                                        <b>Canceld Orders</b> <a class="float-right">10</a>
                                     </li>
                                 </ul>
 
