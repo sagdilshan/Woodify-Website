@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Customers')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Category')
 @section('admin')
 
 
@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>All Customers</h1>
+                        <h1>All Category</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">All Customers</li>
+                            <li class="breadcrumb-item active">All Category</li>
                         </ol>
                     </div>
                 </div>
@@ -29,31 +29,27 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-end">
-                                <a href="{{ route('add.users') }}" class="btn btn-success">Add Customers</a>
-
+                                <a href="{{ route('add.category.list') }}" class="btn btn-success">Add Category</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ID</th>
-                                            <th>Image</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone</th>
+                                            <th>Category ID</th>
+                                            <th>Category Image</th>
+                                            <th>Category Name</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($allcustomer as $key => $item)
+                                        @foreach ($categorys as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-
                                                 <td>
-                                                    @if (!empty($item->photo) && file_exists(public_path('upload/customer_images/' . $item->photo)))
-                                                        <img src="{{ url('upload/customer_images/' . $item->photo) }}"
+                                                    @if (!empty($item->photo) && file_exists(public_path('upload/category_images/' . $item->photo)))
+                                                        <img src="{{ url('upload/category_images/' . $item->photo) }}"
                                                             class="img-circle img-size-50 mr-2">
                                                     @else
                                                         <img src="{{ url('upload/no_image.png') }}"
@@ -61,29 +57,20 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $item->name }}</td>
-                                                <td>{{ $item->email }}</td>
-                                                <td>{{ $item->phone }}</td>
                                                 <td>
-                                                    @if ($item->status == 'active')
-                                                        <span class="badge badge-success text-uppercase"
-                                                            style="font-size: 1rem;">{{ $item->status }}</span>
-                                                    @elseif ($item->status == 'deactive')
-                                                        <span class="badge badge-danger text-uppercase"
-                                                            style="font-size: 1rem;">{{ $item->status }}</span>
+                                                    @if ($item->status == '0')
+                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">Stocks</span>
+                                                    @elseif ($item->status == '1')
+                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">Out of Stocks</span>
                                                     @else
-                                                        <span class="badge badge-warning text-uppercase"
-                                                            style="font-size: 1rem;">{{ $item->status }}</span>
+                                                        <span class="badge badge-success text-uppercase" style="font-size: 1rem;">Error</span>
                                                     @endif
                                                 </td>
 
-
-
-
-
                                                 <td>
-                                                    <a href="{{ route('edit.customer', $item->id) }}"
+                                                    <a href="{{ route('edit.category.list', $item->id) }}"
                                                         class="btn btn-outline-info">Edit</a>
-                                                    <a href="{{ route('delete.customer', $item->id) }}"
+                                                    <a href="{{ route('delete.category.list', $item->id) }}"
                                                         class="btn btn-outline-danger" id="delete">Delete</a>
                                                 </td>
 

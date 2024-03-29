@@ -7,11 +7,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
 {
     public function AdminDashboard()
-    {   $fakeTotalcustomers = 0;
+    {
+        $fakeTotalcustomers = 0;
         $realTotaladmins = User::where('role', 'admin')->where('status', 'active')->count();
         $totaladmins = $fakeTotalcustomers + $realTotaladmins;
         $formattedTotaladmins = number_format($totaladmins);
@@ -127,6 +129,30 @@ class AdminController extends Controller
 
     public function StoreUsers(Request $request)
     {
+        // Attempt validation
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email',
+            'phone' => 'required|unique:users,phone|min:9',
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            $errors = $validator->errors();
+
+            $errorMessage = '';
+            foreach ($errors->all() as $message) {
+                $errorMessage .= $message . ' '; // Concatenate all error messages
+            }
+
+            // Prepare error notification
+            $notification = [
+                'message' => $errorMessage,
+                'alert-type' => 'error' // Use an 'error' alert type or any other type you have defined for errors
+            ];
+
+            // Redirect back with error notification
+            return redirect()->back()->with($notification)->withInput();
+        }
 
 
 
@@ -201,8 +227,8 @@ class AdminController extends Controller
     {
         // $allcustomer = User::where('role', 'customer')->get();
         $allcustomer = User::where('role', 'customer')
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         return view('website-pages.admin.manage-users.all_customer', compact('allcustomer'));
     }

@@ -16,6 +16,38 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `all_category`
+--
+
+DROP TABLE IF EXISTS `all_category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `all_category` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(100) DEFAULT NULL,
+  `status` tinyint(10) NOT NULL DEFAULT 0,
+  `photo` varchar(255) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `is_delete` tinyint(4) NOT NULL DEFAULT 0,
+  `created_at` datetime DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `all_category`
+--
+
+LOCK TABLES `all_category` WRITE;
+/*!40000 ALTER TABLE `all_category` DISABLE KEYS */;
+INSERT INTO `all_category` VALUES (1,'Home Decor','home-decor',0,'home-decor.png',1,0,'2024-03-29 09:05:03',NULL,'2024-03-29 09:05:03'),(2,'Furniture','furniture',0,'furniture.png',1,0,'2024-03-29 09:06:26',NULL,'2024-03-29 09:06:26'),(3,'Kitchen & Dining','kitchen-&-dining',0,'kitchen.png',1,0,'2024-03-29 09:12:59',NULL,'2024-03-29 09:12:59'),(4,'Toys & Games','toys-&-games',0,'games.jpg',1,0,'2024-03-29 09:18:04',NULL,'2024-03-29 09:18:04'),(5,'Office and workspace','office-and-workspace',0,'290919office.png',1,0,'2024-03-29 09:19:24',NULL,'2024-03-29 09:19:24'),(6,'Personalized Gifts','personalized-gifts',0,'20240329gift.png',1,0,'2024-03-29 09:24:04',NULL,'2024-03-29 09:24:04'),(7,'Accessories','accessories',0,'20240329jewel.jpg',1,0,'2024-03-29 09:25:03',NULL,'2024-03-29 09:25:03'),(16,'Test 01','test-01',1,'20240329categories-img1.jpg',1,0,'2024-03-29 10:51:13',NULL,'2024-03-29 10:51:13'),(17,'Test2','test2',0,'20240329categories-img4.jpg',29,0,'2024-03-29 11:57:34',NULL,'2024-03-29 11:57:34');
+/*!40000 ALTER TABLE `all_category` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `categories`
 --
 
@@ -28,7 +60,7 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +69,7 @@ CREATE TABLE `categories` (
 
 LOCK TABLES `categories` WRITE;
 /*!40000 ALTER TABLE `categories` DISABLE KEYS */;
-INSERT INTO `categories` VALUES (1,'Home Decor',NULL,'2024-03-11 22:57:30'),(2,'Furniture',NULL,NULL),(3,'Kitchen & Dining',NULL,NULL);
+INSERT INTO `categories` VALUES (1,'Home Decor',NULL,'2024-03-11 22:57:30'),(2,'Furniture',NULL,NULL),(3,'Kitchen & Dining',NULL,NULL),(6,'Test12',NULL,NULL);
 /*!40000 ALTER TABLE `categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -311,7 +343,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -320,7 +352,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Main Admins','admin','admin@gmail.com',NULL,'202402100705DSC_0398 n.jpg','119','Panadura','admin','active','$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq','cSfGCgQ5nSSKqWR1chm1RRSUJyHN86b9w3E2iPw7A83s3pxpuCMmiEKZBSc5','2024-01-23 05:10:40','2024-02-21 12:11:51'),(2,'Main Seller','seller','seller@gmail.com',NULL,'202402100911user8-128x128.jpg','118','Panadura','seller','active','$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS',NULL,'2024-01-22 12:49:02','2024-03-16 10:18:19'),(3,'Main Customer','customer','customer@gmail.com',NULL,'202402100707pexels-tuấn-kiệt-jr-1468379.jpg','117','Panadura','customer','active','$2y$12$BPnXaUkjkggGRt0FIiisWujaPHH20UZqWqGlmYASzr/qQm43KPb6y',NULL,'2024-01-23 12:48:54','2024-03-13 23:02:02'),(4,'Sandesh Aloka','devyn99','sandesh@gmail.com','2024-02-02 01:54:52','https://via.placeholder.com/60x60.png/00ee22?text=voluptatem','0115874585','147 Corkery Circle\nCronahaven, OH 26257','customer','deactive','$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2','d4KETDqONH','2024-02-02 01:54:52','2024-03-14 23:42:34'),(5,'Malika Abshire','saige74','chelsea.smitham@example.net','2024-02-02 01:54:52','https://via.placeholder.com/60x60.png/0077ff?text=et','+1-915-395-4040','83746 Ziemann Forges\nSchummton, ND 16322-5714','customer','active','$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2','zbwsOwb65c','2024-02-02 01:54:52','2024-02-02 01:54:52'),(9,'Dilshan',NULL,'dilshan@gmail.com',NULL,NULL,'55998555',NULL,'customer','active','$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG',NULL,'2024-02-02 01:57:07','2024-03-14 06:15:24'),(10,'Sandun Pathmika',NULL,'sandun@gmail.com',NULL,NULL,'0711722633',NULL,'admin','deactive','$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.',NULL,'2024-02-16 08:22:51','2024-03-14 23:43:09'),(11,'Denush',NULL,'denush@gmail.com',NULL,NULL,'015544121',NULL,'customer','active','$2y$12$Q2m6nDdX8jfuMIgX1QuTaOvqnNPMOsSIN2pfaalBkv2Jp90VSNoB6',NULL,'2024-02-16 08:23:32','2024-03-14 06:15:46'),(12,'Saritha',NULL,'saritha@gmail.com',NULL,NULL,'0778958566',NULL,'customer','deactive','$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.',NULL,'2024-02-16 08:27:13','2024-03-14 06:16:02'),(15,'Gayathra Dilshan',NULL,'gayathradilshan1@gmail.com',NULL,NULL,'0779919634',NULL,'customer','deactive','$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi',NULL,'2024-02-21 12:04:30','2024-03-14 23:43:49'),(16,'Gayathra Dilshan','sagdilshan','dilshan2024@gmail.com',NULL,'202403132020IMG-20211221-WA0006.jpg','0772780727','Panadura','admin','active','$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu',NULL,'2024-03-12 12:09:28','2024-03-18 00:13:06'),(22,'Test1',NULL,'test1@gmail.com',NULL,NULL,'0188554412',NULL,'seller','deactive','$2y$12$gmIJ8en3Cx0Nte8TXk3VbeaPGcnhJcToJC5QAK1iV6ejkvnTfhdua',NULL,'2024-03-14 05:10:20','2024-03-14 06:15:03'),(24,'Test3',NULL,'test3@gmail.com',NULL,NULL,'0778954789',NULL,'customer','active','$2y$12$Njybd5aF5YuY0njT8zKHzOGD3rZwIT7ewgs3I4EOB1ZzQQxJorKj6',NULL,'2024-03-14 23:40:59','2024-03-14 23:40:59'),(25,'test4',NULL,'test4@gmail.com',NULL,NULL,'147895656955',NULL,'customer','active','$2y$12$ILrUGP3eA78EOJ/1MkTg2edAZO8nA2ceXRnlMZH3KgMVweg1Y1nLO',NULL,'2024-03-14 23:41:30','2024-03-14 23:41:30'),(26,'test5',NULL,'test5@gmail.com',NULL,NULL,'1458756985',NULL,'customer','active','$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12',NULL,'2024-03-14 23:41:56','2024-03-14 23:41:56'),(27,'tese8',NULL,'test8@gmail.com',NULL,NULL,'0778485789',NULL,'customer','deactive','$2y$12$8ljry8XmKYi72DgNfTvHreq/dW2YoEtT0Lc9IAjAJnBKvsRdv1Gfu',NULL,'2024-03-14 23:46:37','2024-03-14 23:47:04'),(28,'Test23',NULL,'test23@gmail.com',NULL,NULL,'0478541253',NULL,'customer','deactive','$2y$12$LOGBIPvGnCGfAGG.ebXUmuir8C1Ch4nRfbLIKd7VADVJ2lFieyuaa',NULL,'2024-03-16 10:20:25','2024-03-16 10:20:57');
+INSERT INTO `users` VALUES (1,'Main Admins','admin','admin@gmail.com',NULL,'202402100705DSC_0398 n.jpg','119','Panadura','admin','active','$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq','RmU6zi7abKFgiqctuf8DbGYyyp1r1IiMifLDw6flmuq5hyTPBXHcIFiHNw9v','2024-01-23 05:10:40','2024-03-19 08:11:32'),(2,'Main Seller','seller','seller@gmail.com',NULL,'202403191338men-pro.jpg','118','Panadura','seller','active','$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS',NULL,'2024-01-22 12:49:02','2024-03-19 08:08:39'),(3,'Main Customer','customerqwe','customer@gmail.com',NULL,'202402100707pexels-tuấn-kiệt-jr-1468379.jpg','117','Panadura','customer','active','$2y$12$mspV2JRdaag09Bt2uzjTn.woL1UBn0sWP6XF.OhzhQNIvLEwlSc8C',NULL,'2024-01-23 12:48:54','2024-03-19 08:07:38'),(4,'Sandesh Aloka','devyn99','sandesh@gmail.com','2024-02-02 01:54:52','https://via.placeholder.com/60x60.png/00ee22?text=voluptatem','0115874585','147 Corkery Circle\nCronahaven, OH 26257','customer','deactive','$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2','d4KETDqONH','2024-02-02 01:54:52','2024-03-14 23:42:34'),(5,'Malika Abshire','saige74','chelsea.smitham@example.net','2024-02-02 01:54:52','https://via.placeholder.com/60x60.png/0077ff?text=et','+1-915-395-4040','83746 Ziemann Forges\nSchummton, ND 16322-5714','customer','active','$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2','zbwsOwb65c','2024-02-02 01:54:52','2024-02-02 01:54:52'),(9,'Dilshan',NULL,'dilshan@gmail.com',NULL,NULL,'55998555',NULL,'customer','active','$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG',NULL,'2024-02-02 01:57:07','2024-03-14 06:15:24'),(10,'Sandun Pathmika',NULL,'sandun@gmail.com',NULL,NULL,'0711722633',NULL,'admin','deactive','$2y$12$4p4IQRECVO9Jeymut.Xd7OufSCP5yO5RPAA7OrxWoK56aoOmxwA6.',NULL,'2024-02-16 08:22:51','2024-03-14 23:43:09'),(11,'Denush',NULL,'denush@gmail.com',NULL,NULL,'015544121',NULL,'customer','active','$2y$12$Q2m6nDdX8jfuMIgX1QuTaOvqnNPMOsSIN2pfaalBkv2Jp90VSNoB6',NULL,'2024-02-16 08:23:32','2024-03-14 06:15:46'),(12,'Saritha',NULL,'saritha@gmail.com',NULL,NULL,'0778958566',NULL,'customer','deactive','$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.',NULL,'2024-02-16 08:27:13','2024-03-14 06:16:02'),(15,'Gayathra Dilshan',NULL,'gayathradilshan1@gmail.com',NULL,NULL,'0779919634',NULL,'customer','deactive','$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi',NULL,'2024-02-21 12:04:30','2024-03-14 23:43:49'),(16,'Gayathra Dilshan','sagdilshan','dilshan2024@gmail.com',NULL,'202403132020IMG-20211221-WA0006.jpg','0772780727','Panadura','admin','active','$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu',NULL,'2024-03-12 12:09:28','2024-03-18 00:13:06'),(22,'Test1',NULL,'test1@gmail.com',NULL,NULL,'0188554412',NULL,'seller','deactive','$2y$12$gmIJ8en3Cx0Nte8TXk3VbeaPGcnhJcToJC5QAK1iV6ejkvnTfhdua',NULL,'2024-03-14 05:10:20','2024-03-14 06:15:03'),(24,'Test3',NULL,'test3@gmail.com',NULL,NULL,'0778954789',NULL,'customer','active','$2y$12$Njybd5aF5YuY0njT8zKHzOGD3rZwIT7ewgs3I4EOB1ZzQQxJorKj6',NULL,'2024-03-14 23:40:59','2024-03-14 23:40:59'),(25,'test4',NULL,'test4@gmail.com',NULL,NULL,'147895656955',NULL,'customer','active','$2y$12$ILrUGP3eA78EOJ/1MkTg2edAZO8nA2ceXRnlMZH3KgMVweg1Y1nLO',NULL,'2024-03-14 23:41:30','2024-03-14 23:41:30'),(26,'Test Profile','testprofile','testprofile@gmail.com',NULL,'202403190419user1-128x128.jpg','0771999634','Panadura','customer','active','$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12',NULL,'2024-03-14 23:41:56','2024-03-18 22:49:10'),(27,'tese8',NULL,'test8@gmail.com',NULL,NULL,'0778485789',NULL,'customer','deactive','$2y$12$8ljry8XmKYi72DgNfTvHreq/dW2YoEtT0Lc9IAjAJnBKvsRdv1Gfu',NULL,'2024-03-14 23:46:37','2024-03-14 23:47:04'),(28,'Test23',NULL,'test23@gmail.com',NULL,NULL,'0478541253',NULL,'customer','active','$2y$12$LOGBIPvGnCGfAGG.ebXUmuir8C1Ch4nRfbLIKd7VADVJ2lFieyuaa',NULL,'2024-03-16 10:20:25','2024-03-19 08:01:56'),(29,'test234',NULL,'test234@gmail.com',NULL,NULL,'0789456123',NULL,'admin','active','$2y$12$Z.FTkGWCuUv2orQ2gZNgT.mdZQDpL0qYsOe8441OTWjjfEitzf1mG',NULL,'2024-03-19 08:03:07','2024-03-19 08:10:15');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -333,4 +365,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-18 11:21:51
+-- Dump completed on 2024-03-29 21:36:19

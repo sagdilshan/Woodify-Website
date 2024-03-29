@@ -45,7 +45,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                                        placeholder="Enter name" required>
+                                                        placeholder="Enter name" required value="{{old('name')}}">
 
                                                         @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -56,7 +56,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Email</label>
                                                 <div class="col-sm-10">
                                                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                                                        placeholder="Enter email" required>
+                                                        placeholder="Enter email" required value="{{old('email')}}">
 
                                                         @error('email')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -67,7 +67,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                                        placeholder="Enter phone" required>
+                                                        placeholder="Enter phone" required value="{{old('phone')}}">
 
                                                         @error('phone')
                                                         <span class="text-danger">{{ $message }}</span>

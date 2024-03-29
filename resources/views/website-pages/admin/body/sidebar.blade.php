@@ -49,10 +49,10 @@
 
 
                 <li
-                    class="nav-item {{ Route::is('all.category') || Route::is('add.category')  || Route::is('edit.category') ? 'menu-open' : '' }}">
+                    class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list')  || Route::is('edit.category') ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ Route::is('all.category') ? 'active' : '' }} "
-                        style="{{ Route::is('all.category') || Route::is('edit.category') || Route::is('add.category')  ? 'background-color: #3c8dbc;' : '' }}">
+                        class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} "
+                        style="{{ Route::is('all.category.list') || Route::is('edit.category') || Route::is('add.category.list')  ? 'background-color: #3c8dbc;' : '' }}">
                         <i class="nav-icon fas fa-receipt"></i>
                         <p>
                             Inventory
@@ -61,8 +61,8 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('all.category') }}"
-                                class="nav-link {{ Route::is('all.category') ? 'active' : '' }} {{ Route::is('edit.category') ? 'active' : '' }} {{ Route::is('add.category') ? 'active' : '' }}">
+                            <a href="{{ route('all.category.list') }}"
+                                class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} {{ Route::is('edit.category') ? 'active' : '' }} {{ Route::is('add.category.list') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-list-alt"></i>
                                 <p>
                                     Category
@@ -89,7 +89,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('all.permission') }}"
                                 class="nav-link {{ Route::is('all.permission') ? 'active' : '' }} {{ Route::is('edit.permission') ? 'active' : '' }} {{ Route::is('add.permission') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-lock"></i>
@@ -97,7 +97,7 @@
                                     Permissions
                                 </p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li class="nav-item">
                             <a href="{{ route('all.roles') }}"
                                 class="nav-link {{ Route::is('all.roles') ? 'active' : '' }} {{ Route::is('edit.roles') ? 'active' : '' }} {{ Route::is('add.roles') ? 'active' : '' }}">

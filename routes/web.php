@@ -8,6 +8,8 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\DatabaseExportController;
+use App\Http\Controllers\Backend\AllCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +25,8 @@ use App\Http\Controllers\DatabaseExportController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', [AllCategoryController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -142,6 +146,19 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('/admin/delete/seller/{id}', 'DeleteSeller')->name('delete.seller');
 
     });
+
+    //sub & main category
+    Route::controller(AllCategoryController::class)->group(function () {
+
+        Route::get('/all/category', 'MainAllCategory')->name('all.category.list');
+        Route::get('/add/category', 'MainAddCategory')->name('add.category.list');
+        Route::post('/store/category', 'MainStoreCategory')->name('store.category.list');
+        Route::get('/edit/category/{id}', 'MainEditCategory')->name('edit.category.list');
+        Route::post('/update/category/{id}', 'MainUpdateCategory')->name('update.category.list');
+        Route::get('/delete/category/{id}', 'MainDeleteCategory')->name('delete.category.list');
+
+    });
+
 
 
 

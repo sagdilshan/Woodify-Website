@@ -29,7 +29,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header d-flex justify-content-end">
-                            <a href="{{route('add.category')}}" class="btn btn-success">Add Category</a>
+                            <a href="{{route('all.category.list')}}" class="btn btn-success">Add Category</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

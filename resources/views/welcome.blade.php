@@ -1222,17 +1222,27 @@
                 <div class="collection-box section">
                     <div class="container-fluid">
                         <div class="collection-grid">
-                            <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/home-decor.png"
-                                        src="assetss/images/woodify/home-decor.png" alt="Home Decor"
-                                        class="blur-up lazyload" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Home Decor</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-grid-item">
+
+
+                            @foreach ($categories as $category)
+                            
+                                <div class="collection-grid-item">
+                                    <a href="#" class="collection-grid-item__link">
+                                        <img data-src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
+                                            src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
+                                            alt="{{ $category->name }}" title="{{ $category->name }}"
+                                            class="blur-up lazyload" />
+                                        <div class="collection-grid-item__title-wrapper">
+                                            <h3 class="collection-grid-item__title btn btn--secondary no-border">
+                                                {{ $category->name }}</h3>
+                                        </div>
+                                    </a>
+                                </div>
+                            @endforeach
+
+
+
+                            {{-- <div class="collection-grid-item">
                                 <a href="#" class="collection-grid-item__link">
                                     <img class="blur-up lazyload" data-src="assetss/images/woodify/furniture.png"
                                         src="assetss/images/woodify/furniture.png" alt="Furniture" />
@@ -1247,7 +1257,8 @@
                                     <img class="blur-up lazyload" data-src="assetss/images/woodify/kitchen.png"
                                         src="assetss/images/woodify/kitchen.png" alt="Kitchen" />
                                     <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Kitchen & Dining
+                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Kitchen &
+                                            Dining
                                         </h3>
                                     </div>
                                 </a>
@@ -1258,7 +1269,8 @@
                                         src="assetss/images/woodify/office.png" alt="Office"
                                         class="blur-up lazyload" />
                                     <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Office & Workspace</h3>
+                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Office &
+                                            Workspace</h3>
                                     </div>
                                 </a>
                             </div>
@@ -1275,11 +1287,11 @@
                             </div>
                             <div class="collection-grid-item">
                                 <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/gift.png"
-                                        src="assetss/images/woodify/gift.png" alt="Shoes"
-                                        class="blur-up lazyload" />
+                                    <img data-src="assetss/images/woodify/gift.png" src="assetss/images/woodify/gift.png"
+                                        alt="Shoes" class="blur-up lazyload" />
                                     <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Personalized Gifts
+                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Personalized
+                                            Gifts
                                         </h3>
                                     </div>
                                 </a>
@@ -1288,14 +1300,13 @@
                             <div class="collection-grid-item">
                                 <a href="#" class="collection-grid-item__link">
                                     <img data-src="assetss/images/woodify/jewel.jpg"
-                                        src="assetss/images/woodify/jewel.jpg" alt="Shoes"
-                                        class="blur-up lazyload" />
+                                        src="assetss/images/woodify/jewel.jpg" alt="Shoes" class="blur-up lazyload" />
                                     <div class="collection-grid-item__title-wrapper">
                                         <h3 class="collection-grid-item__title btn btn--secondary no-border">Accessories
                                         </h3>
                                     </div>
                                 </a>
-                            </div>
+                            </div> --}}
 
                         </div>
                     </div>
@@ -1543,9 +1554,8 @@
                                                                     <a class="qtyBtn minus" href="javascript:void(0);"><i
                                                                             class="fa anm anm-minus-r"
                                                                             aria-hidden="true"></i></a>
-                                                                    <input type="text" id="Quantity"
-                                                                        name="quantity" value="1"
-                                                                        class="product-form__input qty">
+                                                                    <input type="text" id="Quantity" name="quantity"
+                                                                        value="1" class="product-form__input qty">
                                                                     <a class="qtyBtn plus" href="javascript:void(0);"><i
                                                                             class="fa anm anm-plus-r"
                                                                             aria-hidden="true"></i></a>

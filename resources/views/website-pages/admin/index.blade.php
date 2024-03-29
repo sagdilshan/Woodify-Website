@@ -304,7 +304,7 @@
                             <div class="inner">
                                 <h3>{{ $formattedTotalcustomers}}</h3>
 
-                                <p style="font-size: 1.5rem;">Woodify Clients</p>
+                                <p style="font-size: 1.5rem;">Woodify Customers</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-users"></i>
