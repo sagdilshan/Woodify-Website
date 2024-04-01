@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <aside class="main-sidebar sidebar-dark-lightblue elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('admin.dashboard') }}" class="brand-link">
@@ -47,25 +48,35 @@
                     </a>
                 </li>
 
-
+                
                 <li
-                    class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list')  || Route::is('edit.category') ? 'menu-open' : '' }}">
+                    class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list') || Route::is('edit.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} "
-                        style="{{ Route::is('all.category.list') || Route::is('edit.category') || Route::is('add.category.list')  ? 'background-color: #3c8dbc;' : '' }}">
-                        <i class="nav-icon fas fa-receipt"></i>
+                        class="nav-link {{ Route::is('all.category.list') || Route::is('all.post') ? 'active' : '' }} "
+                        style="{{ Route::is('all.category.list') || Route::is('edit.category.list') || Route::is('add.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'background-color: #3c8dbc;' : '' }}">
+                        <i class="nav-icon fa fa-bars"></i>
                         <p>
-                            Inventory
+                            Product
                             <i class="right fas fa-angle-right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('all.category.list') }}"
-                                class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} {{ Route::is('edit.category') ? 'active' : '' }} {{ Route::is('add.category.list') ? 'active' : '' }}">
-                                <i class="nav-icon fa fa-list-alt"></i>
+                                class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} {{ Route::is('edit.category.list') ? 'active' : '' }} {{ Route::is('add.category.list') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-ellipsis-v"></i>
                                 <p>
-                                    Category
+                                    Pending Products
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('all.post') }}"
+                                class="nav-link {{ Route::is('all.post') ? 'active' : '' }} {{ Route::is('edit.post') ? 'active' : '' }} {{ Route::is('add.post') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-ellipsis-v"></i>
+                                <p>
+                                    Approved Products
                                 </p>
                             </a>
                         </li>
@@ -75,6 +86,45 @@
 
                     </ul>
                 </li>
+
+                <li
+                    class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list') || Route::is('edit.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'menu-open' : '' }}">
+                    <a href="#"
+                        class="nav-link {{ Route::is('all.category.list') || Route::is('all.post') ? 'active' : '' }} "
+                        style="{{ Route::is('all.category.list') || Route::is('edit.category.list') || Route::is('add.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'background-color: #3c8dbc;' : '' }}">
+                        <i class="nav-icon fas fa-receipt"></i>
+                        <p>
+                            Inventory
+                            <i class="right fas fa-angle-right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('all.category.list') }}"
+                                class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} {{ Route::is('edit.category.list') ? 'active' : '' }} {{ Route::is('add.category.list') ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-list-alt"></i>
+                                <p>
+                                    Category
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('all.post') }}"
+                                class="nav-link {{ Route::is('all.post') ? 'active' : '' }} {{ Route::is('edit.post') ? 'active' : '' }} {{ Route::is('add.post') ? 'active' : '' }}">
+                                <i class="nav-icon fas fa-blog"></i>
+                                <p>
+                                    Posts
+                                </p>
+                            </a>
+                        </li>
+
+
+
+
+                    </ul>
+                </li>
+
 
 
                 <li

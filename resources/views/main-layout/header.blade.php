@@ -31,10 +31,8 @@
             <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
         </div>
     </div>
-    <div id="pre-loader">
-        <img src="assetss/images/loader.gif" alt="Loading..." />
-    </div>
 
+    
     <div class="top-header">
         <div class="container-fluid">
             <div class="row">
@@ -87,8 +85,8 @@
                 <!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                     <a href="{{ url('/') }}">
-                        <img src="assetss/images/woodify-logo.png" alt="Belle Multipurpose Html Template"
-                            title="Belle Multipurpose Html Template" />
+                        <img src="../assetss/images/woodify-logo.png" alt="Woodify Logo"
+                            title="Woodify Logo" />
                     </a>
                 </div>
                 <!--End Desktop Logo-->
@@ -107,28 +105,7 @@
                                 </a>
 
                             </li>
-                            <li class="lvl1 parent dropdown"><a href="#" style="font-size: 1rem;">Category <i
-                                        class="anm anm-angle-down-l"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="cart-variant1.html" class="site-nav">Cart Page <i
-                                                class="anm anm-angle-right-l"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a href="cart-variant1.html" class="site-nav">Cart Variant1</a></li>
-                                            <li><a href="cart-variant2.html" class="site-nav">Cart Variant2</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="compare-variant1.html" class="site-nav">Compare Product <i
-                                                class="anm anm-angle-right-l"></i></a>
-                                        <ul class="dropdown">
-                                            <li><a href="compare-variant1.html" class="site-nav">Compare Variant1</a>
-                                            </li>
-                                            <li><a href="compare-variant2.html" class="site-nav">Compare Variant2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
 
-                                </ul>
-                            </li>
                             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}"
                                     style="font-size: 1rem;">Shop </a>
                             </li>
@@ -232,7 +209,7 @@
                     <ul>
                       <li><a href="shop-left-sidebar.html" class="site-nav">Product Countdown </a></li>
                       <li><a href="shop-right-sidebar.html" class="site-nav">Infinite Scrolling</a></li>
-                      
+
                     </ul>
                   </li>
                 </ul>

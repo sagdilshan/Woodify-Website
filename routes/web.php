@@ -9,6 +9,9 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\DatabaseExportController;
 use App\Http\Controllers\Backend\AllCategoryController;
+use App\Http\Controllers\Backend\PostController;
+
+use App\Http\Controllers;
 
 
 /*
@@ -26,7 +29,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [AllCategoryController::class, 'index']);
+
+
+// Route::get('/', [AllCategoryController::class, 'index1']);
+
+Route::get('/', [PostController::class, 'indexx']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -43,6 +50,11 @@ require __DIR__ . '/auth.php';
 
 
 Route::view('/shop', 'shop')->name('shop');
+// Route::view('/blog', 'blog')->name('blog');
+
+Route::get('/blog/{id}', [PostController::class, 'show'])->name('blog.show');
+
+Route::get('/blog/{id}', [AllCategoryController::class, 'blog']);
 
 
 //prevent unatherized access(illegale action.. seller log admin acc )
@@ -160,6 +172,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 
+    //post
+    Route::controller(PostController::class)->group(function () {
+
+        Route::get('/all/post', 'AllPost')->name('all.post');
+        Route::get('/add/post', 'AddPost')->name('add.post');
+        Route::post('/store/post', 'StorePost')->name('store.post');
+        Route::get('/edit/post/{id}', 'EditPost')->name('edit.post');
+        Route::post('/update/post/{id}', 'UpdatePost')->name('update.post');
+        Route::get('/delete/post/{id}', 'DeletePost')->name('delete.post');
+
+    });
 
 
 

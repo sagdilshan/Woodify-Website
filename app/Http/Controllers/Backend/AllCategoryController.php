@@ -9,10 +9,13 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
-use App\Models\User;
+use App\Models\Post;
 
 class AllCategoryController extends Controller
 {
+
+    
+
     public function MainAllCategory()
     {
         $categorys = CategoryModel::get();
@@ -77,7 +80,7 @@ class AllCategoryController extends Controller
 
     }
 
-    public function index()
+    public function index1()
     {
         $categories = CategoryModel::where('status', 'active')->get();
         return view('welcome', compact('categories'));
@@ -167,7 +170,8 @@ class AllCategoryController extends Controller
     //     return redirect()->route('all.category.list')->with($notification);
     // }
     public function MainUpdateCategory(Request $request)
-    {$pid = $request->id;
+    {
+        $pid = $request->id;
         $category = CategoryModel::findOrFail($pid);
 
 
@@ -176,12 +180,12 @@ class AllCategoryController extends Controller
         $category->name = $request->name;
         $category->status = $request->status;
 
-        
+
 
         // Save the changes to the database
         $category->save();
 
-     //Redirect back with a success message
+        //Redirect back with a success message
         $notification = array(
             'message' => 'Category Updated',
             'alert-type' => 'success'

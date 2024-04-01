@@ -8,7 +8,10 @@
 
         <div class="pageWrapper">
 
-
+            <div id="pre-loader">
+                <img src="assetss/images/loader.gif" alt="Loading..." />
+            </div>
+            
             <!--Body Content-->
             <div id="page-content">
                 <!--Home slider-->
@@ -1325,7 +1328,35 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+
+                            @foreach ($posts as $post)
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                    <div class="wrap-blog">
+                                        <a href="#" class="article__grid-image">
+                                            <img src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
+                                                alt="{{ $post->title }}" title="{{ $post->title }}"
+                                                class="blur-up lazyloaded" />
+                                        </a>
+                                        <div class="article__grid-meta article__grid-meta--has-image">
+                                            <div class="wrap-blog-inner">
+                                                <h2 class="h3 article__title">
+                                                    <a href="#">{{ $post->title }}</a>
+                                                </h2>
+                                                <span
+                                                    class="article__date">{{ $post->created_at->format('F d, Y') }}</span>
+                                                <div class="rte article__grid-excerpt">
+                                                    {{ Str::limit($post->content, 150, '...') }}
+                                                </div>
+                                                <ul class="list--inline article__meta-buttons">
+                                                    <li><a href="{{ route('blog.show', ['id' => $post->id]) }}">Read more</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                 <div class="wrap-blog">
                                     <a href="#" class="article__grid-image">
                                         <img src="assetss/images/woodify/portfolio-1.jpg"
@@ -1341,7 +1372,7 @@
                                             <div class="rte article__grid-excerpt">
                                                 Woodworking is more than just a craft; it's a tradition passed down through
                                                 generations, a form of expression, and for many, a way of life. Whether
-                                                you're carving a spoon, building furniture, or...
+                                                you're carving a spoon, building furniture, or many items in woodify site. buy and look enjoy.
                                             </div>
                                             <ul class="list--inline article__meta-buttons">
                                                 <li><a href="#">Read more</a></li>
@@ -1374,7 +1405,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>

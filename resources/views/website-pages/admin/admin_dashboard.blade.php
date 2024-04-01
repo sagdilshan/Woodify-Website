@@ -8,6 +8,7 @@
     <title>@yield('pageTitle') - Woodify</title>
     <link rel="icon" href="../assets/dist/img/woodify-fav.png" />
     <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
