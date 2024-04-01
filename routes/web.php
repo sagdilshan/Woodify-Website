@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\DatabaseExportController;
 use App\Http\Controllers\Backend\AllCategoryController;
 use App\Http\Controllers\Backend\PostController;
+use App\Http\Controllers\ProductController;
+
 
 use App\Http\Controllers;
 
@@ -50,9 +52,9 @@ require __DIR__ . '/auth.php';
 
 
 Route::view('/shop', 'shop')->name('shop');
-// Route::view('/blog', 'blog')->name('blog');
 
-Route::get('/blog/{id}', [PostController::class, 'show'])->name('blog.show');
+Route::view('/blog', 'blog')->name('blog');
+Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');
 
 Route::get('/blog/{id}', [AllCategoryController::class, 'blog']);
 
@@ -186,7 +188,25 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
 
 
+
 }); // end group admin middlewere
+
+Route::middleware(['auth', 'role:seller'])->group(function () {
+
+    Route::controller(ProductController::class)->group(function () {
+
+        Route::get('/seller/products', 'SellerAllProduct')->name('seller.all.products');
+        Route::get('seller/add/products', 'SellerAddProduct')->name('seller.add.products');
+        Route::get('seller/view/products', 'SellerViewProduct')->name('seller.view.products');
+        Route::post('seller/store/products', 'SellerStoreProduct')->name('seller.store.products');
+        Route::get('seller/edit/products/{id}', 'SellerEditProduct')->name('seller.edit.products');
+        Route::post('seller/update/products/{id}', 'SellerUpdateProduct')->name('seller.update.products');
+        Route::get('seller/delete/products/{id}', 'SellerDeleteProduct')->name('seller.delete.products');
+
+    });
+
+
+});
 
 
 

@@ -35,7 +35,7 @@
 
 
 
-                                    <div class="active tab-pane" id="settings">
+                                    <div class="active tab-pane">
                                         <form method="POST" action="{{ route('update.post', ['id' => $posts->id]) }}"
                                             class="form-horizontal">
                                             @csrf

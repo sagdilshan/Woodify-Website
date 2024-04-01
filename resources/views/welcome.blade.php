@@ -11,7 +11,7 @@
             <div id="pre-loader">
                 <img src="assetss/images/loader.gif" alt="Loading..." />
             </div>
-            
+
             <!--Body Content-->
             <div id="page-content">
                 <!--Home slider-->
@@ -1348,7 +1348,7 @@
                                                     {{ Str::limit($post->content, 150, '...') }}
                                                 </div>
                                                 <ul class="list--inline article__meta-buttons">
-                                                    <li><a href="{{ route('blog.show', ['id' => $post->id]) }}">Read more</a></li>
+                                                    {{-- <li><a href="{{ route('blog.show', ['id' => $post->id]) }}">Read more</a></li> --}}
                                                 </ul>
                                             </div>
                                         </div>

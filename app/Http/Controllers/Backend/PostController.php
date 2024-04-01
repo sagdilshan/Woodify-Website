@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
 use App\Models\CategoryModel;
 
 
@@ -126,7 +125,7 @@ class PostController extends Controller
         return redirect()->back()->with($notification);
     }
 
-    public function show($id)
+    public function ShowBlog($id)
     {
         $post = Post::findOrFail($id);
         $postss = Post::all();
