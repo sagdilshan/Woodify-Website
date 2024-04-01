@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 10:40 AM
+-- Generation Time: Apr 01, 2024 at 08:46 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -222,6 +222,37 @@ INSERT INTO `posts` (`id`, `title`, `content`, `photo`, `created_at`, `created_b
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `images` varchar(500) DEFAULT NULL,
+  `price` varchar(10) DEFAULT NULL,
+  `sale_price` varchar(10) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `description` text DEFAULT NULL,
+  `status` enum('approve','disapprove','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'disapprove',
+  `created_by` int(11) NOT NULL,
+  `approved_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
+(13, 'scs', '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 2, '2e2', 'approve', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
+(14, 'n', '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 3, 'mmlmlm', 'disapprove', 22, NULL, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
+(15, 'Test 1 Original', '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 4, 'wfsf', 'approve', 2, 1, '2024-04-01 18:30:05', '2024-04-01 16:26:56'),
+(16, 'sf', '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 7, 'svsvs', 'rejected', 2, 1, '2024-04-01 18:24:49', '2024-04-01 17:27:05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -281,9 +312,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'l3PAYA34paJeXoFpBppijEmGQJbKzSO5556wJYUvWULL8ONdZWlkvJhqb9A5', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
+(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'uIPpXygJ7Ktbrcd74YzoKod4Fdrzal0En7hgdVk42IIe1ne7lIjLPti6hiUy', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202403191338men-pro.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-19 08:08:39'),
-(3, 'Main Customer', 'customerqwe', 'customer@gmail.com', NULL, '202402100707pexels-tuấn-kiệt-jr-1468379.jpg', '117', 'Panadura', 'customer', 'active', '$2y$12$mspV2JRdaag09Bt2uzjTn.woL1UBn0sWP6XF.OhzhQNIvLEwlSc8C', NULL, '2024-01-23 12:48:54', '2024-03-19 08:07:38'),
 (4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
 (9, 'Dilshan', NULL, 'dilshan@gmail.com', NULL, NULL, '55998555', NULL, 'customer', 'active', '$2y$12$m8036QLOX186wHU8r.IMF.ZpXQ2zSWCITwR7kR0kIVUwcRhnWLREG', NULL, '2024-02-02 01:57:07', '2024-03-14 06:15:24'),
@@ -371,6 +401,12 @@ ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -436,6 +472,12 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `posts`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `roles`
