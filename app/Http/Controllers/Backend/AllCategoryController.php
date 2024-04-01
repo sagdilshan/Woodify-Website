@@ -112,8 +112,8 @@ class AllCategoryController extends Controller
         return redirect()->back()->with($notification);
     }
 
-    public function MainEditCategory($id){
-        {
+    public function MainEditCategory($id)
+    { {
             $category = CategoryModel::findOrFail($id);
             $CategoryData = CategoryModel::find($id);
             $statuses = CategoryModel::distinct()->pluck('status'); // Fetch unique status values from the users table
@@ -121,31 +121,72 @@ class AllCategoryController extends Controller
         }
     }
 
-    public function MainUpdateCategory(Request $request, $id)
-    {
+    // public function MainUpdateCategory(Request $request, $id)
+    // {
 
-        $category = CategoryModel::findOrFail($id);
+    //     $category = CategoryModel::findOrFail($id);
+    //     $category->name = $request->name;
+    //     $category->status = $request->status;
+    //     $category->updated_by = Auth::user()->id;
+
+    //     if ($request->file('photo')) {
+    //         $file = $request->file('photo');
+    //         @unlink(public_path('upload/category_images/' . $category->photo)); //delete previous profile image
+    //         $filename = date('YmdHi') . $file->getClientOriginalName(); // 0215.a.gayathr.png
+    //         $file->move(public_path('upload/category_images'), $filename);
+    //         $category['photo'] = $filename;
+    //     }
+
+    //     $category->save();
+
+    //     $notification = array(
+    //         'message' => 'Category Updated Succssfully',
+    //         'alert-type' => 'success'
+    //     );
+
+    //     return redirect()->route('all.category.list')->with($notification);
+    // }
+
+    // public function MainUpdateCategory(Request $request)
+    // {
+    //     $pid = $request->id;
+
+    //     CategoryModel::findOrFail($pid)->update([
+    //         'name' => $request->name,
+    //         'status' => $request->status,
+
+    //     ]);
+
+
+    //     // Redirect back with a success message
+    //     $notification = array(
+    //         'message' => 'Category Updated',
+    //         'alert-type' => 'success'
+    //     );
+
+    //     return redirect()->route('all.category.list')->with($notification);
+    // }
+    public function MainUpdateCategory(Request $request)
+    {$pid = $request->id;
+        $category = CategoryModel::findOrFail($pid);
+
+
+
+        // Update other fields
         $category->name = $request->name;
         $category->status = $request->status;
-        $category->updated_by = Auth::user()->id;
 
-        if ($request->file('photo')) {
-            $file = $request->file('photo');
-            @unlink(public_path('upload/category_images/' . $category->photo)); //delete previous profile image
-            $filename = date('YmdHi') . $file->getClientOriginalName(); // 0215.a.gayathr.png
-            $file->move(public_path('upload/category_images'), $filename);
-            $category['photo'] = $filename;
-        }
+        
 
+        // Save the changes to the database
         $category->save();
 
+     //Redirect back with a success message
         $notification = array(
-            'message' => 'Category Updated Succssfully',
+            'message' => 'Category Updated',
             'alert-type' => 'success'
         );
 
         return redirect()->route('all.category.list')->with($notification);
     }
-
-
 }

@@ -1223,9 +1223,7 @@
                     <div class="container-fluid">
                         <div class="collection-grid">
 
-
                             @foreach ($categories as $category)
-                            
                                 <div class="collection-grid-item">
                                     <a href="#" class="collection-grid-item__link">
                                         <img data-src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"

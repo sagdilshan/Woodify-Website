@@ -36,7 +36,7 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{route('update.category.list', $category->id) }}"
+                                        <form method="POST" action="{{ route('update.category.list', ['id' => $category->id]) }}"
                                             class="form-horizontal">
                                             @csrf
 
@@ -75,7 +75,7 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row">
+                                            {{-- <div class="form-group row">
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Category
                                                     Photo</label>
                                                 <div class="col-sm-10">
@@ -86,10 +86,10 @@
                                                 <label for="inputExperience" class="col-sm-2 col-form-label"></label>
                                                 <div class="col-sm-10">
                                                     <img id="showImage" class="profile-user-img img-fluid img-circle"
-                                                        src="{{ !empty($CategoryData->photo) ? url('upload/category_images/' . $CategoryData->photo) : url('upload/no_image.png') }}"
-                                                        alt="Profile Picture">
+                                                        src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
+                                                        alt="{{ $category->name }}">
                                                 </div>
-                                            </div>
+                                            </div> --}}
 
 
 

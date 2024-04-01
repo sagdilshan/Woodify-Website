@@ -155,6 +155,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::post('/store/category', 'MainStoreCategory')->name('store.category.list');
         Route::get('/edit/category/{id}', 'MainEditCategory')->name('edit.category.list');
         Route::post('/update/category/{id}', 'MainUpdateCategory')->name('update.category.list');
+        // Route::post('/update-category/{id}', [AllCategoryController::class, 'MainUpdateCategory'])->name('update.category');
         Route::get('/delete/category/{id}', 'MainDeleteCategory')->name('delete.category.list');
 
     });
