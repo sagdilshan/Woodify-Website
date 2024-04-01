@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2024 at 05:06 PM
+-- Generation Time: Apr 01, 2024 at 10:40 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -45,15 +45,13 @@ CREATE TABLE `all_category` (
 --
 
 INSERT INTO `all_category` (`id`, `name`, `slug`, `status`, `photo`, `created_by`, `is_delete`, `created_at`, `updated_by`, `updated_at`) VALUES
-(1, 'Home Decor', 'home-decor', 0, 'home-decor.png', 1, 0, '2024-03-29 09:05:03', NULL, '2024-03-29 09:05:03'),
-(2, 'Furniture', 'furniture', 0, 'furniture.png', 1, 0, '2024-03-29 09:06:26', NULL, '2024-03-29 09:06:26'),
+(1, 'Home Decor', 'home-decor', 0, 'home-decor.png', 1, 0, '2024-03-29 09:05:03', NULL, '2024-03-30 04:09:59'),
+(2, 'Furniture', 'furniture', 0, 'furniture.png', 1, 0, '2024-03-29 09:06:26', NULL, '2024-04-01 05:04:39'),
 (3, 'Kitchen & Dining', 'kitchen-&-dining', 0, 'kitchen.png', 1, 0, '2024-03-29 09:12:59', NULL, '2024-03-29 09:12:59'),
 (4, 'Toys & Games', 'toys-&-games', 0, 'games.jpg', 1, 0, '2024-03-29 09:18:04', NULL, '2024-03-29 09:18:04'),
 (5, 'Office and workspace', 'office-and-workspace', 0, '290919office.png', 1, 0, '2024-03-29 09:19:24', NULL, '2024-03-29 09:19:24'),
 (6, 'Personalized Gifts', 'personalized-gifts', 0, '20240329gift.png', 1, 0, '2024-03-29 09:24:04', NULL, '2024-03-29 09:24:04'),
-(7, 'Accessories', 'accessories', 0, '20240329jewel.jpg', 1, 0, '2024-03-29 09:25:03', NULL, '2024-03-29 09:25:03'),
-(16, 'Test 01', 'test-01', 1, '20240329categories-img1.jpg', 1, 0, '2024-03-29 10:51:13', NULL, '2024-03-29 10:51:13'),
-(17, 'Test2', 'test2', 0, '20240329categories-img4.jpg', 29, 0, '2024-03-29 11:57:34', NULL, '2024-03-29 11:57:34');
+(7, 'Accessories', 'accessories', 0, '20240329jewel.jpg', 1, 0, '2024-03-29 09:25:03', NULL, '2024-03-29 09:25:03');
 
 -- --------------------------------------------------------
 
@@ -198,6 +196,32 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `title` varchar(50) DEFAULT NULL,
+  `content` text DEFAULT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `created_at` date DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `title`, `content`, `photo`, `created_at`, `created_by`, `updated_at`) VALUES
+(1, 'Tips, Techniques, and Projects', 'Woodworking is more than just a craft; it\'s a tradition passed down through generations, a form of expression, and for many, a way of life. Whether you\'re carving a spoon, building furniture, or many items in woodify site. buy and look enjoy.', '20240401portfolio-1.jpg', '2024-04-01', 1, '2024-04-01 04:55:35'),
+(3, 'Essential Tools for Every Woodworker', 'Grain direction significantly affects the outcome of your project. Working with the grain reduces the chances of tearing or splintering the wood, ensuring a smoother finish', '20240401portfolio-2.jpg', '2024-04-01', 1, '2024-04-01 05:05:05'),
+(5, 'Test 1', 'hjeduehbjebjebcebeuhdgueecbeyveyvcehv\r\nehcejcbehcbec\r\n\r\nececveugcue', '20240401gift.png', '2024-04-01', 1, '2024-04-01 05:05:47'),
+(6, 'teset 2', 'cuedbcuedgbcuehgcfuecge', '20240401product5.png', '2024-04-01', 1, '2024-04-01 08:02:30');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -257,7 +281,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'RmU6zi7abKFgiqctuf8DbGYyyp1r1IiMifLDw6flmuq5hyTPBXHcIFiHNw9v', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
+(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'l3PAYA34paJeXoFpBppijEmGQJbKzSO5556wJYUvWULL8ONdZWlkvJhqb9A5', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202403191338men-pro.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-19 08:08:39'),
 (3, 'Main Customer', 'customerqwe', 'customer@gmail.com', NULL, '202402100707pexels-tuấn-kiệt-jr-1468379.jpg', '117', 'Panadura', 'customer', 'active', '$2y$12$mspV2JRdaag09Bt2uzjTn.woL1UBn0sWP6XF.OhzhQNIvLEwlSc8C', NULL, '2024-01-23 12:48:54', '2024-03-19 08:07:38'),
 (4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
@@ -268,7 +292,7 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `ph
 (12, 'Saritha', NULL, 'saritha@gmail.com', NULL, NULL, '0778958566', NULL, 'customer', 'deactive', '$2y$12$fV3dJ6F1TOC8lWi.YoxJG.n9nM7qvgQULwYHMqAUGpFug0eYg3R5.', NULL, '2024-02-16 08:27:13', '2024-03-14 06:16:02'),
 (15, 'Gayathra Dilshan', NULL, 'gayathradilshan1@gmail.com', NULL, NULL, '0779919634', NULL, 'customer', 'deactive', '$2y$12$yePxIqFu64LmzQ/uDSV7bucJTrpJB3kJlzlpIy9O4mHaDtNHrocDi', NULL, '2024-02-21 12:04:30', '2024-03-14 23:43:49'),
 (16, 'Gayathra Dilshan', 'sagdilshan', 'dilshan2024@gmail.com', NULL, '202403132020IMG-20211221-WA0006.jpg', '0772780727', 'Panadura', 'admin', 'active', '$2y$12$opOMbROJEdDv81erYwZDZuJ4.zcNcy3x6LGydKce89xfNxBYLxDRu', NULL, '2024-03-12 12:09:28', '2024-03-18 00:13:06'),
-(22, 'Test1', NULL, 'test1@gmail.com', NULL, NULL, '0188554412', NULL, 'seller', 'deactive', '$2y$12$gmIJ8en3Cx0Nte8TXk3VbeaPGcnhJcToJC5QAK1iV6ejkvnTfhdua', NULL, '2024-03-14 05:10:20', '2024-03-14 06:15:03'),
+(22, 'Test1', NULL, 'test1@gmail.com', NULL, NULL, '0188554412', NULL, 'seller', 'active', '$2y$12$gmIJ8en3Cx0Nte8TXk3VbeaPGcnhJcToJC5QAK1iV6ejkvnTfhdua', NULL, '2024-03-14 05:10:20', '2024-04-01 02:44:08'),
 (24, 'Test3', NULL, 'test3@gmail.com', NULL, NULL, '0778954789', NULL, 'customer', 'active', '$2y$12$Njybd5aF5YuY0njT8zKHzOGD3rZwIT7ewgs3I4EOB1ZzQQxJorKj6', NULL, '2024-03-14 23:40:59', '2024-03-14 23:40:59'),
 (25, 'test4', NULL, 'test4@gmail.com', NULL, NULL, '147895656955', NULL, 'customer', 'active', '$2y$12$ILrUGP3eA78EOJ/1MkTg2edAZO8nA2ceXRnlMZH3KgMVweg1Y1nLO', NULL, '2024-03-14 23:41:30', '2024-03-14 23:41:30'),
 (26, 'Test Profile', 'testprofile', 'testprofile@gmail.com', NULL, '202403190419user1-128x128.jpg', '0771999634', 'Panadura', 'customer', 'active', '$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12', NULL, '2024-03-14 23:41:56', '2024-03-18 22:49:10'),
@@ -341,6 +365,12 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -369,7 +399,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `all_category`
 --
 ALTER TABLE `all_category`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -400,6 +430,12 @@ ALTER TABLE `permissions`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `roles`
