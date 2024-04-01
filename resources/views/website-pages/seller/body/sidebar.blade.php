@@ -47,7 +47,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('seller.all.products')}}" class="nav-link {{ Route::is('seller.all.products') ? 'active' : '' }}{{ Route::is('seller.add.products') ? 'active' : '' }}">
+                    <a href="{{route('seller.all.products')}}" class="nav-link {{ Route::is('seller.all.products') ? 'active' : '' }} {{ Route::is('seller.add.products') ? 'active' : '' }}{{ Route::is('seller.edit.products') ? 'active' : '' }}{{ Route::is('seller.view.products') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-bars"></i>
                         <p>
                             My Products

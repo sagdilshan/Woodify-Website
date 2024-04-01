@@ -47,45 +47,17 @@
                         </p>
                     </a>
                 </li>
-
-                
-                <li
-                    class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list') || Route::is('edit.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'menu-open' : '' }}">
-                    <a href="#"
-                        class="nav-link {{ Route::is('all.category.list') || Route::is('all.post') ? 'active' : '' }} "
-                        style="{{ Route::is('all.category.list') || Route::is('edit.category.list') || Route::is('add.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'background-color: #3c8dbc;' : '' }}">
+                <li class="nav-item">
+                    <a href="{{ route('manage.all.products') }}"
+                        class="nav-link {{ Route::is('manage.all.products') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-bars"></i>
                         <p>
-                            Product
-                            <i class="right fas fa-angle-right"></i>
+                            Product Manage
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="{{ route('all.category.list') }}"
-                                class="nav-link {{ Route::is('all.category.list') ? 'active' : '' }} {{ Route::is('edit.category.list') ? 'active' : '' }} {{ Route::is('add.category.list') ? 'active' : '' }}">
-                                <i class="nav-icon fa fa-ellipsis-v"></i>
-                                <p>
-                                    Pending Products
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{ route('all.post') }}"
-                                class="nav-link {{ Route::is('all.post') ? 'active' : '' }} {{ Route::is('edit.post') ? 'active' : '' }} {{ Route::is('add.post') ? 'active' : '' }}">
-                                <i class="nav-icon fa fa-ellipsis-v"></i>
-                                <p>
-                                    Approved Products
-                                </p>
-                            </a>
-                        </li>
-
-
-
-
-                    </ul>
                 </li>
+
+
 
                 <li
                     class="nav-item {{ Route::is('all.category.list') || Route::is('add.category.list') || Route::is('edit.category.list') || Route::is('all.post') || Route::is('add.post') || Route::is('edit.post') ? 'menu-open' : '' }}">

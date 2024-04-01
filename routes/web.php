@@ -50,13 +50,19 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 
+Route::controller(PostController::class)->group(function () {
+
+    Route::get('all/blog/{id}', 'ShowBlog')->name('blog.show');
+
+});
 
 Route::view('/shop', 'shop')->name('shop');
 
-Route::view('/blog', 'blog')->name('blog');
-Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');
+// Route::view('/blog', 'blog')->name('blog');
+// Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');
 
-Route::get('/blog/{id}', [AllCategoryController::class, 'blog']);
+
+// Route::get('/blog/{id}', [AllCategoryController::class, 'blog']);
 
 
 //prevent unatherized access(illegale action.. seller log admin acc )
@@ -186,6 +192,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     });
 
+    Route::controller(ProductController::class)->group(function () {
+
+        Route::get('manage/products', 'ManageAllProduct')->name('manage.all.products');
+        Route::get('manage/view/products/{id}', 'ManageViewProduct')->name('manage.view.products');
+        Route::get('manage/edit/products/{id}', 'ManageEditProduct')->name('manage.edit.products');
+        Route::post('manage/update/products/{id}', 'ManageUpdateProduct')->name('manage.update.products');
+
+    });
+
 
 
 
@@ -197,7 +212,7 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
 
         Route::get('/seller/products', 'SellerAllProduct')->name('seller.all.products');
         Route::get('seller/add/products', 'SellerAddProduct')->name('seller.add.products');
-        Route::get('seller/view/products', 'SellerViewProduct')->name('seller.view.products');
+        Route::get('seller/view/products/{id}', 'SellerViewProduct')->name('seller.view.products');
         Route::post('seller/store/products', 'SellerStoreProduct')->name('seller.store.products');
         Route::get('seller/edit/products/{id}', 'SellerEditProduct')->name('seller.edit.products');
         Route::post('seller/update/products/{id}', 'SellerUpdateProduct')->name('seller.update.products');

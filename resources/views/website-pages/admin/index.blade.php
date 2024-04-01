@@ -285,14 +285,14 @@
                         <!-- small card -->
                         <div class="small-box bg-gradient-gray">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3>{{ $product_disapproved_count }}</h3>
 
-                                <p style="font-size: 1.5rem;">Pending Orders</p>
+                                <p style="font-size: 1.5rem;">Pending Approve</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-archive"></i>
                             </div>
-                            <a href="#" class="small-box-footer">
+                            <a href="{{ route('manage.all.products') }}" class="small-box-footer">
                                 More info <i class="fas fa-arrow-circle-right"></i>
                             </a>
                         </div>

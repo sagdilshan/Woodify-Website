@@ -17,7 +17,8 @@ class ProductController extends Controller
         $userId = Auth::id();
 
         // Retrieve products created by the currently authenticated user
-        $allProducts = ProductModel::where('created_by', $userId)->get();
+        $allProducts = ProductModel::where('created_by', $userId)
+            ->orderBy('created_at', 'desc')->get();
 
         return view('website-pages.seller.product.all-product', compact('allProducts'));
     }
@@ -71,6 +72,16 @@ class ProductController extends Controller
     public function SellerEditProduct($id)
     {
         $products = ProductModel::findOrFail($id);
+        // Check if the product belongs to the currently authenticated user
+        if ($products->created_by != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to view this product.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('seller.all.products')->with($notification);
+        }
         $categories = CategoryModel::all();
         $statuses = ProductModel::distinct()->pluck('status');
         return view('website-pages.seller.product.edit-product', compact('products', 'statuses', 'categories'));
@@ -81,6 +92,16 @@ class ProductController extends Controller
         $pid = $request->id;
         $products = ProductModel::findOrFail($pid);
 
+        // Check if the status is 'rejected'
+        if ($products->status === 'rejected') {
+            // Redirect back with an error message
+            $notification = array(
+                'message' => 'Product update failed: Product status is rejected',
+                'alert-type' => 'error'
+            );
+
+            return redirect()->route('seller.all.products')->with($notification);
+        }
         // Update other fields
         $products->name = $request->name;
         $products->price = $request->price;
@@ -137,7 +158,16 @@ class ProductController extends Controller
     public function SellerDeleteProduct($id)
     {
         $product = ProductModel::findOrFail($id);
+        // Check if the product belongs to the currently authenticated user
+        if ($product->created_by != auth()->id()) {
+            // Redirect or abort with an error message
 
+            $notification = [
+                'message' => 'You are not authorized to view this product.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('seller.all.products')->with($notification);
+        }
         // Check if the product has images
         if ($product->images) {
             // Split the image filenames into an array
@@ -172,6 +202,88 @@ class ProductController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    // public function SellerViewProduct()
+    // {
 
+
+    //     return view('website-pages.seller.product.view-product');
+    // }
+    public function SellerViewProduct($id)
+    {
+        $productt = ProductModel::findOrFail($id);
+
+        // Check if the product belongs to the currently authenticated user
+        if ($productt->created_by != auth()->id()) {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'You are not authorized to view this product.',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('seller.all.products')->with($notification);
+        }
+
+        return view('website-pages.seller.product.view-product', compact('productt'));
+    }
+
+    public function ManageAllProduct()
+    {
+
+
+        // Retrieve products created by the currently authenticated user
+        $alldisapprove = ProductModel::where('status', 'disapprove')
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+        $allapprove = ProductModel::where('status', 'approve')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $allrejected = ProductModel::where('status', 'rejected')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.admin.product.all_products', compact('alldisapprove','allapprove','allrejected'));
+    }
+
+    public function ManageEditProduct($id)
+    {
+        $products = ProductModel::findOrFail($id);
+
+        $categories = CategoryModel::all();
+        $statuses = ['approve', 'disapprove', 'rejected'];
+        return view('website-pages.admin.product.edit_products', compact('products', 'statuses', 'categories'));
+    }
+
+    public function ManageUpdateProduct(Request $request)
+    {
+        $pid = $request->id;
+        $products = ProductModel::findOrFail($pid);
+
+
+        // Update other fields
+        $products->category_id = $request->category_id;
+        $products->status = $request->status;
+
+        $products->approved_by = Auth::user()->id;
+
+
+
+        // Save the changes to the database
+        $products->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Product Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('manage.all.products')->with($notification);
+    }
+
+    public function ManageViewProduct($id)
+    {
+        $productt = ProductModel::findOrFail($id);
+        return view('website-pages.admin.product.view_products', compact('productt'));
+    }
 
 }

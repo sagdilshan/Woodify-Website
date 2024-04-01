@@ -1,6 +1,6 @@
-@extends('website-pages.seller.seller_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Edit Product')
-@section('seller')
+@extends('website-pages.admin.admin_dashboard')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'View Product')
+@section('admin')
 
     <body class="hold-transition sidebar-mini">
 
@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ route('seller.all.products') }}">Back</a></li>
+                                <li class="breadcrumb-item"><a href="{{ route('manage.all.products') }}">Back</a></li>
                                 <li class="breadcrumb-item active">View Product</li>
                             </ol>
                         </div>

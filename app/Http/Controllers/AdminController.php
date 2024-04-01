@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\ProductModel;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Validator;
@@ -18,6 +19,8 @@ class AdminController extends Controller
         $totaladmins = $fakeTotalcustomers + $realTotaladmins;
         $formattedTotaladmins = number_format($totaladmins);
 
+        $product_disapproved_count = ProductModel::where('status', 'disapprove')->count();
+
 
         $fakeTotalSellers = 0;// Fake number
         $realTotalSellers = User::where('role', 'seller')->where('status', 'active')->count();// Real count of sellers
@@ -30,7 +33,7 @@ class AdminController extends Controller
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 
-        return view('website-pages.admin.index', compact('formattedTotalSellers', 'formattedTotaladmins', 'formattedTotalcustomers'));
+        return view('website-pages.admin.index', compact('formattedTotalSellers','product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
     }
 
     public function AdminLogout(Request $request)

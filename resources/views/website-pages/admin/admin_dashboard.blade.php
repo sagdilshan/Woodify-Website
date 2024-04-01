@@ -118,6 +118,31 @@
 
         });
     </script>
+
+<script>
+    $(function() {
+        $("#example2").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["excel", "pdf", "print"]
+        }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+
+    });
+</script>
+
+
+<script>
+    $(function() {
+        $("#example3").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["excel", "pdf", "print"]
+        }).buttons().container().appendTo('#example3_wrapper .col-md-6:eq(0)');
+
+    });
+</script>
     <script>
         $(function() {
             $(document).on('click', '#delete', function(e) {
@@ -149,6 +174,17 @@
 
         });
     </script>
+
+<script>
+    $(document).ready(function() {
+      $('.product-image-thumb').on('click', function () {
+        var $image_element = $(this).find('img')
+        $('.product-image').prop('src', $image_element.attr('src'))
+        $('.product-image-thumb.active').removeClass('active')
+        $(this).addClass('active')
+      })
+    })
+  </script>
 
 </body>
 

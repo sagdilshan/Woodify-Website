@@ -3,16 +3,14 @@
 @section('mainpage')
 <head>
 
-    <!-- Favicon -->
+    <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" />
     <!-- Plugins CSS -->
-    <link rel="shortcut icon" href="../assetss/images/woodify-fav.png" />
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../assetss/css/plugins.css">
+    <link rel="stylesheet" href="../../assetss/css/plugins.css">
     <!-- Bootstap CSS -->
-    <link rel="stylesheet" href="../assetss/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assetss/css/bootstrap.min.css">
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href="../assetss/css/style.css">
-    <link rel="stylesheet" href="../assetss/css/responsive.css">
+    <link rel="stylesheet" href="../../assetss/css/style.css">
+    <link rel="stylesheet" href="../../assetss/css/responsive.css">
     </head>
     <body class="template-blog belle">
         <div class="pageWrapper">
@@ -41,8 +39,8 @@
                                 <div class="article">
                                     <!-- Article Image -->
                                     <a class="article_featured-image" href="#"><img class="blur-up lazyload"
-                                            data-src="../assetss/images/blog/blog-post-1.jpg"
-                                            src="../assetss/images/blog/blog-post-1.jpg" alt="It's all about how you wear"></a>
+                                            data-src="../../assetss/images/blog/blog-post-1.jpg"
+                                            src="../../assetss/images/blog/blog-post-1.jpg" alt="It's all about how you wear"></a>
                                     <h1><a href="blog-left-sidebar.html">It's all about how you wear</a></h1>
                                     <ul class="publish-detail">
                                         <li><i class="anm anm-user-al" aria-hidden="true"></i> Admin</li>
@@ -124,8 +122,8 @@
                                                         <div class="mini-view_image"> <a class="grid-view-item__link"
                                                                 href="#"><img
                                                                     class="grid-view-item__image blur-up lazyload"
-                                                                    data-src="../assetss/images/blog/blog-post-sml-3.jpg"
-                                                                    src="../assetss/images/blog/blog-post-sml-3.jpg"
+                                                                    data-src="../../assetss/images/blog/blog-post-sml-3.jpg"
+                                                                    src="../../assetss/images/blog/blog-post-sml-3.jpg"
                                                                     alt="" /></a> </div>
                                                         <div class="details"> <a class="grid-view-item__title"
                                                                 href="#">How to Wear The Folds Trend Four Ways</a>
@@ -177,15 +175,15 @@
             </div>
         </div>
     </body>
-    <script src="../assetss/js/vendor/jquery-3.3.1.min.js"></script>
-    <script src="../assetss/js/vendor/modernizr-3.6.0.min.js"></script>
-    <script src="../assetss/js/vendor/jquery.cookie.js"></script>
-    <script src="../assetss/js/vendor/wow.min.js"></script>
+    <script src="../../assetss/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="../../assetss/js/vendor/modernizr-3.6.0.min.js"></script>
+    <script src="../../assetss/js/vendor/jquery.cookie.js"></script>
+    <script src="../../assetss/js/vendor/wow.min.js"></script>
     <!-- Including Javascript -->
-    <script src="../assetss/js/bootstrap.min.js"></script>
-    <script src="../assetss/js/plugins.js"></script>
-    <script src="../assetss/js/popper.min.js"></script>
-    <script src="../assetss/js/lazysizes.js"></script>
-    <script src="../assetss/js/main.js"></script>
+    <script src="../../assetss/js/bootstrap.min.js"></script>
+    <script src="../../assetss/js/plugins.js"></script>
+    <script src="../../assetss/js/popper.min.js"></script>
+    <script src="../../assetss/js/lazysizes.js"></script>
+    <script src="../../assetss/js/main.js"></script>
 
 @endsection

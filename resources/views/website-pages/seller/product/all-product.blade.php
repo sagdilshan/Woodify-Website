@@ -14,7 +14,7 @@
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('seller.dashboard') }}">Home</a></li>
                             <li class="breadcrumb-item active">All Products</li>
                         </ol>
                     </div>
@@ -29,7 +29,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header d-flex justify-content-end">
-                                <a href="{{ route('seller.add.products') }}" class="btn btn-success">Add Products</a>
+                                <a href="{{ route('seller.add.products') }}" class="btn btn-info">Add Products</a>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">
@@ -59,16 +59,16 @@
                                                     @if ($item->status == 'approve')
                                                         <span class="badge badge-success text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @elseif ($item->status == 'disapprove')
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
+                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @else
-                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">Error</span>
+                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @endif
                                                 </td>
 
                                                 <td>
                                                     <a href="{{ route('seller.edit.products', $item->id) }}"
                                                         class="btn btn-outline-info">Edit</a>
-                                                    <a href="{{ route('seller.edit.products', $item->id) }}"
+                                                    <a href="{{ route('seller.view.products', $item->id) }}"
                                                         class="btn btn-outline-success" >View</a>
                                                 </td>
 
