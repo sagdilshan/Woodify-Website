@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2024 at 08:46 PM
+-- Generation Time: Apr 02, 2024 at 09:18 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -228,12 +228,15 @@ INSERT INTO `posts` (`id`, `title`, `content`, `photo`, `created_at`, `created_b
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
   `name` varchar(50) DEFAULT NULL,
+  `thumb1` varchar(100) DEFAULT NULL,
+  `thumb2` varchar(100) DEFAULT NULL,
   `images` varchar(500) DEFAULT NULL,
   `price` varchar(10) DEFAULT NULL,
   `sale_price` varchar(10) NOT NULL,
   `category_id` int(11) NOT NULL,
   `description` text DEFAULT NULL,
-  `status` enum('approve','disapprove','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'disapprove',
+  `status` enum('approve','disapprove','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sale_type` enum('normal','sale') NOT NULL DEFAULT 'normal',
   `created_by` int(11) NOT NULL,
   `approved_by` int(11) DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
@@ -244,11 +247,18 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
-(13, 'scs', '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 2, '2e2', 'approve', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
-(14, 'n', '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 3, 'mmlmlm', 'disapprove', 22, NULL, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
-(15, 'Test 1 Original', '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 4, 'wfsf', 'approve', 2, 1, '2024-04-01 18:30:05', '2024-04-01 16:26:56'),
-(16, 'sf', '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 7, 'svsvs', 'rejected', 2, 1, '2024-04-01 18:24:49', '2024-04-01 17:27:05');
+INSERT INTO `products` (`id`, `name`, `thumb1`, `thumb2`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `sale_type`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
+(13, 'scs', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 1, '2e2', 'approve', 'normal', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
+(14, 'n', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 1, 'mmlmlm', 'approve', 'normal', 22, NULL, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
+(15, 'Test 1 Original', NULL, NULL, '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 3, 'wfsf', 'approve', 'normal', 2, 1, '2024-04-01 18:30:05', '2024-04-01 16:26:56'),
+(16, 'sf', NULL, NULL, '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 4, 'svsvs', 'approve', 'normal', 2, 1, '2024-04-01 18:24:49', '2024-04-01 17:27:05'),
+(17, 'Test1', NULL, NULL, '[\"upload\\/product_images\\/20240402_contactless.png\",\"upload\\/product_images\\/20240402_credit-card.png\"]', '200', '102', 5, 'bhbdhwvbdhvhsv', 'approve', 'normal', 2, 1, '2024-04-02 16:57:28', '2024-04-02 16:56:35'),
+(18, 'fhfhf', NULL, NULL, '[\"upload\\/product_images\\/20240402_logo.jpg\",\"upload\\/product_images\\/20240402_Test.jpg\"]', '535', '32', 6, 'wsaeat', 'approve', 'normal', 2, 1, '2024-04-02 17:41:54', '2024-04-02 17:41:43'),
+(19, 'tes44', NULL, NULL, '[\"upload\\/product_images\\/20240402_IMG-20230921-WA0008.jpg\",\"upload\\/product_images\\/20240402_sg.jpg\"]', '35353', '3224', 7, 'eagea', 'approve', 'normal', 2, 1, '2024-04-02 17:44:05', '2024-04-02 17:43:56'),
+(20, 'vnfx', '20240402product-image46-1.jpg', '20240402product-image46-1.jpg', '[\"upload\\/product_images\\/20240402_product-image48.jpg\"]', '353', '32', 3, 'wrafa', 'approve', 'normal', 2, 1, '2024-04-02 18:23:49', '2024-04-02 18:23:00'),
+(21, 'test 2hdb', '20240402product-image21.jpg', '20240402product-image21-1.jpg', '[\"upload\\/product_images\\/20240402_product-image2.jpg\"]', '1000', '870', 5, 'jwbdjwbdjsbjbcsc', 'approve', 'sale', 2, 1, '2024-04-02 18:23:45', '2024-04-02 18:23:36'),
+(22, 'testvvchs', '20240402author-2.jpg', '20240402clothing.jpg', '[\"upload\\/product_images\\/20240402_blog-thumb.jpg\",\"upload\\/product_images\\/20240402_blog-thumb-2.jpg\"]', '2242', '24', 1, 'wqfe', 'approve', 'sale', 2, 1, '2024-04-02 18:37:17', '2024-04-02 18:36:55'),
+(23, 'ooeiieo', '20240402single-pro-thumb-2.jpg', '20240402single-pro-thumb-5.jpg', '[\"upload\\/product_images\\/20240402_sale-product-2.jpg\"]', '44903', '39345', 6, 'ebfjfb', 'approve', 'sale', 2, 1, '2024-04-02 18:42:38', '2024-04-02 18:42:13');
 
 -- --------------------------------------------------------
 
@@ -477,7 +487,7 @@ ALTER TABLE `posts`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `roles`
