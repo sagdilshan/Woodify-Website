@@ -33,8 +33,8 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric|min:0',
             'sale_price' => 'required|numeric|min:0',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048' // Adjust max file size as needed
-            // Add more validation rules for other fields
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+
         ]);
 
         $product = new ProductModel();
@@ -43,6 +43,7 @@ class ProductController extends Controller
         $product->sale_price = $validatedData['sale_price'];
         // $product->category_id = $request->category_id;
         $product->category_id = $request->category_id;
+        $product->sale_type = $request->sale_type;
         $product->description = $request->description;
         $product->created_by = Auth::user()->id;
         $product->status = 'disapprove';
@@ -58,6 +59,24 @@ class ProductController extends Controller
             }
             $product['images'] = json_encode($imagePaths); // Save array of image paths as JSON string in database
         }
+
+        if ($request->file('thumb1')) {
+            $file = $request->file('thumb1');
+
+            $filename = date('Ymd') . $file->getClientOriginalName();
+            $file->move(public_path('upload/thumb_images'), $filename);
+            $product['thumb1'] = $filename;
+        }
+
+        if ($request->file('thumb2')) {
+            $file = $request->file('thumb2');
+
+            $filename = date('Ymd') . $file->getClientOriginalName();
+            $file->move(public_path('upload/thumb_images'), $filename);
+            $product['thumb2'] = $filename;
+        }
+
+
         $product->save();
 
         //Redirect back with a success message

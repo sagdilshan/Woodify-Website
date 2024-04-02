@@ -10,7 +10,7 @@
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="assetss/images/woodify-fav.png" />
+    <link rel="shortcut icon" href="{{asset('assetss/images/woodify-fav.png')}}" />
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assetss/css/plugins.css">
     <!-- Bootstap CSS -->
@@ -32,7 +32,7 @@
         </div>
     </div>
 
-    
+
     <div class="top-header">
         <div class="container-fluid">
             <div class="row">

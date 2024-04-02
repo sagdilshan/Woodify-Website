@@ -2171,12 +2171,12 @@ textarea:-ms-input-placeholder {
 
 .product-labels .on-sale {
     right: 5px;
-    background: #f54337;
+    background: #ca700f;
 }
 
 .product-labels .pr-label1 {
     left: 5px;
-    background: #01bad4;
+    background: #ff0000;
 }
 
 .product-labels .pr-label2 {
@@ -2357,10 +2357,12 @@ a.quick-view {
 }
 
 .grid-products .item .product-name a {
-    color: #000;
-    font-size: 1em;
+    color: #8d2d00;
+    font-size: 1rem;
+    font-weight: bold;
     line-height: 1.2;
     margin-bottom: 0;
+    text-transform: uppercase;
 }
 
 .grid-products .item .product-name a:hover {
@@ -2375,7 +2377,7 @@ a.quick-view {
 
 .product-price .old-price {
     color: #555;
-    font-size: 12px;
+    font-size: 15px;
     opacity: 0.8;
     text-decoration: line-through;
 }
@@ -2386,7 +2388,8 @@ a.quick-view {
 }
 
 .product-price .price {
-    color: #000000;
+    color: #ff0000;
+    font-size: 18px;
 }
 
 .product-price__sale,

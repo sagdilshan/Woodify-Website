@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use App\Models\CategoryModel;
-
+use App\Models\ProductModel;
 
 class PostController extends Controller
 {
@@ -17,19 +17,108 @@ class PostController extends Controller
 
         return view('website-pages.admin.post.all_post', compact('posts'));
     }
-
-    public function indexx()
-    {
-        // Fetch the latest 2 posts
+// Fetch the latest 2 posts
         // $posts = Post::latest()->take(2)->get();
         // $posts = Post::all();
-        $recents= Post::orderBy('id', 'asc')->take(7)->get();
-        $posts = Post::orderBy('id', 'asc')->take(2)->get();
-        $categories = CategoryModel::where('status', 'active')->get();
+    // public function indexx()
+    // {
 
-        // Pass them to the view
-        return view('welcome', compact('posts', 'categories','recents'));
+    //     $recents= Post::orderBy('id', 'asc')->take(7)->get();
+    //     $posts = Post::orderBy('id', 'asc')->take(2)->get();
+    //     $categories = CategoryModel::where('status', 'active')->get();
+    //     // $productss = ProductModel::where('category_id', 1)->get();
+
+    //     $productss = ProductModel::where('status', 'approve')
+    //     ->orderBy('created_at', 'desc')
+    //     ->take(10)
+    //     ->get();
+    //     $products1 = ProductModel::where('status', 'approve')
+    //     ->orderBy('created_at', 'desc')
+    //     ->take(10)
+    //     ->get();
+    //     // Pass them to the view
+    //     return view('welcome', compact('posts', 'categories','recents','productss','products1'));
+    // }
+
+
+    // public function indexx()
+    // {
+    //     $recents = Post::orderBy('id', 'asc')->take(7)->get();
+    //     $posts = Post::orderBy('id', 'asc')->take(2)->get();
+    //     $categories = CategoryModel::where('status', 'active')->get();
+
+    //     // Retrieve products with their regular price and sale price
+    //     $productss = ProductModel::where('status', 'approve')
+    //         ->orderBy('created_at', 'desc')
+    //         ->take(10)
+    //         ->get();
+
+    //     $products1 = ProductModel::where('status', 'approve')
+    //         ->orderBy('created_at', 'desc')
+    //         ->take(10)
+    //         ->get();
+
+    //     // Calculate percentage decrease for $productss
+    //     foreach ($productss as $product) {
+    //         $regularPrice = $product->price;
+    //         $salePrice = $product->sale_price;
+    //         $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+    //         $product->percentage_decrease = $percentageDecrease;
+    //     }
+
+    //     // Calculate percentage decrease for $products1
+    //     foreach ($products1 as $product) {
+    //         $regularPrice = $product->price;
+    //         $salePrice = $product->sale_price;
+    //         $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+    //         $product->percentage_decrease = $percentageDecrease;
+    //     }
+
+    //     // Pass data to the view
+    //     return view('welcome', compact('posts', 'categories', 'recents', 'productss', 'products1'));
+    // }
+
+
+public function indexx()
+{
+    $recents = Post::orderBy('id', 'asc')->take(7)->get();
+    $posts = Post::orderBy('id', 'asc')->take(2)->get();
+    $categories = CategoryModel::where('status', 'active')->get();
+
+
+    // Retrieve products with their regular price and sale price
+    $productss = ProductModel::where('status', 'approve')
+        ->orderBy('created_at', 'desc')
+        ->take(10)
+        ->get();
+
+        $products1 = ProductModel::where('status', 'approve')
+        ->where('sale_type', 'sale') // Add condition for sale_type
+        ->orderBy('created_at', 'desc')
+        ->take(6)
+        ->get();
+
+    // Calculate percentage decrease for $productss
+    foreach ($productss as $product) {
+        $regularPrice = $product->price;
+        $salePrice = $product->sale_price;
+        $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+        $product->percentage_decrease = intval($percentageDecrease); // Convert to integer
     }
+
+    // Calculate percentage decrease for $products1
+    foreach ($products1 as $product) {
+        $regularPrice = $product->price;
+        $salePrice = $product->sale_price;
+        $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+        $product->percentage_decrease = intval($percentageDecrease); // Convert to integer
+    }
+
+    
+
+    // Pass data to the view
+    return view('welcome', compact('posts', 'categories', 'recents', 'productss', 'products1'));
+}
 
 
 

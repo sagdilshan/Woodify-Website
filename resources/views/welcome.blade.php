@@ -31,7 +31,8 @@
                                                 We prioritize simplicity, memorability,
                                                 scalability, modernity, versatility, timelessness, cleanliness,
                                                 and impact.</span>
-                                            <span class="btn">Shop Now</span>
+                                            <span class="btn" onclick="window.location='{{ route('shop') }}'">Shop
+                                                Now</span>
                                         </div>
                                     </div>
                                 </div>
@@ -48,7 +49,8 @@
                                         <div class="wrap-caption center">
                                             <h2 class="h1 mega-title slideshow__title">New Design Furnitures</h2>
                                             <span class="mega-subtitle slideshow__subtitle">Save up to 20% off </span>
-                                            <span class="btn">Shop now</span>
+                                            <span class="btn" onclick="window.location='{{ route('shop') }}'">Shop
+                                                now</span>
                                         </div>
                                     </div>
                                 </div>
@@ -74,1143 +76,457 @@
                                         <li rel="tab3">Kitchen & Dining</li>
                                         <li rel="tab4">Office & Workpspace</li>
                                         <li rel="tab5">Toys & Games</li>
-                                        <li rel="tab6">Sale</li>
+                                        <li rel="tab6">Gifts</li>
+                                        <li rel="tab7">Accessories</li>
                                     </ul>
                                     <div class="tab_container">
                                         <div id="tab1" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product1.jpeg"
-                                                                src="assetss/images/woodify/product1.jpeg" alt="image"
-                                                                title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product1.jpeg"
-                                                                src="assetss/images/woodify/product1.jpeg" alt="image"
-                                                                title="product">
-                                                            <!-- End hover image -->
-                                                            <!-- product label -->
-                                                            <div class="product-labels rectangular"><span
-                                                                    class="lbl on-sale">-16%</span> <span
-                                                                    class="lbl pr-label1">new</span></div>
-                                                            <!-- End product label -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- countdown start -->
-                                                        <div class="saleTime desktop" data-countdown="2024/03/01"></div>
-                                                        <!-- countdown end -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 1)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $ {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $ {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
                                                             </div>
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Round Sofa</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="old-price">$50.00</span>
-                                                            <span class="price">$40.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
+                                                    @endif
+                                                @endforeach
 
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product2.jpg"
-                                                                src="assetss/images/woodify/product2.jpg" alt="image"
-                                                                title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product2.jpg"
-                                                                src="assetss/images/woodify/product2.jpg" alt="image"
-                                                                title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add to Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">3 Row Table</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$100.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product3.jpg"
-                                                                src="assetss/images/woodify/product3.jpg" alt="image"
-                                                                title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product3.jpg"
-                                                                src="assetss/images/woodify/product3.jpg" alt="image"
-                                                                title="product">
-                                                            <!-- End hover image -->
-                                                            <!-- product label -->
-                                                            <div class="product-labels rectangular"><span
-                                                                    class="lbl pr-label2">Hot</span></div>
-                                                            <!-- End product label -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">3/4 Sleeve Kimono Dress</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$550.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product6.png"
-                                                                src="assetss/images/woodify/product6.png" alt="image"
-                                                                title="product" />
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/woodify/product6.png"
-                                                                src="assetss/images/woodify/product6.png" alt="image"
-                                                                title="product" />
-                                                            <!-- End hover image -->
-                                                            <!-- product label -->
-                                                            <div class="product-labels"><span
-                                                                    class="lbl on-sale">Sale</span></div>
-                                                            <!-- End product label -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Select Options</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Paper Dress</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$550.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                        </div>
-
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
                                             </div>
                                         </div>
                                         <div id="tab2" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image6.jpg"
-                                                                src="assetss/images/product-images/product-image6.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image6-1.jpg"
-                                                                src="assetss/images/product-images/product-image6-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                            <!-- product label -->
-                                                            <div class="product-labels rectangular"><span
-                                                                    class="lbl on-sale">-16%</span> <span
-                                                                    class="lbl pr-label1">new</span></div>
-                                                            <!-- End product label -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 2)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span> </div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
                                                             </div>
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
+                                                    @endif
+                                                @endforeach
 
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Zipper Jacket</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$788.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
 
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image7.jpg"
-                                                                src="assetss/images/product-images/product-image7.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image7-1.jpg"
-                                                                src="assetss/images/product-images/product-image7-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Select Options</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Zipper Jacket</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$748.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image8.jpg"
-                                                                src="assetss/images/product-images/product-image8.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image8-1.jpg"
-                                                                src="assetss/images/product-images/product-image8-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Workers Shirt Jacket</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$238.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image9.jpg"
-                                                                src="assetss/images/product-images/product-image9.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image9-1.jpg"
-                                                                src="assetss/images/product-images/product-image9-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Watercolor Sport Jacket in
-                                                                Brown/Blue</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$348.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
 
                                             </div>
                                         </div>
                                         <div id="tab3" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11.jpg"
-                                                                src="assetss/images/product-images/product-image11.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11-1.jpg"
-                                                                src="assetss/images/product-images/product-image11-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-                                                        <!-- countdown start -->
-                                                        <div class="saleTime desktop" data-countdown="2024/03/01"></div>
-                                                        <!-- countdown end -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 3)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span> </div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
                                                             </div>
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Azur Bracelet in Blue
-                                                                Azurite</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$168.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image12.jpg"
-                                                                src="assetss/images/product-images/product-image12.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image12-1.jpg"
-                                                                src="assetss/images/product-images/product-image12-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Select Options</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Bi-Goutte Earrings</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$58.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image13.jpg"
-                                                                src="assetss/images/product-images/product-image13.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image13-1.jpg"
-                                                                src="assetss/images/product-images/product-image13-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Ashton Necklace</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$228.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image14.jpg"
-                                                                src="assetss/images/product-images/product-image14.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image14-1.jpg"
-                                                                src="assetss/images/product-images/product-image14-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
-                                                                </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Ara Ring</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$198.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
+                                                    @endif
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div id="tab4" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11.jpg"
-                                                                src="assetss/images/product-images/product-image11.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11-1.jpg"
-                                                                src="assetss/images/product-images/product-image11-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-                                                        <!-- countdown start -->
-                                                        <div class="saleTime desktop" data-countdown="2024/03/01"></div>
-                                                        <!-- countdown end -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 5)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span> </div>
+                                                                    <!-- End product label -->
                                                                 </a>
-                                                            </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
+                                                                <!-- end product image -->
 
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Azur Bracelet in Blue
-                                                                Azurite</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$168.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
 
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
+                                                            </div>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
+                                                            </div>
+                                                            <!-- End product details -->
                                                         </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
+                                                    @endif
+                                                @endforeach
 
                                             </div>
                                         </div>
                                         <div id="tab5" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11.jpg"
-                                                                src="assetss/images/product-images/product-image11.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11-1.jpg"
-                                                                src="assetss/images/product-images/product-image11-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-                                                        <!-- countdown start -->
-                                                        <div class="saleTime desktop" data-countdown="2024/03/01"></div>
-                                                        <!-- countdown end -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 4)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span> </div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
-                                                                </a>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
                                                             </div>
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
-
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Azur Bracelet in Blue
-                                                                Azurite</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$168.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
-
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
-
+                                                    @endif
+                                                @endforeach
                                             </div>
                                         </div>
                                         <div id="tab6" class="tab_content grid-products">
                                             <div class="productSlider">
-                                                <div class="col-12 item">
-                                                    <!-- start product image -->
-                                                    <div class="product-image">
-                                                        <!-- start product image -->
-                                                        <a href="#">
-                                                            <!-- image -->
-                                                            <img class="primary blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11.jpg"
-                                                                src="assetss/images/product-images/product-image11.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End image -->
-                                                            <!-- Hover image -->
-                                                            <img class="hover blur-up lazyload"
-                                                                data-src="assetss/images/product-images/product-image11-1.jpg"
-                                                                src="assetss/images/product-images/product-image11-1.jpg"
-                                                                alt="image" title="product">
-                                                            <!-- End hover image -->
-                                                        </a>
-                                                        <!-- end product image -->
-                                                        <!-- countdown start -->
-                                                        <div class="saleTime desktop" data-countdown="2024/03/01"></div>
-                                                        <!-- countdown end -->
-
-                                                        <!-- Start product button -->
-                                                        <form class="variants add" action="#"
-                                                            onclick="window.location.href='#'"method="post">
-                                                            <button class="btn btn-addto-cart" type="button"
-                                                                tabindex="0">Add To Cart</button>
-                                                        </form>
-                                                        <div class="button-set">
-                                                            <a href="javascript:void(0)" title="Quick View"
-                                                                class="quick-view-popup quick-view" data-toggle="modal"
-                                                                data-target="#content_quickview">
-                                                                <i class="icon anm anm-search-plus-r"></i>
-                                                            </a>
-                                                            <div class="wishlist-btn">
-                                                                <a class="wishlist add-to-wishlist" href="#">
-                                                                    <i class="icon anm anm-heart-l"></i>
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 6)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span> </div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                            <div class="compare-btn">
-                                                                <a class="compare add-to-compare" href="#"
-                                                                    title="Add to Compare">
-                                                                    <i class="icon anm anm-random-r"></i>
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
+
+
+
+                                                            </div>
+                                                            <!-- End product details -->
+                                                        </div>
+                                                    @endif
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <div id="tab7" class="tab_content grid-products">
+                                            <div class="productSlider">
+                                                @foreach ($productss as $product)
+                                                    @if ($product->category_id == 7)
+                                                        <div class="col-12 item">
+                                                            <!-- start product image -->
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a href="#">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="assetss/images/woodify/product1.jpeg"
+                                                                        src="assetss/images/woodify/product1.jpeg"
+                                                                        alt="image" title="product">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">-16%</span></div>
+                                                                    <!-- End product label -->
                                                                 </a>
+                                                                <!-- end product image -->
+
+
+                                                                <!-- Start product button -->
+                                                                <form class="variants add" action="#"
+                                                                    onclick="window.location.href='#'"method="post">
+                                                                    <button class="btn btn-addto-cart" type="button"
+                                                                        tabindex="0">Add To Cart</button>
+                                                                </form>
+
+                                                                <!-- end product button -->
                                                             </div>
-                                                        </div>
-                                                        <!-- end product button -->
-                                                    </div>
-                                                    <!-- end product image -->
+                                                            <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a href="#">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">$ {{ $product->price }}</span>
+                                                                    <span class="price">$
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
-                                                    <!--start product details -->
-                                                    <div class="product-details text-center">
-                                                        <!-- product name -->
-                                                        <div class="product-name">
-                                                            <a href="#">Azur Bracelet in Blue
-                                                                Azdgdg</a>
-                                                        </div>
-                                                        <!-- End product name -->
-                                                        <!-- product price -->
-                                                        <div class="product-price">
-                                                            <span class="price">$168.00</span>
-                                                        </div>
-                                                        <!-- End product price -->
 
-                                                        <div class="product-review">
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                            <i class="font-13 fa fa-star-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <!-- End product details -->
-                                                </div>
 
+                                                            </div>
+                                                            <!-- End product details -->
+                                                        </div>
+                                                    @endif
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -1229,8 +545,8 @@
                             @foreach ($categories as $category)
                                 <div class="collection-grid-item">
                                     <a href="#" class="collection-grid-item__link">
-                                        <img data-src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
-                                            src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
+                                        <img data-src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_product.png') }}"
+                                            src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_product.png') }}"
                                             alt="{{ $category->name }}" title="{{ $category->name }}"
                                             class="blur-up lazyload" />
                                         <div class="collection-grid-item__title-wrapper">
@@ -1243,78 +559,88 @@
 
 
 
-                            {{-- <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img class="blur-up lazyload" data-src="assetss/images/woodify/furniture.png"
-                                        src="assetss/images/woodify/furniture.png" alt="Furniture" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Furniture
-                                        </h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img class="blur-up lazyload" data-src="assetss/images/woodify/kitchen.png"
-                                        src="assetss/images/woodify/kitchen.png" alt="Kitchen" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Kitchen &
-                                            Dining
-                                        </h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-grid-item blur-up lazyloaded">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/office.png"
-                                        src="assetss/images/woodify/office.png" alt="Office"
-                                        class="blur-up lazyload" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Office &
-                                            Workspace</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/games.jpg"
-                                        src="assetss/images/woodify/games.jpg" alt="Toys & Games"
-                                        class="blur-up lazyload" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Toys & Games
-                                        </h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/gift.png" src="assetss/images/woodify/gift.png"
-                                        alt="Shoes" class="blur-up lazyload" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Personalized
-                                            Gifts
-                                        </h3>
-                                    </div>
-                                </a>
-                            </div>
 
-                            <div class="collection-grid-item">
-                                <a href="#" class="collection-grid-item__link">
-                                    <img data-src="assetss/images/woodify/jewel.jpg"
-                                        src="assetss/images/woodify/jewel.jpg" alt="Shoes" class="blur-up lazyload" />
-                                    <div class="collection-grid-item__title-wrapper">
-                                        <h3 class="collection-grid-item__title btn btn--secondary no-border">Accessories
-                                        </h3>
-                                    </div>
-                                </a>
-                            </div> --}}
 
                         </div>
                     </div>
                 </div>
                 <!--End Collection Box slider-->
 
+                <!--Featured Product-->
+                <div class="product-rows section">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="section-header text-center">
+                                    <h2 class="h2">Featured collection</h2>
+                                    <p>Our most popular products based on sales</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid-products">
+                            <div class="row">
+                                @foreach ($products1 as $product)
+                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
+                                        <div class="grid-view_image">
+                                            <!-- start product image -->
+                                            <a href="product-accordion.html" class="grid-view-item__link">
+                                                <!-- image -->
+                                                <img class="grid-view-item__image primary blur-up lazyload"
+                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                    title="{{ $product->name }}" alt="{{ $product->name }}">
+                                                <!-- End image -->
+                                                <!-- Hover image -->
+                                                <img class="grid-view-item__image hover blur-up lazyload"
+                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                    title="{{ $product->name }}" alt="{{ $product->name }}">
+                                                <!-- End hover image -->
+                                                <!-- product label -->
+                                                <div class="product-labels rectangular"><span
+                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                    <span class="lbl pr-label1">sale</span>
+                                                </div>
+                                                <!-- End product label -->
+                                            </a>
+                                            <!-- end product image -->
+                                            <!--start product details -->
+                                            <div class="product-details hoverDetails text-center mobile">
+                                                <!-- product name -->
+                                                <div class="product-name">
+                                                    <a href="#">{{ $product->name }}</a>
+                                                </div>
+                                                <!-- End product name -->
+                                                <!-- product price -->
+                                                <div class="product-price">
+                                                    <span class="price">$550.00</span>
+                                                </div>
+                                                <!-- product button -->
+                                                <div class="button-set">
 
+                                                    <!-- Start product button -->
+                                                    <form class="variants add" action="#"
+                                                        onclick="window.location.href='cart.html'"method="post">
+                                                        <button class="btn cartIcon btn-addto-cart" type="button"
+                                                            tabindex="0"><i class="icon anm anm-cart-1-l"></i></button>
+                                                    </form>
+
+                                                </div>
+                                                <!-- end product button -->
+                                            </div>
+                                            <!-- Variant -->
+
+                                            <!-- End Variant -->
+                                            <!-- End product details -->
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--End Featured Product-->
 
 
                 <!--Latest Blog-->
@@ -1333,7 +659,7 @@
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                     <div class="wrap-blog">
                                         <a href="#" class="article__grid-image">
-                                            <img src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
+                                            <img src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_product.png') }}"
                                                 alt="{{ $post->title }}" title="{{ $post->title }}"
                                                 class="blur-up lazyloaded" />
                                         </a>
@@ -1348,7 +674,8 @@
                                                     {{ Str::limit($post->content, 150, '...') }}
                                                 </div>
                                                 <ul class="list--inline article__meta-buttons">
-                                                    <li><a href="{{ route('blog.show', ['id' => $post->id]) }}">Read more</a></li>
+                                                    <li><a href="{{ route('blog.show', ['id' => $post->id]) }}">Read
+                                                            more</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -1356,56 +683,6 @@
                                 </div>
                             @endforeach
 
-                            {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                <div class="wrap-blog">
-                                    <a href="#" class="article__grid-image">
-                                        <img src="assetss/images/woodify/portfolio-1.jpg"
-                                            alt="It's all about how you wear" title="It's all about how you wear"
-                                            class="blur-up lazyloaded" />
-                                    </a>
-                                    <div class="article__grid-meta article__grid-meta--has-image">
-                                        <div class="wrap-blog-inner">
-                                            <h2 class="h3 article__title">
-                                                <a href="#">Tips, Techniques, and Projects</a>
-                                            </h2>
-                                            <span class="article__date">February 20, 2024</span>
-                                            <div class="rte article__grid-excerpt">
-                                                Woodworking is more than just a craft; it's a tradition passed down through
-                                                generations, a form of expression, and for many, a way of life. Whether
-                                                you're carving a spoon, building furniture, or many items in woodify site. buy and look enjoy.
-                                            </div>
-                                            <ul class="list--inline article__meta-buttons">
-                                                <li><a href="#">Read more</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                <div class="wrap-blog">
-                                    <a href="#" class="article__grid-image">
-                                        <img src="assetss/images/woodify/portfolio-2.jpg"
-                                            alt="27 Days of Spring Fashion Recap" title="27 Days of Spring Fashion Recap"
-                                            class="blur-up lazyloaded" />
-                                    </a>
-                                    <div class="article__grid-meta article__grid-meta--has-image">
-                                        <div class="wrap-blog-inner">
-                                            <h2 class="h3 article__title">
-                                                <a href="#">Essential Tools for Every Woodworker</a>
-                                            </h2>
-                                            <span class="article__date">February 21, 2024</span>
-                                            <div class="rte article__grid-excerpt">
-                                                Grain direction significantly affects the outcome of your project. Working
-                                                with the grain reduces the chances of tearing or splintering the wood,
-                                                ensuring a smoother finish...
-                                            </div>
-                                            <ul class="list--inline article__meta-buttons">
-                                                <li><a href="#">Read more</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -1446,12 +723,7 @@
             </div>
             <!--End Body Content-->
 
-            <!--Footer-->
 
-            <!--End Footer-->
-            <!--Scoll Top-->
-
-            <!--End Scoll Top-->
 
             <!--Quick View popup-->
             <div class="modal fade quick-view-popup" id="content_quickview">

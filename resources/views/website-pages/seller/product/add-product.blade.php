@@ -80,6 +80,22 @@
                                             </div>
 
                                             <div class="form-group row">
+                                                <label for="inputName" class="col-sm-2 col-form-label">Select Market</label>
+                                                <div class="col-sm-10">
+                                                    {{-- <input type="number" class="form-control " name="category_id"
+                                                        placeholder="Enter Category Id" required id="category_id"/> --}}
+                                                    <select class="form-control" id="sale_type" name="sale_type">
+
+                                                            <option value="normal">Normal Market
+                                                            </option>
+                                                            <option value="sale">Sale Market
+                                                            </option>
+
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Description</label>
                                                 <div class="col-sm-10">
                                                     <textarea rows="4" class="form-control" name="description" placeholder="Description"></textarea>
@@ -93,6 +109,26 @@
 
 
 
+
+
+
+                                            <div class="form-group row">
+                                                <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
+                                                    Image 1</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-lable"name="thumb1" id="thumb1"
+                                                        >
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
+                                                    Image 2</label>
+                                                <div class="col-sm-10">
+                                                    <input type="file" class="form-lable"name="thumb2" id="thumb2"
+                                                        >
+                                                </div>
+                                            </div>
 
                                             <div class="form-group row">
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Product
