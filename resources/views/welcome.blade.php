@@ -131,8 +131,10 @@
                                                                 <!-- End product name -->
                                                                 <!-- product price -->
                                                                 <div class="product-price">
-                                                                    <span class="old-price">Regular Price: $ {{ $product->price }}</span><br>
-                                                                    <span class="price">Sale Price: $ {{ $product->sale_price }}</span>
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
                                                                 </div>
                                                                 <!-- End product price -->
 
@@ -150,61 +152,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 2)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span> </div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
 
@@ -216,61 +222,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 3)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span> </div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -279,61 +289,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 5)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span> </div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
 
@@ -343,61 +357,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 4)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span> </div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -406,61 +424,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 6)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span> </div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -470,61 +492,65 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 7)
-                                                        <div class="col-12 item">
+                                                    <div class="col-12 item">
+                                                        <!-- start product image -->
+                                                        <div class="product-image">
                                                             <!-- start product image -->
-                                                            <div class="product-image">
-                                                                <!-- start product image -->
-                                                                <a href="#">
-                                                                    <!-- image -->
-                                                                    <img class="primary blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End image -->
-                                                                    <!-- Hover image -->
-                                                                    <img class="hover blur-up lazyload"
-                                                                        data-src="assetss/images/woodify/product1.jpeg"
-                                                                        src="assetss/images/woodify/product1.jpeg"
-                                                                        alt="image" title="product">
-                                                                    <!-- End hover image -->
-                                                                    <!-- product label -->
-                                                                    <div class="product-labels rectangular"><span
-                                                                            class="lbl on-sale">-16%</span></div>
-                                                                    <!-- End product label -->
-                                                                </a>
-                                                                <!-- end product image -->
-
-
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
-
-                                                                <!-- end product button -->
-                                                            </div>
+                                                            <a href="#">
+                                                                <!-- image -->
+                                                                <img class="primary blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End image -->
+                                                                <!-- Hover image -->
+                                                                <img class="hover blur-up lazyload"
+                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                    alt="{{ $product->name }}"
+                                                                    title="{{ $product->name }}">
+                                                                <!-- End hover image -->
+                                                                <!-- product label -->
+                                                                <div class="product-labels rectangular"><span
+                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                </div>
+                                                                <!-- End product label -->
+                                                            </a>
                                                             <!-- end product image -->
-                                                            <!--start product details -->
-                                                            <div class="product-details text-center">
-                                                                <!-- product name -->
-                                                                <div class="product-name">
-                                                                    <a href="#">{{ $product->name }}</a>
-                                                                </div>
-                                                                <!-- End product name -->
-                                                                <!-- product price -->
-                                                                <div class="product-price">
-                                                                    <span class="old-price">$ {{ $product->price }}</span>
-                                                                    <span class="price">$
-                                                                        {{ $product->sale_price }}</span>
-                                                                </div>
-                                                                <!-- End product price -->
 
 
+                                                            <!-- Start product button -->
+                                                            <form class="variants add" action="#"
+                                                                onclick="window.location.href='#'"method="post">
+                                                                <button class="btn btn-addto-cart" type="button"
+                                                                    tabindex="0">Add To Cart</button>
+                                                            </form>
 
-                                                            </div>
-                                                            <!-- End product details -->
+                                                            <!-- end product button -->
                                                         </div>
+                                                        <!-- end product image -->
+                                                        <!--start product details -->
+                                                        <div class="product-details text-center">
+                                                            <!-- product name -->
+                                                            <div class="product-name">
+                                                                <a href="#">{{ $product->name }}</a>
+                                                            </div>
+                                                            <!-- End product name -->
+                                                            <!-- product price -->
+                                                            <div class="product-price">
+                                                                <span class="old-price">Regular Price: $
+                                                                    {{ $product->price }}</span><br>
+                                                                <span class="price">Sale Price: $
+                                                                    {{ $product->sale_price }}</span>
+                                                            </div>
+                                                            <!-- End product price -->
+
+
+
+                                                        </div>
+                                                        <!-- End product details -->
+                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>

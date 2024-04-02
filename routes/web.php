@@ -36,6 +36,8 @@ Route::get('/', function () {
 // Route::get('/', [AllCategoryController::class, 'index1']);
 
 Route::get('/', [PostController::class, 'indexx']);
+Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -56,7 +58,7 @@ Route::controller(PostController::class)->group(function () {
 
 });
 
-Route::view('/shop', 'shop')->name('shop');
+// Route::view('/shop', 'shop')->name('shop');
 
 // Route::view('/blog', 'blog')->name('blog');
 // Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');

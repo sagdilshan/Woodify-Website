@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 09:18 PM
+-- Generation Time: Apr 02, 2024 at 10:02 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -249,7 +249,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `name`, `thumb1`, `thumb2`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `sale_type`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
 (13, 'scs', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 1, '2e2', 'approve', 'normal', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
-(14, 'n', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 1, 'mmlmlm', 'approve', 'normal', 22, NULL, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
+(14, 'n', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 2, 'mmlmlm', 'approve', 'normal', 22, 1, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
 (15, 'Test 1 Original', NULL, NULL, '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 3, 'wfsf', 'approve', 'normal', 2, 1, '2024-04-01 18:30:05', '2024-04-01 16:26:56'),
 (16, 'sf', NULL, NULL, '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 4, 'svsvs', 'approve', 'normal', 2, 1, '2024-04-01 18:24:49', '2024-04-01 17:27:05'),
 (17, 'Test1', NULL, NULL, '[\"upload\\/product_images\\/20240402_contactless.png\",\"upload\\/product_images\\/20240402_credit-card.png\"]', '200', '102', 5, 'bhbdhwvbdhvhsv', 'approve', 'normal', 2, 1, '2024-04-02 16:57:28', '2024-04-02 16:56:35'),
@@ -322,7 +322,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'uIPpXygJ7Ktbrcd74YzoKod4Fdrzal0En7hgdVk42IIe1ne7lIjLPti6hiUy', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
+(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'D4ZvnewfUfCpoow7PXW3r0cmXYLEvGZya4gSGH7UXeDE7Siw1L71v06jXHnO', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202403191338men-pro.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-19 08:08:39'),
 (4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),

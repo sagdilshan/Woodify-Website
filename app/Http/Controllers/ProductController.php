@@ -305,4 +305,30 @@ class ProductController extends Controller
         return view('website-pages.admin.product.view_products', compact('productt'));
     }
 
+    public function shopindex()
+{
+    // Retrieve products with their regular price and sale price
+    $productss = ProductModel::where('status', 'approve')
+        ->orderBy('created_at', 'desc')
+        ->take(12)
+        ->get();
+
+
+
+    // Calculate percentage decrease for $productss
+    foreach ($productss as $product) {
+        $regularPrice = $product->price;
+        $salePrice = $product->sale_price;
+        $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+        $product->percentage_decrease = intval($percentageDecrease); // Convert to integer
+    }
+
+
+
+
+
+    // Pass data to the view
+    return view('shop', compact( 'productss'));
+}
+
 }

@@ -1926,6 +1926,7 @@ textarea:-ms-input-placeholder {
 
 .grid-view-item.style2 .grid-view-item__image {
     display: inline-block;
+    object-fit: cover;
     width: 22rem;
     height: 29rem;
     margin: 0 auto;
