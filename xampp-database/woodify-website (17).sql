@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 02, 2024 at 10:02 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Apr 03, 2024 at 08:51 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -258,7 +258,7 @@ INSERT INTO `products` (`id`, `name`, `thumb1`, `thumb2`, `images`, `price`, `sa
 (20, 'vnfx', '20240402product-image46-1.jpg', '20240402product-image46-1.jpg', '[\"upload\\/product_images\\/20240402_product-image48.jpg\"]', '353', '32', 3, 'wrafa', 'approve', 'normal', 2, 1, '2024-04-02 18:23:49', '2024-04-02 18:23:00'),
 (21, 'test 2hdb', '20240402product-image21.jpg', '20240402product-image21-1.jpg', '[\"upload\\/product_images\\/20240402_product-image2.jpg\"]', '1000', '870', 5, 'jwbdjwbdjsbjbcsc', 'approve', 'sale', 2, 1, '2024-04-02 18:23:45', '2024-04-02 18:23:36'),
 (22, 'testvvchs', '20240402author-2.jpg', '20240402clothing.jpg', '[\"upload\\/product_images\\/20240402_blog-thumb.jpg\",\"upload\\/product_images\\/20240402_blog-thumb-2.jpg\"]', '2242', '24', 1, 'wqfe', 'approve', 'sale', 2, 1, '2024-04-02 18:37:17', '2024-04-02 18:36:55'),
-(23, 'ooeiieo', '20240402single-pro-thumb-2.jpg', '20240402single-pro-thumb-5.jpg', '[\"upload\\/product_images\\/20240402_sale-product-2.jpg\"]', '44903', '39345', 6, 'ebfjfb', 'approve', 'sale', 2, 1, '2024-04-02 18:42:38', '2024-04-02 18:42:13');
+(23, 'ooeiieo', '20240402single-pro-thumb-2.jpg', '20240402single-pro-thumb-5.jpg', '[\"upload\\/product_images\\/20240402_sale-product-2.jpg\"]', '44903', '39345', 6, 'ebfjfb', 'approve', 'sale', 2, 29, '2024-04-03 07:55:48', '2024-04-02 18:42:13');
 
 -- --------------------------------------------------------
 
@@ -322,7 +322,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'D4ZvnewfUfCpoow7PXW3r0cmXYLEvGZya4gSGH7UXeDE7Siw1L71v06jXHnO', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
+(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'uwPUJ6lDko5jBULUtx8h1PO33UncJz4RVYO1qIYg6n9kEtNir5MToxn3BLkE', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202403191338men-pro.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-19 08:08:39'),
 (4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
@@ -338,7 +338,7 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `ph
 (26, 'Test Profile', 'testprofile', 'testprofile@gmail.com', NULL, '202403190419user1-128x128.jpg', '0771999634', 'Panadura', 'customer', 'active', '$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12', NULL, '2024-03-14 23:41:56', '2024-03-18 22:49:10'),
 (27, 'tese8', NULL, 'test8@gmail.com', NULL, NULL, '0778485789', NULL, 'customer', 'deactive', '$2y$12$8ljry8XmKYi72DgNfTvHreq/dW2YoEtT0Lc9IAjAJnBKvsRdv1Gfu', NULL, '2024-03-14 23:46:37', '2024-03-14 23:47:04'),
 (28, 'Test23', NULL, 'test23@gmail.com', NULL, NULL, '0478541253', NULL, 'customer', 'active', '$2y$12$LOGBIPvGnCGfAGG.ebXUmuir8C1Ch4nRfbLIKd7VADVJ2lFieyuaa', NULL, '2024-03-16 10:20:25', '2024-03-19 08:01:56'),
-(29, 'test234', NULL, 'test234@gmail.com', NULL, NULL, '0789456123', NULL, 'admin', 'active', '$2y$12$Z.FTkGWCuUv2orQ2gZNgT.mdZQDpL0qYsOe8441OTWjjfEitzf1mG', NULL, '2024-03-19 08:03:07', '2024-03-19 08:10:15');
+(29, 'test234', 'testori', 'test234@gmail.com', NULL, '202404030756german-flag.png', '0789456123', 'Kuliyapitiya', 'admin', 'active', '$2y$12$Z.FTkGWCuUv2orQ2gZNgT.mdZQDpL0qYsOe8441OTWjjfEitzf1mG', NULL, '2024-03-19 08:03:07', '2024-04-03 02:26:35');
 
 --
 -- Indexes for dumped tables
