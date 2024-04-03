@@ -43,17 +43,17 @@
                                                         <img class="grid-view-item__image primary blur-up lazyload"
                                                             data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
                                                             src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                            alt="image" title="product">
+                                                            alt="{{ $product->name }}" title="{{ $product->name }}">
                                                         <!-- End image -->
                                                         <!-- Hover image -->
                                                         <img class="grid-view-item__image hover blur-up lazyload"
                                                             data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
                                                             src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                            alt="image" title="product">
+                                                            alt="{{ $product->name }}" title="{{ $product->name }}">
                                                         <!-- End hover image -->
                                                         <!-- product label -->
                                                         <div class="product-labels rectangular"><span
-                                                                class="lbl on-sale">-16%</span> <span
+                                                                class="lbl on-sale">{{ $product->percentage_decrease }}%</span> <span
                                                                 class="lbl pr-label1">new</span></div>
                                                         <!-- End product label -->
                                                     </a>
@@ -68,8 +68,8 @@
                                                         <!-- End product name -->
                                                         <!-- product price -->
                                                         <div class="product-price">
-                                                            <span class="old-price">$500.00</span>
-                                                            <span class="price">$600.00</span>
+                                                            <span class="old-price">$ {{ $product->price }}</span>
+                                                            <span class="price">$ {{ $product->sale_price }}</span>
                                                         </div>
                                                         <!-- End product price -->
 
