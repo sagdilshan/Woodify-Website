@@ -10,7 +10,7 @@
     <meta name="description" content="description">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="shortcut icon" href="{{asset('assetss/images/woodify-fav.png')}}" />
+    <link rel="shortcut icon" href="{{ asset('assetss/images/woodify-fav.png') }}" />
     <!-- Plugins CSS -->
     <link rel="stylesheet" href="assetss/css/plugins.css">
     <!-- Bootstap CSS -->
@@ -85,8 +85,7 @@
                 <!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                     <a href="{{ url('/') }}">
-                        <img src="../assetss/images/woodify-logo.png" alt="Woodify Logo"
-                            title="Woodify Logo" />
+                        <img src="../assetss/images/woodify-logo.png" alt="Woodify Logo" title="Woodify Logo" />
                     </a>
                 </div>
                 <!--End Desktop Logo-->
@@ -101,7 +100,8 @@
                     <!--Desktop Menu-->
                     <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
                         <ul id="siteNav" class="site-nav medium center hidearrow">
-                            <li class="lvl1 parent megamenu"><a href="{{ url('/') }}" style="font-size: 1rem;">Home
+                            <li class="lvl1 parent megamenu"><a href="{{ url('/') }}"
+                                    style="font-size: 1rem;">Home
                                 </a>
 
                             </li>
@@ -148,8 +148,8 @@
                         @auth
                             @if (Auth::user()->role == 'admin')
                                 <div class="site-cart">
-                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i
-                                            class="icon fa fa-power-off" style="font-size: 1.5rem;"></i></a>
+                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i class="icon fa fa-power-off"
+                                            style="font-size: 1.5rem;"></i></a>
 
                                 </div>
                             @elseif(Auth::user()->role == 'seller')

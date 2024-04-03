@@ -65,7 +65,7 @@ class AdminController extends Controller
         $declinedCount = ProductModel::where('approved_by', $userId)
             ->where('status', 'rejected')
             ->count();
-        return view('website-pages.admin.profile', compact('profileData','acceptedCount', 'declinedCount'));
+        return view('website-pages.admin.profile', compact('profileData', 'acceptedCount', 'declinedCount'));
     }
 
     public function AdminProfileStore(Request $request)

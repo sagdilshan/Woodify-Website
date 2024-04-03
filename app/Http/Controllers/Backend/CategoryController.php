@@ -55,7 +55,7 @@ class CategoryController extends Controller
     public function UpdateCategory(Request $request)
     {
 
-      $pid = $request->id;
+        $pid = $request->id;
 
         Category::findOrFail($pid)->update([
             'category_name' => $request->category_name,
@@ -70,7 +70,8 @@ class CategoryController extends Controller
 
     }
 
-    public function DeleteCategory($id){
+    public function DeleteCategory($id)
+    {
         Category::findOrFail($id)->delete();
 
         $notification = array(

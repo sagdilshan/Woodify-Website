@@ -19,7 +19,7 @@
                         <h4 class="h4">Informations</h4>
                         <ul>
                             <li><a href="#">About us</a></li>
-                            <li><a href="{{url('blog/1')}}">Blog</a></li>
+                            <li><a href="{{ url('blog/1') }}">Blog</a></li>
                             <li><a href="#">Privacy policy</a></li>
                             <li><a href="#">Terms &amp; condition</a></li>
                             <li><a href="#">Blog</a></li>
@@ -58,7 +58,9 @@
                     <!--Footer Copyright-->
                     <div
                         class="col-12 col-sm-12 col-md-6 col-lg-6 order-1 order-md-0 order-lg-0 order-sm-1 copyright text-sm-center text-md-left text-lg-left">
-                        <span></span> <a href="https://www.gayathradilshan.site" target="_blank">Developed By S.A. Gayathra Dilshan</a></div>
+                        <span></span> <a href="https://www.gayathradilshan.site" target="_blank">Developed By S.A.
+                            Gayathra Dilshan</a>
+                    </div>
                     <!--End Footer Copyright-->
                     <!--Footer Payment Icon-->
                     <div

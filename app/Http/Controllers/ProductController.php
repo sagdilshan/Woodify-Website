@@ -251,8 +251,8 @@ class ProductController extends Controller
 
         // Retrieve products created by the currently authenticated user
         $alldisapprove = ProductModel::where('status', 'disapprove')
-        ->orderBy('created_at', 'desc')
-        ->get();
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         $allapprove = ProductModel::where('status', 'approve')
             ->orderBy('created_at', 'desc')
@@ -261,7 +261,7 @@ class ProductController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('website-pages.admin.product.all_products', compact('alldisapprove','allapprove','allrejected'));
+        return view('website-pages.admin.product.all_products', compact('alldisapprove', 'allapprove', 'allrejected'));
     }
 
     public function ManageEditProduct($id)
@@ -306,29 +306,25 @@ class ProductController extends Controller
     }
 
     public function shopindex()
-{
-    // Retrieve products with their regular price and sale price
-    $productss = ProductModel::where('status', 'approve')
-        ->orderBy('created_at', 'desc')
-        ->take(12)
-        ->get();
+    {
+        // Retrieve products with their regular price and sale price
+        $productss = ProductModel::where('status', 'approve')
+            ->orderBy('created_at', 'desc')
+            ->take(12)
+            ->get();
 
 
 
-    // Calculate percentage decrease for $productss
-    foreach ($productss as $product) {
-        $regularPrice = $product->price;
-        $salePrice = $product->sale_price;
-        $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
-        $product->percentage_decrease = intval($percentageDecrease); // Convert to integer
+        // Calculate percentage decrease for $productss
+        foreach ($productss as $product) {
+            $regularPrice = $product->price;
+            $salePrice = $product->sale_price;
+            $percentageDecrease = ($regularPrice - $salePrice) / $regularPrice * 100;
+            $product->percentage_decrease = intval($percentageDecrease); // Convert to integer
+        }
+
+        // Pass data to the view
+        return view('shop', compact('productss'));
     }
-
-
-
-
-
-    // Pass data to the view
-    return view('shop', compact( 'productss'));
-}
 
 }

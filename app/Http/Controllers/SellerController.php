@@ -18,14 +18,14 @@ class SellerController extends Controller
         $product_approved = ProductModel::where('created_by', $user_id)
             ->where('status', 'approve')
             ->count();
-            $product_disapproved = ProductModel::where('created_by', $user_id)
+        $product_disapproved = ProductModel::where('created_by', $user_id)
             ->where('status', 'disapprove')
             ->count();
-            $product_rejected = ProductModel::where('created_by', $user_id)
+        $product_rejected = ProductModel::where('created_by', $user_id)
             ->where('status', 'rejected')
             ->count();
 
-        return view('website-pages.seller.index', compact('product_approved','product_disapproved','product_rejected'));
+        return view('website-pages.seller.index', compact('product_approved', 'product_disapproved', 'product_rejected'));
 
 
     }

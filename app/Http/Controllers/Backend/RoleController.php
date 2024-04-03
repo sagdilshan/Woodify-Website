@@ -58,7 +58,8 @@ class RoleController extends Controller
         return redirect()->route('all.permission')->with($notification);
     }
 
-    public function DeletePermission($id){
+    public function DeletePermission($id)
+    {
         Permission::findOrFail($id)->delete();
 
         $notification = array(
@@ -119,7 +120,8 @@ class RoleController extends Controller
         return redirect()->route('all.roles')->with($notification);
     }
 
-    public function DeleteRoles($id){
+    public function DeleteRoles($id)
+    {
         Role::findOrFail($id)->delete();
 
         $notification = array(

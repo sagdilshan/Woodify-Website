@@ -14,7 +14,7 @@ use App\Models\Post;
 class AllCategoryController extends Controller
 {
 
-    
+
 
     public function MainAllCategory()
     {
