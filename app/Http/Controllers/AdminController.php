@@ -33,7 +33,7 @@ class AdminController extends Controller
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 
-        return view('website-pages.admin.index', compact('formattedTotalSellers','product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
+        return view('website-pages.admin.index', compact('formattedTotalSellers', 'product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
     }
 
     public function AdminLogout(Request $request)
@@ -49,9 +49,23 @@ class AdminController extends Controller
 
     public function AdminProfile()
     {
+
+
         $id = Auth::user()->id;
         $profileData = user::find($id);
-        return view('website-pages.admin.profile', compact('profileData'));
+
+        $userId = Auth::id();
+
+        // Count the number of accepted products
+        $acceptedCount = ProductModel::where('approved_by', $userId)
+            ->where('status', 'approve')
+            ->count();
+
+        // Count the number of declined products
+        $declinedCount = ProductModel::where('approved_by', $userId)
+            ->where('status', 'rejected')
+            ->count();
+        return view('website-pages.admin.profile', compact('profileData','acceptedCount', 'declinedCount'));
     }
 
     public function AdminProfileStore(Request $request)

@@ -99,7 +99,7 @@
 
 
 
-                <li
+                {{-- <li
                     class="nav-item {{ Route::is('all.permission') || Route::is('all.roles') || Route::is('add.roles') || Route::is('add.permission') || Route::is('edit.permission') || Route::is('edit.roles') ? 'menu-open' : '' }}">
                     <a href="#"
                         class="nav-link {{ Route::is('all.permission') ? 'active' : '' }} {{ Route::is('all.roles') ? 'active' : '' }}   {{ Route::is('edit.permission') ? 'active' : '' }} {{ Route::is('edit.roles') ? 'active' : '' }}"
@@ -120,7 +120,7 @@
                                 </p>
                             </a>
                         </li> --}}
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="{{ route('all.roles') }}"
                                 class="nav-link {{ Route::is('all.roles') ? 'active' : '' }} {{ Route::is('edit.roles') ? 'active' : '' }} {{ Route::is('add.roles') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-tasks"></i>
@@ -133,7 +133,7 @@
 
 
                     </ul>
-                </li>
+                </li> --}} 
 
 
 

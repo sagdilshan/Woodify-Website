@@ -196,24 +196,6 @@
             <li class="lvl1 parent megamenu"><a href="{{ url('/') }}">Home </a>
 
             </li>
-            <li class="lvl1 parent megamenu"><a href="#">Category <i class="anm anm-plus-l"></i></a>
-                <ul style="display: none;">
-                  <li><a href="#" class="site-nav">Shop Pages<i class="anm anm-plus-l"></i></a>
-                    <ul>
-                      <li><a href="shop-left-sidebar.html" class="site-nav">Left Sidebar</a></li>
-                      <li><a href="shop-right-sidebar.html" class="site-nav">Right Sidebar</a></li>
-
-                    </ul>
-                  </li>
-                  <li><a href="#" class="site-nav">Shop Features<i class="anm anm-plus-l"></i></a>
-                    <ul>
-                      <li><a href="shop-left-sidebar.html" class="site-nav">Product Countdown </a></li>
-                      <li><a href="shop-right-sidebar.html" class="site-nav">Infinite Scrolling</a></li>
-
-                    </ul>
-                  </li>
-                </ul>
-              </li>
             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}">Shop </a>
 
             </li>

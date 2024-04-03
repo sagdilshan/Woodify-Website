@@ -42,10 +42,10 @@
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>Accept Products</b> <a class="float-right">22</a>
+                                        <b>Accept Products</b> <a class="float-right">{{ $acceptedCount }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Deciline Products</b> <a class="float-right">3</a>
+                                        <b>Deciline Products</b> <a class="float-right">{{ $declinedCount }}</a>
                                     </li>
 
                                 </ul>

@@ -35,8 +35,8 @@
                                 <h3 class="d-inline-block d-sm-none " style="font-weight: bold;text-transform: uppercase;">
                                     {{ $productt->name }}</h3>
                                 <div class="col-12">
-                                    <img src="{{ asset('../assets/dist/img/click.jpg') }}" class="product-image"
-                                        alt="Product Image">
+                                    <img src="{{ !empty($productt->thumb1) ? url('upload/thumb_images/' . $productt->thumb1) : url('upload/no_product.png') }}" class="product-image"
+                                        alt="{{ $productt->name }}">
                                 </div>
 
 
@@ -97,15 +97,15 @@
                                     @if ($productt->status == 'rejected')
                                         <div class="btn btn-danger btn-lg btn-flat text-uppercase">
 
-                                            {{ $productt->status }}
+                                            This Product Rejected
                                         </div>
                                     @elseif($productt->status == 'disapprove')
                                         <div class="btn btn-warning btn-lg btn-flat text-uppercase">
-                                            {{ $productt->status }}
+                                            This Product Disapprove
                                         </div>
                                     @elseif($productt->status == 'approve')
                                         <div class="btn btn-success btn-lg btn-flat text-uppercase">
-                                            {{ $productt->status }}
+                                            This Product Approved
                                         </div>
                                     @endif
 

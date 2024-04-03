@@ -523,7 +523,7 @@
                                                             <!-- Start product button -->
                                                             <form class="variants add" action="#"
                                                                 onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
+                                                                <button class="btn cartIcon btn-addto-cart" type="button"
                                                                     tabindex="0">Add To Cart</button>
                                                             </form>
 
@@ -606,7 +606,7 @@
                         <div class="grid-products">
                             <div class="row">
                                 @foreach ($products1 as $product)
-                                    <div class="col-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
+                                    <div class="col-md-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                                         <div class="grid-view_image">
                                             <!-- start product image -->
                                             <a href="product-accordion.html" class="grid-view-item__link">
