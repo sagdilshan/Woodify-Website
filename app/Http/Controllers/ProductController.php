@@ -103,7 +103,8 @@ class ProductController extends Controller
         }
         $categories = CategoryModel::all();
         $statuses = ProductModel::distinct()->pluck('status');
-        return view('website-pages.seller.product.edit-product', compact('products', 'statuses', 'categories'));
+        $stocks = ['stock', 'out_of_stock'];
+        return view('website-pages.seller.product.edit-product', compact('products', 'statuses', 'categories', 'stocks'));
     }
 
     public function SellerUpdateProduct(Request $request)
@@ -126,6 +127,7 @@ class ProductController extends Controller
         $products->price = $request->price;
         $products->sale_price = $request->sale_price;
         $products->category_id = $request->category_id;
+        $products->stock_status = $request->stock_status;
         $products->description = $request->description;
         $products->status = 'disapprove';
 
@@ -251,17 +253,23 @@ class ProductController extends Controller
 
         // Retrieve products created by the currently authenticated user
         $alldisapprove = ProductModel::where('status', 'disapprove')
+            ->where('stock_status', 'stock')
             ->orderBy('created_at', 'desc')
             ->get();
 
         $allapprove = ProductModel::where('status', 'approve')
+            ->where('stock_status', 'stock')
             ->orderBy('created_at', 'desc')
             ->get();
         $allrejected = ProductModel::where('status', 'rejected')
+            ->where('stock_status', 'stock')
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $outofstocks = ProductModel::where('stock_status', 'out_of_stock')
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('website-pages.admin.product.all_products', compact('alldisapprove', 'allapprove', 'allrejected'));
+        return view('website-pages.admin.product.all_products', compact('alldisapprove', 'allapprove', 'allrejected', 'outofstocks'));
     }
 
     public function ManageEditProduct($id)
@@ -309,6 +317,7 @@ class ProductController extends Controller
     {
         // Retrieve products with their regular price and sale price
         $productss = ProductModel::where('status', 'approve')
+            ->where('stock_status', 'stock')
             ->orderBy('created_at', 'desc')
             ->take(12)
             ->get();

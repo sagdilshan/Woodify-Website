@@ -88,12 +88,14 @@ class PostController extends Controller
 
         // Retrieve products with their regular price and sale price
         $productss = ProductModel::where('status', 'approve')
+        ->where('stock_status', 'stock')
             ->orderBy('created_at', 'desc')
             ->take(10)
             ->get();
 
         $products1 = ProductModel::where('status', 'approve')
             ->where('sale_type', 'sale') // Add condition for sale_type
+            ->where('stock_status', 'stock')
             ->orderBy('created_at', 'desc')
             ->take(6)
             ->get();

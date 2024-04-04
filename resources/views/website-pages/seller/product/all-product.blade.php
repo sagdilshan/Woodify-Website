@@ -41,6 +41,7 @@
                                             <th>Regular Price</th>
                                             <th>Sale Price</th>
                                             <th>Category</th>
+                                            <th>Stocks</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -54,7 +55,19 @@
                                                 <td>{{ $item->name }}</td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>{{ $item->sale_price }}</td>
+
                                                 <td>{{ $item->category->name }}</td>
+
+
+                                                <td>
+                                                    @if ($item->stock_status == 'stock')
+                                                        <span class="badge badge-primary text-uppercase" style="font-size: 1rem;">Stocks</span>
+                                                    @elseif ($item->stock_status == 'out_of_stock')
+                                                        <span class="badge badge-dark text-uppercase" style="font-size: 1rem;">Out of Stocks</span>
+                                                    @else
+                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">Error</span>
+                                                    @endif
+                                                </td>
                                                 <td>
                                                     @if ($item->status == 'approve')
                                                         <span class="badge badge-success text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>

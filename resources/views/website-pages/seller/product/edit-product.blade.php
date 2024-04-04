@@ -67,6 +67,23 @@
                                                         value="{{ $products->sale_price }}" required id="sale_price">
                                                 </div>
                                             </div>
+                                            <div class="form-group row">
+                                                <label for="inputName" class="col-sm-2 col-form-label">Category</label>
+                                                <div class="col-sm-10">
+
+                                                    <select class="form-control" id="stock_status" name="stock_status">
+
+                                                       
+
+                                                        @foreach ($stocks as $stock)
+                                                            <option value="{{ $stock }}"
+                                                                {{ $products->stock_status == $stock ? 'selected' : '' }}>
+                                                                {{ ucfirst($stock) }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                            </div>
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Category</label>
