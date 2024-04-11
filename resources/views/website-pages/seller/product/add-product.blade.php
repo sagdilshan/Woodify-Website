@@ -53,7 +53,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Regular Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="price"
-                                                        placeholder="Enter regular price" required id="price">
+                                                        placeholder="Enter regular price" required id="price" >
                                                 </div>
                                             </div>
 
@@ -61,7 +61,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Sale Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="sale_price"
-                                                        placeholder="Enter sale price" required id="sale_price">
+                                                        placeholder="Enter sale price" required id="sale_price" >
                                                 </div>
                                             </div>
 
@@ -70,7 +70,7 @@
                                                 <div class="col-sm-10">
                                                     {{-- <input type="number" class="form-control " name="category_id"
                                                         placeholder="Enter Category Id" required id="category_id"/> --}}
-                                                    <select class="form-control" id="category_id" name="category_id">
+                                                    <select class="form-control" id="category_id" name="category_id" required>
                                                         @foreach ($categories as $category)
                                                             <option value="{{ $category->id }}">{{ $category->name }}
                                                             </option>
@@ -84,7 +84,7 @@
                                                 <div class="col-sm-10">
                                                     {{-- <input type="number" class="form-control " name="category_id"
                                                         placeholder="Enter Category Id" required id="category_id"/> --}}
-                                                    <select class="form-control" id="sale_type" name="sale_type">
+                                                    <select class="form-control" id="sale_type" name="sale_type" required>
 
                                                             <option value="normal">Normal Market
                                                             </option>
@@ -98,7 +98,7 @@
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Description</label>
                                                 <div class="col-sm-10">
-                                                    <textarea rows="4" class="form-control" name="description" placeholder="Description"></textarea>
+                                                    <textarea rows="4" class="form-control" name="description" placeholder="Description" required></textarea>
 
 
                                                     @error('description')
@@ -116,16 +116,16 @@
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
                                                     Image 1</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable"name="thumb1" id="thumb1"
+                                                    <input type="file" class="form-lable"name="thumb1" required id="thumb1"
                                                         >
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
+                                                <label for="inputSkills" class="col-sm-2 col-form-label" >Thumbnail
                                                     Image 2</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable"name="thumb2" id="thumb2"
+                                                    <input type="file" class="form-lable"name="thumb2" required id="thumb2"
                                                         >
                                                 </div>
                                             </div>
@@ -135,7 +135,7 @@
                                                     Photos</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-lable"name="images[]" id="images"
-                                                        multiple accept="image/*" onchange="validateImageCount(this)">
+                                                        multiple accept="image/*" onchange="validateImageCount(this)" required>
                                                 </div>
                                             </div>
 
