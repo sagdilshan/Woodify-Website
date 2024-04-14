@@ -19,7 +19,7 @@ class AdminController extends Controller
         $totaladmins = $fakeTotalcustomers + $realTotaladmins;
         $formattedTotaladmins = number_format($totaladmins);
 
-        $product_disapproved_count = ProductModel::where('status', 'disapprove')->count();
+        $product_disapproved_count = ProductModel::where('status', 'disapprove')->where('stock_status', 'stock')->count();
 
 
         $fakeTotalSellers = 0;// Fake number

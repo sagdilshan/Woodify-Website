@@ -33,11 +33,14 @@ Route::get('/', function () {
 
 
 
+
+
 // Route::get('/', [AllCategoryController::class, 'index1']);
 
 Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
 
+Route::view('/contact-us','contact')->name('contactus');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
