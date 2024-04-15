@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ContactModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -353,7 +354,14 @@ class AdminController extends Controller
         return redirect()->back()->with($notification);
     }
 
+    public function AllContact()
+    {
+        $allcontact = ContactModel::where('status', 'new')
+            ->orderBy('created_at', 'desc')
+            ->get();
 
+        return view('website-pages.admin.contact.all-contact', compact('allcontact'));
+    }
 
 
 

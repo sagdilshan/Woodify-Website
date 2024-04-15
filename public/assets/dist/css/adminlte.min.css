@@ -5617,7 +5617,7 @@ input[type=submit].btn-block {
     padding: .5rem .75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #007bff;
+    color: red;
     background-color: #fff;
     border: 1px solid #dee2e6
 }
@@ -5627,7 +5627,7 @@ input[type=submit].btn-block {
     color: #0056b3;
     text-decoration: none;
     background-color: #e9ecef;
-    border-color: #dee2e6
+    border-color: red;
 }
 
 .page-link:focus {
@@ -5655,7 +5655,7 @@ input[type=submit].btn-block {
 }
 
 .page-item.disabled .page-link {
-    color: #6c757d;
+    color: red;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;

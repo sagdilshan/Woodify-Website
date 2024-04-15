@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Backend\ContactController;
 use App\Http\Controllers\SellerController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -40,7 +41,6 @@ Route::get('/', function () {
 Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
 
-Route::view('/contact-us','contact')->name('contactus');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -54,6 +54,12 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
+Route::controller(ContactController::class)->group(function () {
+
+    Route::get('/contact-us', 'AllContact')->name('contactus');
+    Route::post('contact-us/new', 'StoreContact')->name('store.contact');
+
+});
 
 Route::controller(PostController::class)->group(function () {
 
@@ -203,6 +209,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('manage/view/products/{id}', 'ManageViewProduct')->name('manage.view.products');
         Route::get('manage/edit/products/{id}', 'ManageEditProduct')->name('manage.edit.products');
         Route::post('manage/update/products/{id}', 'ManageUpdateProduct')->name('manage.update.products');
+
+    });
+
+    Route::controller(AdminController::class)->group(function () {
+
+        Route::get('/all/contact', 'AllContact')->name('all.contact');
+        // Route::get('manage/view/products/{id}', 'ManageViewProduct')->name('manage.view.products');
+        // Route::get('manage/edit/products/{id}', 'ManageEditProduct')->name('manage.edit.products');
+        // Route::post('manage/update/products/{id}', 'ManageUpdateProduct')->name('manage.update.products');
 
     });
 

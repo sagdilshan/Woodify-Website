@@ -68,8 +68,7 @@
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Category</label>
                                                 <div class="col-sm-10">
-                                                    {{-- <input type="number" class="form-control " name="category_id"
-                                                        placeholder="Enter Category Id" required id="category_id"/> --}}
+
                                                     <select class="form-control" id="category_id" name="category_id" required>
                                                         @foreach ($categories as $category)
                                                             <option value="{{ $category->id }}">{{ $category->name }}
@@ -82,8 +81,7 @@
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Select Market</label>
                                                 <div class="col-sm-10">
-                                                    {{-- <input type="number" class="form-control " name="category_id"
-                                                        placeholder="Enter Category Id" required id="category_id"/> --}}
+                                                 
                                                     <select class="form-control" id="sale_type" name="sale_type" required>
 
                                                             <option value="normal">Normal Market
