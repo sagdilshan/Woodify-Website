@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2024 at 08:51 PM
+-- Generation Time: Apr 15, 2024 at 12:07 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -75,6 +75,38 @@ INSERT INTO `categories` (`id`, `category_name`, `created_at`, `updated_at`) VAL
 (2, 'Furniture', NULL, NULL),
 (3, 'Kitchen & Dining', NULL, NULL),
 (6, 'Test12', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(75) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `subject` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `user_id` varchar(11) DEFAULT NULL,
+  `admin_id` varchar(11) DEFAULT NULL,
+  `status` enum('new','responded') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'new',
+  `answer` text DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `contact`
+--
+
+INSERT INTO `contact` (`id`, `name`, `email`, `phone`, `subject`, `message`, `user_id`, `admin_id`, `status`, `answer`, `updated_at`, `created_at`) VALUES
+(1, 'admin', 'admin@gmail.com', '012456', 'axbcbc', 'xbahchacva', '1', NULL, 'new', NULL, '2024-04-14 13:06:05', '2024-04-14 13:06:05'),
+(2, 'hhvhxcv', 'gcgcyvzc@gmail.com', '14566', 'hxbxhvxh', 'cgygcygcyscgs', '1', NULL, 'new', NULL, '2024-04-14 13:07:42', '2024-04-14 13:07:42'),
+(3, 'edgheh', 'dgdg@gmail.com', '2482', 'dncdjbc', 'ckedbcjdbcjd', '1', NULL, 'new', NULL, '2024-04-14 13:10:46', '2024-04-14 13:10:46'),
+(4, 'hegdwhdw', 'mksjwdh@gmail.com', '10254', 'behfcyhw', 'csgcebc', NULL, NULL, 'new', NULL, '2024-04-14 13:11:24', '2024-04-14 13:11:24'),
+(5, 'Main Customer', 'customer@gmail.com', '117', 'dev', 'evevevedv', '27', NULL, 'new', NULL, '2024-04-14 13:20:36', '2024-04-14 13:20:36');
 
 -- --------------------------------------------------------
 
@@ -236,6 +268,7 @@ CREATE TABLE `products` (
   `category_id` int(11) NOT NULL,
   `description` text DEFAULT NULL,
   `status` enum('approve','disapprove','rejected') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stock_status` enum('stock','out_of_stock') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'stock',
   `sale_type` enum('normal','sale') NOT NULL DEFAULT 'normal',
   `created_by` int(11) NOT NULL,
   `approved_by` int(11) DEFAULT NULL,
@@ -247,18 +280,18 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `thumb1`, `thumb2`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `sale_type`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
-(13, 'scs', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 1, '2e2', 'approve', 'normal', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
-(14, 'n', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 2, 'mmlmlm', 'approve', 'normal', 22, 1, '2024-04-01 15:03:47', '2024-04-01 15:01:32'),
-(15, 'Test 1 Original', NULL, NULL, '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 3, 'wfsf', 'approve', 'normal', 2, 1, '2024-04-01 18:30:05', '2024-04-01 16:26:56'),
-(16, 'sf', NULL, NULL, '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 4, 'svsvs', 'approve', 'normal', 2, 1, '2024-04-01 18:24:49', '2024-04-01 17:27:05'),
-(17, 'Test1', NULL, NULL, '[\"upload\\/product_images\\/20240402_contactless.png\",\"upload\\/product_images\\/20240402_credit-card.png\"]', '200', '102', 5, 'bhbdhwvbdhvhsv', 'approve', 'normal', 2, 1, '2024-04-02 16:57:28', '2024-04-02 16:56:35'),
-(18, 'fhfhf', NULL, NULL, '[\"upload\\/product_images\\/20240402_logo.jpg\",\"upload\\/product_images\\/20240402_Test.jpg\"]', '535', '32', 6, 'wsaeat', 'approve', 'normal', 2, 1, '2024-04-02 17:41:54', '2024-04-02 17:41:43'),
-(19, 'tes44', NULL, NULL, '[\"upload\\/product_images\\/20240402_IMG-20230921-WA0008.jpg\",\"upload\\/product_images\\/20240402_sg.jpg\"]', '35353', '3224', 7, 'eagea', 'approve', 'normal', 2, 1, '2024-04-02 17:44:05', '2024-04-02 17:43:56'),
-(20, 'vnfx', '20240402product-image46-1.jpg', '20240402product-image46-1.jpg', '[\"upload\\/product_images\\/20240402_product-image48.jpg\"]', '353', '32', 3, 'wrafa', 'approve', 'normal', 2, 1, '2024-04-02 18:23:49', '2024-04-02 18:23:00'),
-(21, 'test 2hdb', '20240402product-image21.jpg', '20240402product-image21-1.jpg', '[\"upload\\/product_images\\/20240402_product-image2.jpg\"]', '1000', '870', 5, 'jwbdjwbdjsbjbcsc', 'approve', 'sale', 2, 1, '2024-04-02 18:23:45', '2024-04-02 18:23:36'),
-(22, 'testvvchs', '20240402author-2.jpg', '20240402clothing.jpg', '[\"upload\\/product_images\\/20240402_blog-thumb.jpg\",\"upload\\/product_images\\/20240402_blog-thumb-2.jpg\"]', '2242', '24', 1, 'wqfe', 'approve', 'sale', 2, 1, '2024-04-02 18:37:17', '2024-04-02 18:36:55'),
-(23, 'ooeiieo', '20240402single-pro-thumb-2.jpg', '20240402single-pro-thumb-5.jpg', '[\"upload\\/product_images\\/20240402_sale-product-2.jpg\"]', '44903', '39345', 6, 'ebfjfb', 'approve', 'sale', 2, 29, '2024-04-03 07:55:48', '2024-04-02 18:42:13');
+INSERT INTO `products` (`id`, `name`, `thumb1`, `thumb2`, `images`, `price`, `sale_price`, `category_id`, `description`, `status`, `stock_status`, `sale_type`, `created_by`, `approved_by`, `updated_at`, `created_at`) VALUES
+(13, 'scs', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\",\"upload\\/product_images\\/20240401_about2.jpg\",\"upload\\/product_images\\/20240401_about3.jpg\"]', '2424', '242', 1, '2e2', 'approve', 'stock', 'normal', 2, 1, '2024-04-01 18:30:49', '2024-04-01 12:40:58'),
+(14, 'n', NULL, NULL, '[\"upload\\/product_images\\/20240401_about1.jpg\"]', '2222', '1255', 2, 'mmlmlm', 'approve', 'stock', 'normal', 22, 1, '2024-04-04 04:28:51', '2024-04-01 15:01:32'),
+(15, 'Test 1 Original', NULL, NULL, '[\"upload\\/product_images\\/20240401_coming-soon.jpg\"]', '354353', '244', 3, 'wfsf', 'disapprove', 'stock', 'normal', 2, 1, '2024-04-14 13:24:37', '2024-04-01 16:26:56'),
+(16, 'sf', NULL, NULL, '[\"upload\\/product_images\\/20240401_home3-small-banner1.jpg\"]', '442424', '2424', 4, 'svsvs', 'approve', 'out_of_stock', 'normal', 2, 1, '2024-04-14 13:23:55', '2024-04-01 17:27:05'),
+(17, 'Test1', NULL, NULL, '[\"upload\\/product_images\\/20240402_contactless.png\",\"upload\\/product_images\\/20240402_credit-card.png\"]', '200', '102', 5, 'bhbdhwvbdhvhsv', 'approve', 'stock', 'normal', 2, 1, '2024-04-02 16:57:28', '2024-04-02 16:56:35'),
+(18, 'fhfhf', NULL, NULL, '[\"upload\\/product_images\\/20240402_logo.jpg\",\"upload\\/product_images\\/20240402_Test.jpg\"]', '535', '32', 6, 'wsaeat', 'approve', 'stock', 'normal', 2, 1, '2024-04-14 05:53:52', '2024-04-02 17:41:43'),
+(19, 'tes44', NULL, NULL, '[\"upload\\/product_images\\/20240402_IMG-20230921-WA0008.jpg\",\"upload\\/product_images\\/20240402_sg.jpg\"]', '35353', '3224', 7, 'eagea', 'rejected', 'stock', 'normal', 2, 1, '2024-04-14 13:24:32', '2024-04-02 17:43:56'),
+(20, 'vnfx', '20240402product-image46-1.jpg', '20240402product-image46-1.jpg', '[\"upload\\/product_images\\/20240402_product-image48.jpg\"]', '353', '32', 3, 'wrafa', 'approve', 'stock', 'normal', 2, 1, '2024-04-02 18:23:49', '2024-04-02 18:23:00'),
+(21, 'test 2hdb', '20240402product-image21.jpg', '20240402product-image21-1.jpg', '[\"upload\\/product_images\\/20240402_product-image2.jpg\"]', '1000', '870', 4, 'jwbdjwbdjsbjbcsc', 'approve', 'stock', 'sale', 2, 1, '2024-04-15 09:55:06', '2024-04-02 18:23:36'),
+(22, 'testvvchs', '20240402author-2.jpg', '20240402clothing.jpg', '[\"upload\\/product_images\\/20240402_blog-thumb.jpg\",\"upload\\/product_images\\/20240402_blog-thumb-2.jpg\"]', '2242', '24', 7, 'wqfe', 'approve', 'stock', 'sale', 2, 1, '2024-04-15 09:55:42', '2024-04-02 18:36:55'),
+(23, 'ooeiieo', '20240402single-pro-thumb-2.jpg', '20240402single-pro-thumb-5.jpg', '[\"upload\\/product_images\\/20240402_sale-product-2.jpg\"]', '44903', '39345', 6, 'ebfjfb', 'approve', 'stock', 'sale', 2, 1, '2024-04-14 13:23:00', '2024-04-02 18:42:13');
 
 -- --------------------------------------------------------
 
@@ -322,7 +355,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `photo`, `phone`, `address`, `role`, `status`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Main Admins', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', 'uwPUJ6lDko5jBULUtx8h1PO33UncJz4RVYO1qIYg6n9kEtNir5MToxn3BLkE', '2024-01-23 05:10:40', '2024-03-19 08:11:32'),
+(1, 'Main Admin', 'admin', 'admin@gmail.com', NULL, '202402100705DSC_0398 n.jpg', '119', 'Panadura', 'admin', 'active', '$2y$12$52bnlbEIblawlIlH0B7Ksupz50b3.2sp8MsClSAEcHHcgicnuo7Jq', '5eRjA58N5cNTgBKnlVA0LQfgyyf2Ejceyh0toVCfK0gXYhtWfEQKXGAcudv5', '2024-01-23 05:10:40', '2024-04-13 06:12:22'),
 (2, 'Main Seller', 'seller', 'seller@gmail.com', NULL, '202403191338men-pro.jpg', '118', 'Panadura', 'seller', 'active', '$2y$12$OPwR7oR0cDqtUQed2i5zCOF3DP3FYj3PqXdmadaruI7cugu6YFxtS', NULL, '2024-01-22 12:49:02', '2024-03-19 08:08:39'),
 (4, 'Sandesh Aloka', 'devyn99', 'sandesh@gmail.com', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/00ee22?text=voluptatem', '0115874585', '147 Corkery Circle\nCronahaven, OH 26257', 'customer', 'deactive', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'd4KETDqONH', '2024-02-02 01:54:52', '2024-03-14 23:42:34'),
 (5, 'Malika Abshire', 'saige74', 'chelsea.smitham@example.net', '2024-02-02 01:54:52', 'https://via.placeholder.com/60x60.png/0077ff?text=et', '+1-915-395-4040', '83746 Ziemann Forges\nSchummton, ND 16322-5714', 'customer', 'active', '$2y$12$m7wg2nSQKPTfYcCJOLBAUuTj3/kKlklOqCd1470rDLqg1YNV06Ct2', 'zbwsOwb65c', '2024-02-02 01:54:52', '2024-02-02 01:54:52'),
@@ -336,8 +369,8 @@ INSERT INTO `users` (`id`, `name`, `username`, `email`, `email_verified_at`, `ph
 (24, 'Test3', NULL, 'test3@gmail.com', NULL, NULL, '0778954789', NULL, 'customer', 'active', '$2y$12$Njybd5aF5YuY0njT8zKHzOGD3rZwIT7ewgs3I4EOB1ZzQQxJorKj6', NULL, '2024-03-14 23:40:59', '2024-03-14 23:40:59'),
 (25, 'test4', NULL, 'test4@gmail.com', NULL, NULL, '147895656955', NULL, 'customer', 'active', '$2y$12$ILrUGP3eA78EOJ/1MkTg2edAZO8nA2ceXRnlMZH3KgMVweg1Y1nLO', NULL, '2024-03-14 23:41:30', '2024-03-14 23:41:30'),
 (26, 'Test Profile', 'testprofile', 'testprofile@gmail.com', NULL, '202403190419user1-128x128.jpg', '0771999634', 'Panadura', 'customer', 'active', '$2y$12$6qjPkpJn8eioIftnAm1O5uEjrLua30Eu14GG2lxfVU1fIeFvrIL12', NULL, '2024-03-14 23:41:56', '2024-03-18 22:49:10'),
-(27, 'tese8', NULL, 'test8@gmail.com', NULL, NULL, '0778485789', NULL, 'customer', 'deactive', '$2y$12$8ljry8XmKYi72DgNfTvHreq/dW2YoEtT0Lc9IAjAJnBKvsRdv1Gfu', NULL, '2024-03-14 23:46:37', '2024-03-14 23:47:04'),
-(28, 'Test23', NULL, 'test23@gmail.com', NULL, NULL, '0478541253', NULL, 'customer', 'active', '$2y$12$LOGBIPvGnCGfAGG.ebXUmuir8C1Ch4nRfbLIKd7VADVJ2lFieyuaa', NULL, '2024-03-16 10:20:25', '2024-03-19 08:01:56'),
+(27, 'Main Customer', NULL, 'customer@gmail.com', NULL, '202404141314logo12.png', '117', NULL, 'customer', 'active', '$2y$12$LkCsaTDu4LvJBoenfH6/.O7vx6kGoJKaBbDIWU/TxwqTGX2hP7a3m', NULL, '2024-03-14 23:46:37', '2024-04-14 07:44:59'),
+(28, 'Test23', NULL, 'test23@gmail.com', NULL, NULL, '186262', NULL, 'customer', 'active', '$2y$12$LOGBIPvGnCGfAGG.ebXUmuir8C1Ch4nRfbLIKd7VADVJ2lFieyuaa', NULL, '2024-03-16 10:20:25', '2024-03-19 08:01:56'),
 (29, 'test234', 'testori', 'test234@gmail.com', NULL, '202404030756german-flag.png', '0789456123', 'Kuliyapitiya', 'admin', 'active', '$2y$12$Z.FTkGWCuUv2orQ2gZNgT.mdZQDpL0qYsOe8441OTWjjfEitzf1mG', NULL, '2024-03-19 08:03:07', '2024-04-03 02:26:35');
 
 --
@@ -354,6 +387,12 @@ ALTER TABLE `all_category`
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -452,6 +491,12 @@ ALTER TABLE `all_category`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
