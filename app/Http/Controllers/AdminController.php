@@ -363,6 +363,49 @@ class AdminController extends Controller
         return view('website-pages.admin.contact.all-contact', compact('allcontact'));
     }
 
+    public function AllEditContact($id)
+    {
+        $contacts = ContactModel::findOrFail($id);
+        if ($contacts->status == 'responded') {
+            // Redirect or abort with an error message
+
+            $notification = [
+                'message' => 'Cannot be reply again',
+                'alert-type' => 'error'
+            ];
+            return redirect()->route('all.contact')->with($notification);
+        }
+        $statuses = ['new', 'responded'];
+        return view('website-pages.admin.contact.edit-contact', compact('contacts', 'statuses'));
+    }
+
+    public function AllUpdateContact(Request $request)
+    {
+        $pid = $request->id;
+        $contacts = ContactModel::findOrFail($pid);
+
+
+
+        // Update other fields
+        $contacts->status = 'responded';
+        $contacts->answer = $request->answer;
+
+        $contacts->admin_id = Auth::user()->id;
+
+
+
+        // Save the changes to the database
+        $contacts->save();
+
+        //Redirect back with a success message
+        $notification = array(
+            'message' => 'Product Updated',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('all.contact')->with($notification);
+    }
+
 
 
 
