@@ -215,9 +215,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::controller(AdminController::class)->group(function () {
 
         Route::get('/all/contact', 'AllContact')->name('all.contact');
-        // Route::get('manage/view/products/{id}', 'ManageViewProduct')->name('manage.view.products');
-        // Route::get('manage/edit/products/{id}', 'ManageEditProduct')->name('manage.edit.products');
-        // Route::post('manage/update/products/{id}', 'ManageUpdateProduct')->name('manage.update.products');
+        // Route::get('all/view/products/{id}', 'ManageViewProduct')->name('manage.view.products');
+        Route::get('all/edit/contact/{id}', 'AllEditContact')->name('edit.contact');
+        Route::post('all/update/contact/{id}', 'AllUpdateContact')->name('update.contact');
 
     });
 
