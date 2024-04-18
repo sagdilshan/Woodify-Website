@@ -190,6 +190,15 @@
                     </ul>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('all.contact') }}"
+                        class="nav-link {{ Route::is('all.contact') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-comment-alt"></i>
+                        <p>
+                            Inquires
+                        </p>
+                    </a>
+                </li>
 
 
 
