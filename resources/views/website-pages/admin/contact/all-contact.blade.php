@@ -57,10 +57,9 @@
 
 
                                                 <td>
-                                                    <a href="{{ route('manage.edit.products', $item->id) }}"
-                                                        class="btn btn-outline-info">Edit</a>
-                                                    <a href="{{ route('manage.view.products', $item->id) }}"
-                                                        class="btn btn-outline-success">View</a>
+
+                                                    <a href="{{ route('edit.contact', $item->id) }}"
+                                                        class="btn btn-outline-danger">Reply</a>
                                                 </td>
 
                                             </tr>
