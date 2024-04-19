@@ -42,6 +42,8 @@ Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
 
 
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -66,6 +68,7 @@ Route::controller(PostController::class)->group(function () {
     Route::get('all/blog/{id}', 'ShowBlog')->name('blog.show');
 
 });
+Route::view('/product-view','productview')->name('product.view');
 
 // Route::view('/shop', 'shop')->name('shop');
 
