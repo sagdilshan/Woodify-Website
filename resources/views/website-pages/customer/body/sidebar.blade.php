@@ -37,7 +37,7 @@
                 <li class="nav-header mb-2">MAIN</li>
 
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="{{ route('customer.dashboard') }}" class="nav-link {{ Route::is('customer.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Overview
@@ -52,41 +52,17 @@
                         </p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-header mt-3 mb-2">EXAMPLES</li>
 
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
+                    <a href="{{ route('my.inquires') }}"
+                        class="nav-link {{ Route::is('my.inquires') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-comment-alt"></i>
                         <p>
-                            Gallery
+                            My Inquires
                         </p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li> --}}
+               
 
 
 

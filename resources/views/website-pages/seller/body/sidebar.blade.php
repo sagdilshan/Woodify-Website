@@ -55,6 +55,16 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{ route('seller.inquires') }}"
+                        class="nav-link {{ Route::is('seller.inquires') ? 'active' : '' }}">
+                        <i class="nav-icon far fa-comment-alt"></i>
+                        <p>
+                            My Inquires
+                        </p>
+                    </a>
+                </li>
+
 
 
 
