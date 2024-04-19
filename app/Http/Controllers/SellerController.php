@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use App\Models\ContactModel;
+
 
 class SellerController extends Controller
 {
@@ -108,5 +110,16 @@ class SellerController extends Controller
         );
 
         return back()->with($notification);
+    }
+
+    public function MyInquires()
+    {
+        $userId = Auth::id();
+        $allcontact = ContactModel::where('status', 'responded')
+            ->where('user_id', $userId )
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.seller.contact.my-contact', compact('allcontact'));
     }
 }
