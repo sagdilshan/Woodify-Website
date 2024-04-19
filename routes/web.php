@@ -240,6 +240,23 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
 
     });
 
+    Route::controller(SellerController::class)->group(function () {
+
+        Route::get('/seller/inquires', 'MyInquires')->name('seller.inquires');
+
+    });
+
+
+});
+
+Route::middleware(['auth', 'role:customer'])->group(function () {
+
+    Route::controller(CustomerController::class)->group(function () {
+
+        Route::get('/my/inquires', 'MyInquires')->name('my.inquires');
+
+    });
+
 
 });
 
