@@ -116,7 +116,7 @@
 
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">
-                    <a href="{{ route('seller.profile') }}" class="nav-link">
+                    <a href="{{ route('seller.profile') }}" class="nav-link {{ Route::is('seller.profile') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-user-circle"></i>
                         <p>
                             Profile
