@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\ContactModel;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
@@ -103,5 +104,16 @@ class CustomerController extends Controller
     public function Checkout()
     {
         return view('checkout');
+    }
+
+    public function MyInquires()
+    {
+        $userId = Auth::id();
+        $allcontact = ContactModel::where('status', 'responded')
+            ->where('user_id', $userId )
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.customer.contact.my-contact', compact('allcontact'));
     }
 }
