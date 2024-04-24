@@ -58,7 +58,7 @@
                                                         <a class="qtyBtn minus" href="javascript:void(0);"><i
                                                                 class="icon icon-minus"></i></a>
                                                         <input class="cart__qty-input qty" type="text" name="updates[]"
-                                                            id="qty" value="1" pattern="[0-9]*">
+                                                            id="qty" value="1"  pattern="[0-9]*">
                                                         <a class="qtyBtn plus" href="javascript:void(0);"><i
                                                                 class="icon icon-plus"></i></a>
                                                     </div>
