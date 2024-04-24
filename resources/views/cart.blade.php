@@ -68,7 +68,7 @@
                                                 <div><span class="money">$40.00</span></div>
                                             </td>
                                             <td class="text-center small--hide"><a href="#"
-                                                    class="btn btn--secondary cart__remove" title="Remove tem"><i
+                                                    class="btn btn--secondary cart__remove" title="Remove Item"><i
                                                         class="icon icon anm anm-times-l"></i></a></td>
                                         </tr>
 
@@ -77,7 +77,7 @@
                                         <tr>
                                             <td colspan="3" class="text-left"><a href="{{ route('shop') }}"
                                                     class="btn--link cart-continue"><i
-                                                        class="icon icon-arrow-circle-left"></i> Continue shopping</a></td>
+                                                        class="icon icon-arrow-circle-left"></i> Continue Shopping</a></td>
 
                                         </tr>
                                     </tfoot>
