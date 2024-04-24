@@ -27,8 +27,8 @@
                     <!--Breadcrumb-->
                     <div class="bredcrumbWrap">
                         <div class="container breadcrumbs">
-                            <a href="index.html" title="Back to the home page">Home</a><span
-                                aria-hidden="true">›</span><span>Product Shipping Message</span>
+                            <a href="{{url('/')}}" title="Back to the home page">Home</a><span
+                                aria-hidden="true">›</span><span>Product View</span>
                         </div>
                     </div>
                     <!--End Breadcrumb-->
@@ -67,7 +67,7 @@
 
                                         </div>
                                         <div class="product-thumb">
-                                            <div id="gallery" class="">
+                                            <div id="gallery" class="product-dec-slider-2 product-tab-left">
                                                 @php
                                                     // Decode the JSON string to get an array of image paths
                                                     $imagePaths = json_decode($productview->images);
@@ -75,7 +75,7 @@
 
                                                 @if (!empty($imagePaths))
                                                     @foreach ($imagePaths as $path)
-                                                        <div class="product-dec-slider-2 product-tab-left">
+
                                                             <a data-image="{{ asset($path) }}"
                                                                 data-zoom-image="{{ asset($path) }}"
                                                                 class="slick-slide slick-cloned" data-slick-index="-4"
@@ -83,7 +83,7 @@
                                                                 <img class="blur-up lazyload" src="{{ asset($path) }}"
                                                                     alt="Product Image" />
                                                             </a>
-                                                        </div>
+
                                                     @endforeach
                                                 @endif
 
@@ -173,15 +173,14 @@
                                     <img src="../assetss/images/worldwide.png" alt="Worldwide Delivery"
                                         title="Worldwide Delivery" />
                                     <div class="details">
-                                        <h3>Worldwide Delivery</h3>FREE &amp; fast shipping to over 200+ countries &amp;
+                                        <h3>Worldwide Delivery</h3>FAST &amp; shipping to over 200+ countries &amp;
                                         regions.
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm-6 col-md-6 col-lg-3 feature">
                                     <img src="../assetss/images/phone-call.png" alt="Hotline" title="Hotline" />
                                     <div class="details">
-                                        <h3>Hotline</h3>Talk to help line for your question on 4141 456 789, 4125 666
-                                        888
+                                        <h3>Hotline</h3>Talk to help line for your question on (+94) 77 991 9634
                                     </div>
                                 </div>
                             </div>
@@ -220,7 +219,7 @@
                         <!--Recently Product Slider-->
                         <div class="related-product grid-products">
                             <header class="section-header">
-                                <h2 class="section-header__title text-center h2"><span>Recently Viewed Product</span>
+                                <h2 class="section-header__title text-center h2"><span>Mostly Viewed Product</span>
                                 </h2>
                                 <p class="sub-heading">You can manage this section from store admin as describe in
                                     above
@@ -228,7 +227,7 @@
                             </header>
                             <div class="productPageSlider">
                                 @foreach ($productss as $product)
-                                <div class="col-12 item">
+                                <div class="col-lg-12 item">
                                     <!-- start product image -->
 
                                     <div class="product-image">
@@ -283,149 +282,7 @@
 
 
 
-            <div class="hide">
-                <div id="sizechart">
-                    <h3>WOMEN'S BODY SIZING CHART</h3>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Size</th>
-                                <th>XS</th>
-                                <th>S</th>
-                                <th>M</th>
-                                <th>L</th>
-                                <th>XL</th>
-                            </tr>
-                            <tr>
-                                <td>Chest</td>
-                                <td>31" - 33"</td>
-                                <td>33" - 35"</td>
-                                <td>35" - 37"</td>
-                                <td>37" - 39"</td>
-                                <td>39" - 42"</td>
-                            </tr>
-                            <tr>
-                                <td>Waist</td>
-                                <td>24" - 26"</td>
-                                <td>26" - 28"</td>
-                                <td>28" - 30"</td>
-                                <td>30" - 32"</td>
-                                <td>32" - 35"</td>
-                            </tr>
-                            <tr>
-                                <td>Hip</td>
-                                <td>34" - 36"</td>
-                                <td>36" - 38"</td>
-                                <td>38" - 40"</td>
-                                <td>40" - 42"</td>
-                                <td>42" - 44"</td>
-                            </tr>
-                            <tr>
-                                <td>Regular inseam</td>
-                                <td>30"</td>
-                                <td>30½"</td>
-                                <td>31"</td>
-                                <td>31½"</td>
-                                <td>32"</td>
-                            </tr>
-                            <tr>
-                                <td>Long (Tall) Inseam</td>
-                                <td>31½"</td>
-                                <td>32"</td>
-                                <td>32½"</td>
-                                <td>33"</td>
-                                <td>33½"</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <h3>MEN'S BODY SIZING CHART</h3>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <th>Size</th>
-                                <th>XS</th>
-                                <th>S</th>
-                                <th>M</th>
-                                <th>L</th>
-                                <th>XL</th>
-                                <th>XXL</th>
-                            </tr>
-                            <tr>
-                                <td>Chest</td>
-                                <td>33" - 36"</td>
-                                <td>36" - 39"</td>
-                                <td>39" - 41"</td>
-                                <td>41" - 43"</td>
-                                <td>43" - 46"</td>
-                                <td>46" - 49"</td>
-                            </tr>
-                            <tr>
-                                <td>Waist</td>
-                                <td>27" - 30"</td>
-                                <td>30" - 33"</td>
-                                <td>33" - 35"</td>
-                                <td>36" - 38"</td>
-                                <td>38" - 42"</td>
-                                <td>42" - 45"</td>
-                            </tr>
-                            <tr>
-                                <td>Hip</td>
-                                <td>33" - 36"</td>
-                                <td>36" - 39"</td>
-                                <td>39" - 41"</td>
-                                <td>41" - 43"</td>
-                                <td>43" - 46"</td>
-                                <td>46" - 49"</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div style="padding-left: 30px;"><img src="../assetss/images/size.jpg" alt=""></div>
-                </div>
-            </div>
-            <div class="hide">
-                <div id="productInquiry">
-                    <div class="contact-form form-vertical">
-                        <div class="page-title">
-                            <h3>Camelia Reversible Jacket</h3>
-                        </div>
-                        <form method="post" action="#" id="contact_form" class="contact-form">
-                            <input type="hidden" name="form_type" value="contact" />
-                            <input type="hidden" name="utf8" value="✓" />
-                            <div class="formFeilds">
-                                <input type="hidden" name="contact[product name]" value="Camelia Reversible Jacket">
-                                <input type="hidden" name="contact[product link]"
-                                    value="/products/camelia-reversible-jacket-black-red">
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input type="text" id="ContactFormName" name="contact[name]"
-                                            placeholder="Name" value="" required>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                        <input type="email" id="ContactFormEmail" name="contact[email]"
-                                            placeholder="Email" autocapitalize="off" value="" required>
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                        <input required type="tel" id="ContactFormPhone" name="contact[phone]"
-                                            pattern="[0-9\-]*" placeholder="Phone Number" value="">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                        <textarea required rows="10" id="ContactFormMessage" name="contact[body]" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                        <input type="submit" class="btn" value="Send Message">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+
 
 
 
