@@ -336,4 +336,25 @@ class ProductController extends Controller
         return view('shop', compact('productss'));
     }
 
+
+    // public function ProductView()
+    // {
+    //     return view('productview');
+    // }
+
+
+    public function ProductView($id)
+    {
+        $productview = ProductModel::findOrFail($id);
+        $productviews = ProductModel::all();
+        $productss = ProductModel::where('status', 'approve')
+        ->where('stock_status', 'stock')
+        ->inRandomOrder()
+        ->take(8)
+        ->get();
+
+
+        return view('productview', compact('productview', 'productviews', 'productss'));
+    }
+
 }
