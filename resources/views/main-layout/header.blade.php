@@ -179,10 +179,7 @@
                             </div>
                         @endauth
                     @endif
-                    <div class="site-header__search">
-                        <button type="button" class="search-trigger"><i class="icon anm anm-search-l"></i></button>
-                    </div>
-
+                   
                 </div>
 
             </div>
@@ -228,6 +225,10 @@
     <script src="assetss/js/popper.min.js"></script>
     <script src="assetss/js/lazysizes.js"></script>
     <script src="assetss/js/main.js"></script>
+
+    <!-- Photoswipe Gallery -->
+    <script src="assetss/js/vendor/photoswipe.min.js"></script>
+    <script src="assetss/js/vendor/photoswipe-ui-default.min.js"></script>
 
 </body>
 
