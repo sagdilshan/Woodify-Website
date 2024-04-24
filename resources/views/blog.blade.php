@@ -1,17 +1,19 @@
 @extends('main-layout.header')
 @section('pageTitle', isset($pageTitle) ? $pageTitle : 'Blog Article')
 @section('mainpage')
-<head>
 
-    <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" />
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="../../assetss/css/plugins.css">
-    <!-- Bootstap CSS -->
-    <link rel="stylesheet" href="../../assetss/css/bootstrap.min.css">
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="../../assetss/css/style.css">
-    <link rel="stylesheet" href="../../assetss/css/responsive.css">
+    <head>
+
+        {{-- <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" /> --}}
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="../../assetss/css/plugins.css">
+        <!-- Bootstap CSS -->
+        <link rel="stylesheet" href="../../assetss/css/bootstrap.min.css">
+        <!-- Main Style CSS -->
+        <link rel="stylesheet" href="../../assetss/css/style.css">
+        <link rel="stylesheet" href="../../assetss/css/responsive.css">
     </head>
+
     <body class="template-blog belle">
         <div class="pageWrapper">
             <br><br><br>
@@ -27,7 +29,8 @@
                 <!--End Page Title-->
                 <div class="bredcrumbWrap">
                     <div class="container breadcrumbs">
-                        <a href="{{ url('/') }}" title="Back to the home page">Home</a><span aria-hidden="true">›</span>
+                        <a href="{{ url('/') }}" title="Back to the home page">Home</a><span
+                            aria-hidden="true">›</span>
                         <span>Blog Article</span>
                     </div>
                 </div>
@@ -87,11 +90,14 @@
                                     <!-- Article Image -->
                                     <a class="article_featured-image" href="#"><img class="blur-up lazyload"
                                             data-src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
-                                            src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}" alt="{{ $post->title }}"></a>
+                                            src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
+                                            alt="{{ $post->title }}"></a>
                                     <h1><a href="#">{{ $post->title }}</a></h1>
                                     <ul class="publish-detail">
                                         <li><i class="anm anm-user-al" aria-hidden="true"></i> Admin</li>
-                                        <li><i class="icon anm anm-clock-r"></i> <time datetime="{{ $post->created_at }}">{{ $post->created_at->format('F d, Y') }}</time></li>
+                                        <li><i class="icon anm anm-clock-r"></i> <time
+                                                datetime="{{ $post->created_at }}">{{ $post->created_at->format('F d, Y') }}</time>
+                                        </li>
                                         <!-- Add comments count if available -->
                                     </ul>
                                     <div class="rte">
@@ -141,7 +147,8 @@
                                                     <div class="grid__item">
                                                         <div class="mini-list-item">
                                                             <div class="mini-view_image">
-                                                                <a class="grid-view-item__link" href="{{ route('blog.show', ['id' => $post->id]) }}">
+                                                                <a class="grid-view-item__link"
+                                                                    href="{{ route('blog.show', ['id' => $post->id]) }}">
                                                                     <img class="grid-view-item__image blur-up lazyload"
                                                                         data-src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
                                                                         src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_image.png') }}"
@@ -149,10 +156,12 @@
                                                                 </a>
                                                             </div>
                                                             <div class="details">
-                                                                <a class="grid-view-item__title" href="{{ route('blog.show', ['id' => $post->id]) }}">{{ $post->title }}</a>
+                                                                <a class="grid-view-item__title"
+                                                                    href="{{ route('blog.show', ['id' => $post->id]) }}">{{ $post->title }}</a>
                                                                 <div class="grid-view-item__meta">
                                                                     <span class="article__date">
-                                                                        <time datetime="{{ $post->created_at }}">{{ $post->created_at->format('F d, Y') }}</time>
+                                                                        <time
+                                                                            datetime="{{ $post->created_at }}">{{ $post->created_at->format('F d, Y') }}</time>
                                                                     </span>
                                                                 </div>
                                                             </div>
