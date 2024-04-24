@@ -19,7 +19,7 @@
             <br>
             <br>
             <br>
-            <br>
+
             <!--Body Content-->
             <div id="page-content">
                 <!--MainContent-->

@@ -77,10 +77,10 @@
                                                         <div class="button-set">
 
                                                             <!-- Start product button -->
-                                                            <form action="#" method="post">
-                                                                <button class="btn btn--secondary cartIcon btn-addto-cart"
-                                                                    type="button"><i
-                                                                        class="icon anm anm-cart-1-l"></i></button>
+                                                            <form class="variants add">
+                                                                <a class="btn cartIcon btn-addto-cart"
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}"><i
+                                                                        class="icon anm anm-eye-r"></i></a>
                                                             </form>
 
                                                         </div>

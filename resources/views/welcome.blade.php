@@ -88,7 +88,8 @@
                                                             <!-- start product image -->
                                                             <div class="product-image">
                                                                 <!-- start product image -->
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
                                                                     <!-- image -->
                                                                     <img class="primary blur-up lazyload"
                                                                         data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
@@ -112,21 +113,15 @@
                                                                 <!-- end product image -->
 
 
-                                                                <!-- Start product button -->
-                                                                <form class="variants add" action="#"
-                                                                    onclick="window.location.href='#'"method="post">
-                                                                    <button class="btn btn-addto-cart" type="button"
-                                                                        tabindex="0">Add To Cart</button>
-                                                                </form>
 
-                                                                <!-- end product button -->
                                                             </div>
                                                             <!-- end product image -->
                                                             <!--start product details -->
                                                             <div class="product-details text-center">
                                                                 <!-- product name -->
                                                                 <div class="product-name">
-                                                                    <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                                 </div>
                                                                 <!-- End product name -->
                                                                 <!-- product price -->
@@ -152,65 +147,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 2)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
 
@@ -222,65 +212,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 3)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -289,65 +274,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 5)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
 
@@ -357,65 +337,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 4)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -424,65 +399,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 6)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+                                                                
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -492,65 +462,60 @@
                                             <div class="productSlider">
                                                 @foreach ($productss as $product)
                                                     @if ($product->category_id == 7)
-                                                    <div class="col-12 item">
-                                                        <!-- start product image -->
-                                                        <div class="product-image">
+                                                        <div class="col-12 item">
                                                             <!-- start product image -->
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">
-                                                                <!-- image -->
-                                                                <img class="primary blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End image -->
-                                                                <!-- Hover image -->
-                                                                <img class="hover blur-up lazyload"
-                                                                    data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
-                                                                    alt="{{ $product->name }}"
-                                                                    title="{{ $product->name }}">
-                                                                <!-- End hover image -->
-                                                                <!-- product label -->
-                                                                <div class="product-labels rectangular"><span
-                                                                        class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
-                                                                </div>
-                                                                <!-- End product label -->
-                                                            </a>
+                                                            <div class="product-image">
+                                                                <!-- start product image -->
+                                                                <a
+                                                                    href="{{ route('product.view', ['id' => $product->id]) }}">
+                                                                    <!-- image -->
+                                                                    <img class="primary blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End image -->
+                                                                    <!-- Hover image -->
+                                                                    <img class="hover blur-up lazyload"
+                                                                        data-src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        src="{{ !empty($product->thumb2) ? url('upload/thumb_images/' . $product->thumb2) : url('upload/no_product.png') }}"
+                                                                        alt="{{ $product->name }}"
+                                                                        title="{{ $product->name }}">
+                                                                    <!-- End hover image -->
+                                                                    <!-- product label -->
+                                                                    <div class="product-labels rectangular"><span
+                                                                            class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                                    </div>
+                                                                    <!-- End product label -->
+                                                                </a>
+                                                                <!-- end product image -->
+
+
+
+                                                            </div>
                                                             <!-- end product image -->
+                                                            <!--start product details -->
+                                                            <div class="product-details text-center">
+                                                                <!-- product name -->
+                                                                <div class="product-name">
+                                                                    <a
+                                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                                </div>
+                                                                <!-- End product name -->
+                                                                <!-- product price -->
+                                                                <div class="product-price">
+                                                                    <span class="old-price">Regular Price: $
+                                                                        {{ $product->price }}</span><br>
+                                                                    <span class="price">Sale Price: $
+                                                                        {{ $product->sale_price }}</span>
+                                                                </div>
+                                                                <!-- End product price -->
 
 
-                                                            <!-- Start product button -->
-                                                            <form class="variants add" action="#"
-                                                                onclick="window.location.href='#'"method="post">
-                                                                <button class="btn cartIcon btn-addto-cart" type="button"
-                                                                    tabindex="0">Add To Cart</button>
-                                                            </form>
 
-                                                            <!-- end product button -->
-                                                        </div>
-                                                        <!-- end product image -->
-                                                        <!--start product details -->
-                                                        <div class="product-details text-center">
-                                                            <!-- product name -->
-                                                            <div class="product-name">
-                                                                <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                             </div>
-                                                            <!-- End product name -->
-                                                            <!-- product price -->
-                                                            <div class="product-price">
-                                                                <span class="old-price">Regular Price: $
-                                                                    {{ $product->price }}</span><br>
-                                                                <span class="price">Sale Price: $
-                                                                    {{ $product->sale_price }}</span>
-                                                            </div>
-                                                            <!-- End product price -->
-
-
-
+                                                            <!-- End product details -->
                                                         </div>
-                                                        <!-- End product details -->
-                                                    </div>
                                                     @endif
                                                 @endforeach
                                             </div>
@@ -609,7 +574,8 @@
                                     <div class="col-md-6 col-sm-6 col-md-4 col-lg-4 item grid-view-item style2">
                                         <div class="grid-view_image">
                                             <!-- start product image -->
-                                            <a href="{{ route('product.view', ['id' => $product->id]) }}" class="grid-view-item__link">
+                                            <a href="{{ route('product.view', ['id' => $product->id]) }}"
+                                                class="grid-view-item__link">
                                                 <!-- image -->
                                                 <img class="grid-view-item__image primary blur-up lazyload"
                                                     data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
@@ -634,21 +600,22 @@
                                             <div class="product-details hoverDetails text-center mobile">
                                                 <!-- product name -->
                                                 <div class="product-name">
-                                                    <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                    <a
+                                                        href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                 </div>
                                                 <!-- End product name -->
                                                 <!-- product price -->
                                                 <div class="product-price">
-                                                    <span class="price">$550.00</span>
+                                                    <span class="price">${{ $product->sale_price }}</span>
                                                 </div>
                                                 <!-- product button -->
                                                 <div class="button-set">
 
                                                     <!-- Start product button -->
-                                                    <form class="variants add" action="#"
-                                                        onclick="window.location.href='cart.html'"method="post">
-                                                        <button class="btn cartIcon btn-addto-cart" type="button"
-                                                            tabindex="0"><i class="icon anm anm-cart-1-l"></i></button>
+                                                    <form class="variants add">
+                                                        <a class="btn cartIcon btn-addto-cart"
+                                                            href="{{ route('product.view', ['id' => $product->id]) }}"><i
+                                                                class="icon anm anm-eye-r"></i></a>
                                                     </form>
 
                                                 </div>
@@ -684,7 +651,8 @@
                             @foreach ($posts as $post)
                                 <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                     <div class="wrap-blog">
-                                        <a href="{{ route('blog.show', ['id' => $post->id]) }}" class="article__grid-image">
+                                        <a href="{{ route('blog.show', ['id' => $post->id]) }}"
+                                            class="article__grid-image">
                                             <img src="{{ !empty($post->photo) ? url('upload/post_images/' . $post->photo) : url('upload/no_product.png') }}"
                                                 alt="{{ $post->title }}" title="{{ $post->title }}"
                                                 class="blur-up lazyloaded" />
@@ -692,7 +660,8 @@
                                         <div class="article__grid-meta article__grid-meta--has-image">
                                             <div class="wrap-blog-inner">
                                                 <h2 class="h3 article__title">
-                                                    <a href="{{ route('blog.show', ['id' => $post->id]) }}">{{ $post->title }}</a>
+                                                    <a
+                                                        href="{{ route('blog.show', ['id' => $post->id]) }}">{{ $post->title }}</a>
                                                 </h2>
                                                 <span
                                                     class="article__date">{{ $post->created_at->format('F d, Y') }}</span>

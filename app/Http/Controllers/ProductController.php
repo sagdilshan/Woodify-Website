@@ -343,9 +343,9 @@ class ProductController extends Controller
     // }
 
 
-    public function ProductView($id)
+    public function ProductView($slug)
     {
-        $productview = ProductModel::findOrFail($id);
+        $productview = ProductModel::findOrFail($slug);
         $productviews = ProductModel::all();
         $productss = ProductModel::where('status', 'approve')
         ->where('stock_status', 'stock')
