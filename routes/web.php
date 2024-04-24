@@ -68,7 +68,13 @@ Route::controller(PostController::class)->group(function () {
     Route::get('all/blog/{id}', 'ShowBlog')->name('blog.show');
 
 });
-Route::view('/product-view','productview')->name('product.view');
+
+Route::controller(ProductController::class)->group(function () {
+
+    Route::get('/product-view/{id}','ProductView')->name('product.view');
+
+});
+
 
 // Route::view('/shop', 'shop')->name('shop');
 
