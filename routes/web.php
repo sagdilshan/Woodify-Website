@@ -15,7 +15,7 @@ use App\Http\Controllers\ProductController;
 
 
 use App\Http\Controllers;
-
+use App\Http\Controllers\Backend\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +40,10 @@ Route::get('/', function () {
 
 Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
+
+// Route::get('shop/{id}', [ProductController::class, 'shopItem'])->name('shop.item');
+// Route for a specific category or product page in the shop that includes an ID
+// Route::get('shop/category/{id}', [CategoryController::class, 'ShowProducts'])->name('shop.product');
 
 
 
@@ -115,7 +119,11 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::get('/customer/profile', [CustomerController::class, 'CustomerProfile'])->name('customer.profile');
     Route::post('/customer/profile/store', [CustomerController::class, 'CustomerProfileStore'])->name('customer.profile.store');
     Route::post('/customer/update/password', [CustomerController::class, 'CustomerUpdatePassword'])->name('customer.update.password');
-    Route::get('/cart', [CustomerController::class, 'Cart'])->name('cart');
+    Route::get('/cart', [CartController::class, 'CartIndex'])->name('cart');
+    Route::post('/cart/add', [ProductController::class, 'CartAdd'])->name('cart.add');
+    Route::post('/cart/update', [ProductController::class, 'UpdateCart'])->name('cart.update');
+    Route::get('/cart/delete/{id}', [ProductController::class, 'DeleteCart'])->name('cart.delete');
+
     Route::get('/checkout', [CustomerController::class, 'Checkout'])->name('checkout');
 
 }); // end group customer middlewere
