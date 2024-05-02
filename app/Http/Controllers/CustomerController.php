@@ -96,10 +96,10 @@ class CustomerController extends Controller
         return back()->with($notification);
     }
 
-    public function Cart()
-    {
-        return view('cart');
-    }
+    // public function Cart()
+    // {
+    //     return view('cart');
+    // }
 
     public function Checkout()
     {
