@@ -27,7 +27,7 @@
                     <!--Breadcrumb-->
                     <div class="bredcrumbWrap">
                         <div class="container breadcrumbs">
-                            <a href="{{url('/')}}" title="Back to the home page">Home</a><span
+                            <a href="{{ url('/') }}" title="Back to the home page">Home</a><span
                                 aria-hidden="true">›</span><span>Product View</span>
                         </div>
                     </div>
@@ -75,15 +75,13 @@
 
                                                 @if (!empty($imagePaths))
                                                     @foreach ($imagePaths as $path)
-
-                                                            <a data-image="{{ asset($path) }}"
-                                                                data-zoom-image="{{ asset($path) }}"
-                                                                class="slick-slide slick-cloned" data-slick-index="-4"
-                                                                aria-hidden="true" tabindex="-1">
-                                                                <img class="blur-up lazyload" src="{{ asset($path) }}"
-                                                                    alt="Product Image" />
-                                                            </a>
-
+                                                        <a data-image="{{ asset($path) }}"
+                                                            data-zoom-image="{{ asset($path) }}"
+                                                            class="slick-slide slick-cloned" data-slick-index="-4"
+                                                            aria-hidden="true" tabindex="-1">
+                                                            <img class="blur-up lazyload" src="{{ asset($path) }}"
+                                                                alt="Product Image" />
+                                                        </a>
                                                     @endforeach
                                                 @endif
 
@@ -98,6 +96,10 @@
                                         <div class="prInfoRow">
                                             <div class="product-stock"> <span class="instock ">In Stock</span> <span
                                                     class="outstock hide">Unavailable</span> </div>
+
+                                        </div>
+                                        <div class="prInfoRow">
+                                            <div class="product-stock" style="display: none"> <span class="instock ">{{ $productview->created_by }}</span> </div>
 
                                         </div>
 
@@ -115,15 +117,15 @@
                                     <div class="product-single__description rte">
                                         <p style="font-size: 1rem;">{{ $productview->description }}</p>
                                     </div><br>
-                                    <form method="post" action="#" accept-charset="UTF-8"
-                                        class="product-form product-form-product-template hidedropdown"
-                                        enctype="multipart/form-data">
+                                    <form method="post" action="{{ route('cart.add') }}" accept-charset="UTF-8"
+                                        class="product-form product-form-product-template hidedropdown">
 
 
 
+                                        @csrf
                                         <!-- Product Action -->
                                         <div class="product-action clearfix">
-                                            <div class="product-form__item--quantity">
+                                            <div class="product-form__item--quantity" >
                                                 <div class="wrapQtyBtn">
                                                     <div class="qtyField">
                                                         <a class="qtyBtn minus" href="javascript:void(0);"><i
@@ -135,19 +137,34 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <input type="hidden" name="product_id" value="{{ $productview->id }}">
+                                            <input type="hidden" name="product_name" value="{{ $productview->name }}">
+                                            <input type="hidden" name="thumb" value="{{ $productview->thumb1 }}">
+                                            <input type="hidden" name="price" value="{{ $productview->sale_price }}">
+                                            <input type="hidden" name="seller_id" value="{{ $productview->created_by }}">
                                             <div class="product-form__item--submit">
-                                                <button type="button" name="add" class="btn product-form__cart-submit">
+                                                <button type="submit" name="add"
+                                                    class="btn product-form__cart-submit">
                                                     <span id="AddToCartText-product-template">Add to Cart</span>
                                                 </button>
                                             </div>
-                                            <div class="shopify-payment-button" data-shopify="payment-button">
-                                                <button type="button"
+                                            {{-- <div class="shopify-payment-button" data-shopify="payment-button">
+                                                <button type="submit"
                                                     class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy
                                                     it now</button>
-                                            </div>
+                                            </div> --}}
                                         </div>
                                         <!-- End Product Action -->
                                     </form>
+                                    {{-- <form action="{{ route('cart.add') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="product_id" value="{{ $productview->id }}">
+                                        <input type="hidden" name="product_name" value="{{ $productview->name }}">
+                                        <input type="hidden" name="thumb" value="{{ $productview->thumb1 }}">
+                                        <input type="hidden" name="price" value="{{ $productview->sale_price }}">
+                                        <input type="number" name="quantity" value="1" min="1" max="10">
+                                        <button type="submit">Add to Cart</button>
+                                    </form> --}}
 
                                 </div>
                             </div>
@@ -227,10 +244,10 @@
                             </header>
                             <div class="productPageSlider">
                                 @foreach ($productss as $product)
-                                <div class="col-lg-12 item">
-                                    <!-- start product image -->
+                                    <div class="col-lg-12 item">
+                                        <!-- start product image -->
 
-                                    <div class="product-image">
+                                        <div class="product-image">
 
                                             <!-- start product image -->
                                             <a href="{{ route('product.view', ['id' => $product->id]) }}">
@@ -254,20 +271,19 @@
                                             </a>
                                             <!-- end product image -->
 
-                                    </div>
-                                    <!-- end product image -->
-
-                                    <!--start product details -->
-                                    <div class="product-details text-center">
-                                        <!-- product name -->
-                                        <div class="product-name">
-                                            <a href="#">{{ $product->name }}</a>
                                         </div>
-                                        <!-- End product name -->
-                                    </div>
-                                    <!-- End product details -->
-                                </div>
+                                        <!-- end product image -->
 
+                                        <!--start product details -->
+                                        <div class="product-details text-center">
+                                            <!-- product name -->
+                                            <div class="product-name">
+                                                <a href="#">{{ $product->name }}</a>
+                                            </div>
+                                            <!-- End product name -->
+                                        </div>
+                                        <!-- End product details -->
+                                    </div>
                                 @endforeach
 
                             </div>
