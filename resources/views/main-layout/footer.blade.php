@@ -19,10 +19,9 @@
                         <h4 class="h4">Informations</h4>
                         <ul>
                             <li><a href="#">About us</a></li>
-                            <li><a href="{{ url('blog/1') }}">Blog</a></li>
+                            <li><a href="{{ url('http://127.0.0.1:8000/all/blog/1') }}">Blog</a></li>
                             <li><a href="#">Privacy policy</a></li>
                             <li><a href="#">Terms &amp; condition</a></li>
-                            <li><a href="#">Blog</a></li>
                         </ul>
                     </div>
                     <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
