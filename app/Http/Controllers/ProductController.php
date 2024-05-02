@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartModel;
 use App\Models\CategoryModel;
 use App\Models\ProductModel;
 
@@ -343,18 +344,63 @@ class ProductController extends Controller
     // }
 
 
-    public function ProductView($slug)
+    public function ProductView($id)
     {
-        $productview = ProductModel::findOrFail($slug);
+        $productview = ProductModel::findOrFail($id);
         $productviews = ProductModel::all();
         $productss = ProductModel::where('status', 'approve')
-        ->where('stock_status', 'stock')
-        ->inRandomOrder()
-        ->take(8)
-        ->get();
+            ->where('stock_status', 'stock')
+            ->inRandomOrder()
+            ->take(8)
+            ->get();
 
 
         return view('productview', compact('productview', 'productviews', 'productss'));
     }
 
+
+    public function CartAdd(Request $request)
+
+    {
+        $cart = new CartModel;
+        $cart->product_name = trim($request->product_name);
+        $cart->product_id = trim($request->product_id);
+        $cart->product_name = trim($request->product_name);
+        $cart->price = trim($request->price);
+        $cart->quantity = trim($request->quantity);
+        $cart->thumb = trim($request->thumb);
+        $cart->seller_id = trim($request->seller_id);
+        $cart->customer_id = Auth::user()->id;
+
+
+
+        $cart->save();
+
+        $notification = array(
+            'message' => 'Product added to Cart',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('cart')->with($notification);
+    }
+
+
+
+    public function DeleteCart($id)
+    {
+        $carts = CartModel::findOrFail($id);
+
+
+
+        // Delete the category from the database
+        $carts->delete();
+
+        // Redirect back with a success message
+        $notification = [
+            'message' => 'Cart Item Deleted',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->back()->with($notification);
+    }
 }
