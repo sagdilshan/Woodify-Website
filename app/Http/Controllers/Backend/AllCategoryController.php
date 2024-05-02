@@ -193,4 +193,17 @@ class AllCategoryController extends Controller
 
         return redirect()->route('all.category.list')->with($notification);
     }
+
+    // public function ProductView($slug)
+    // {
+    //     $categoryview = CategoryModel::findOrFail($slug);
+    //     $categoryviews = CategoryModel::all();
+    //     $categorys = CategoryModel::where('status', 'approve')
+    //     ->where('stock_status', 'stock')
+    //     ->inRandomOrder()
+    //     ->get();
+
+
+    //     return view('shop', compact('categoryview', 'categoryviews', 'categorys'));
+    // }
 }
