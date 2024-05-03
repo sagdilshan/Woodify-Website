@@ -101,10 +101,7 @@ class CustomerController extends Controller
     //     return view('cart');
     // }
 
-    public function Checkout()
-    {
-        return view('checkout');
-    }
+    
 
     public function MyInquires()
     {

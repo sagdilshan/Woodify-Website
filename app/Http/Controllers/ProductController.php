@@ -398,7 +398,7 @@ class ProductController extends Controller
         // Redirect back with a success message
         $notification = [
             'message' => 'Cart Item Deleted',
-            'alert-type' => 'success'
+            'alert-type' => 'warning'
         ];
 
         return redirect()->back()->with($notification);
