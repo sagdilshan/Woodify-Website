@@ -24,13 +24,14 @@
                     <div class="row billing-fields">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 sm-margin-30px-bottom">
                             <div class="create-ac-content bg-light-gray padding-20px-all">
-                                <form>
+                                <form action="{{ route('checkout.add') }}" method="POST">
+                                    @csrf
                                     <fieldset>
                                         <h2 class="login-title mb-3">Billing details</h2>
                                         <div class="row">
                                             <div class="form-group col-md-12 col-lg-12 col-xl-12 required">
                                                 <label for="input-firstname">Name <span class="required-f">*</span></label>
-                                                <input name="firstname" value="{{ Auth::user()->name }}"
+                                                <input name="customer_name" value="{{ Auth::user()->name }}"
                                                     id="input-firstname" type="text" required>
                                             </div>
 
@@ -38,13 +39,13 @@
                                         <div class="row">
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-email">E-Mail <span class="required-f">*</span></label>
-                                                <input name="email" value="{{ Auth::user()->email }}" id="input-email"
-                                                    type="email" required>
+                                                <input name="customer_email" value="{{ Auth::user()->email }}"
+                                                    id="input-email" type="email" required>
                                             </div>
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-telephone">Telephone <span
                                                         class="required-f">*</span></label>
-                                                <input name="telephone" value="{{ Auth::user()->phone }}"
+                                                <input name="customer_phone" value="{{ Auth::user()->phone }}"
                                                     id="input-telephone" type="number" required>
                                             </div>
                                         </div>
@@ -56,40 +57,40 @@
                                             <div class="form-group col-md-12 col-lg-12 col-xl-12 required">
                                                 <label for="input-address-1">Address <span
                                                         class="required-f">*</span></label>
-                                                <input name="address_1" value="" id="input-address-1" type="text"
-                                                    required>
+                                                <input name="customer_address" value="fdhhdhdh" id="input-address-1"
+                                                    type="text" required>
                                             </div>
                                         </div>
                                         <div class="row">
 
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-city">City <span class="required-f">*</span></label>
-                                                <input name="city" value="" id="input-city" type="text"
+                                                <input name="customer_city" value="dhggnn" id="input-city" type="text"
                                                     required>
                                             </div>
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-province">Province <span
                                                         class="required-f">*</span></label>
-                                                <input name="province" value="" id="input-province" type="text"
-                                                    required>
+                                                <input name="customer_province" value="bxbfbbffb" id="input-province"
+                                                    type="text" required>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-postcode">Postal Code <span
                                                         class="required-f">*</span></label>
-                                                <input name="postcode" value="" id="input-postcode" type="text"
-                                                    required>
+                                                <input name="customer_postal_code" value="35353" id="input-postcode"
+                                                    type="text" required>
                                             </div>
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-country">Country <span class="required-f">*</span></label>
-                                                <select name="country_id" id="input-country" required>
-                                                    <option value=""> --- Please Select --- </option>
-                                                    <option value="244">Aaland Islands</option>
-                                                    <option value="1">Sri Lanka</option>
-                                                    <option value="2">Australia</option>
-                                                    <option value="3">America</option>
-                                                    <option value="4">England</option>
+                                                <select name="customer_country" id="input-country" required>
+                                                    <option value="dssd"> --- Please Select --- </option>
+                                                    <option value="Sri Lanka">Sri Lanka</option>
+                                                    <option value="India">India</option>
+                                                    <option value="Australia">Australia</option>
+                                                    <option value="USA">USA</option>
+                                                    <option value="England">England</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -103,7 +104,7 @@
                                             <div class="form-group col-md-12 col-lg-12 col-xl-12">
                                                 <label for="input-company">Order Notes <span
                                                         class="required-f">*</span></label>
-                                                <textarea class="form-control resize-both" rows="3" placeholder="Optional"></textarea>
+                                                <textarea class="form-control resize-both" rows="3" placeholder="Optional" name="note"></textarea>
                                             </div>
                                         </div>
                                     </fieldset>
@@ -127,22 +128,34 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td class="text-left">Round Sofa</td>
-                                                    <td>$40</td>
-                                                    <td>1</td>
-                                                    <td>$40</td>
-                                                </tr>
+                                                @foreach ($buyitems as $item)
+                                                    <tr>
+                                                        <td class="text-left">{{ $item->product_name }}</td>
+                                                        <td>${{ $item->price }}</td>
+                                                        <td>{{ $item->quantity }}</td>
+                                                        <td>${{ $item->price * $item->quantity }}</td>
+                                                        <input name="id" type="hidden" value="{{ $item->id }}"></input>
+                                                    </tr>
+                                                @endforeach
 
                                             </tbody>
+                                            @php
+                                                $subtotal = 0;
+                                                foreach ($buyitems as $item) {
+                                                    $subtotal += $item->price * $item->quantity;
+                                                }
+
+                                                $shippingCharge = $subtotal * 0.05; // Calculate 5% of the subtotal for shipping charge
+                                                $total = $subtotal + $shippingCharge; // Add the shipping charge to the total
+                                            @endphp
                                             <tfoot class="font-weight-600">
                                                 <tr>
-                                                    <td colspan="3" class="text-right">Shipping </td>
-                                                    <td>$10.00</td>
+                                                    <td colspan="3" class="text-right">Shipping (+5%)</td>
+                                                    <td>${{ number_format($shippingCharge, 2) }}</td>
                                                 </tr>
                                                 <tr>
                                                     <td colspan="3" class="text-right">Total</td>
-                                                    <td>$50.00</td>
+                                                    <td>${{ number_format($total, 2) }}</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
@@ -171,7 +184,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cardname">Name on Card <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="cardname" value=""
+                                                                        <input name="name_on_card" value="ddvdvdv"
                                                                             placeholder="Card Name" id="input-cardname"
                                                                             class="form-control" type="text" required>
                                                                     </div>
@@ -179,15 +192,15 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-country">Credit Card Type <span
                                                                                 class="required-f">*</span></label>
-                                                                        <select name="country_id" class="form-control"
+                                                                        <select name="card_type" class="form-control"
                                                                             required>
-                                                                            <option value=""> --- Please Select ---
+                                                                            <option value="dvd"> --- Please Select ---
                                                                             </option>
-                                                                            <option value="1">American Express
+                                                                            <option value="american">American Express
                                                                             </option>
-                                                                            <option value="2">Visa Card</option>
-                                                                            <option value="3">Master Card</option>
-                                                                            <option value="4">Discover Card</option>
+                                                                            <option value="visa">Visa Card</option>
+                                                                            <option value="master">Master Card</option>
+                                                                            <option value="discover">Discover Card</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
@@ -196,7 +209,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cardno">Credit Card Number <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="cardno" value=""
+                                                                        <input name="card_number" value="435353535"
                                                                             placeholder="Credit Card Number"
                                                                             id="input-cardno" class="form-control"
                                                                             type="text" required>
@@ -205,7 +218,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cvv">CVV Code <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="cvv" value=""
+                                                                        <input name="cvv" value="355"
                                                                             placeholder="Card Verification Number"
                                                                             id="input-cvv" class="form-control"
                                                                             type="text" required>
