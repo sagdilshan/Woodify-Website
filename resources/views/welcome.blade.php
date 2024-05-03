@@ -428,7 +428,7 @@
                                                                 <!-- end product image -->
 
 
-                                                                
+
                                                             </div>
                                                             <!-- end product image -->
                                                             <!--start product details -->
@@ -682,6 +682,8 @@
                     </div>
                 </div>
                 <!--End Latest Blog-->
+
+                
 
                 <!--Store Feature-->
                 <div class="store-feature section">

@@ -110,7 +110,8 @@
                             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}"
                                     style="font-size: 1rem;">Shop </a>
                             </li>
-
+                            <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}" style="font-size: 1rem;">Auction</a>
+                            </li>
                             <li class="lvl1 parent megamenu"><a href="#" style="font-size: 1rem;">About Us </a>
                             </li>
                             <li class="lvl1 parent dropdown"><a href="{{ route('contactus') }}"
@@ -196,6 +197,9 @@
 
             </li>
             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}">Shop </a>
+
+            </li>
+            <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}">Auction</a>
 
             </li>
             <li class="lvl1 parent megamenu"><a href="#">About Us </a>

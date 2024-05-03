@@ -12,6 +12,7 @@ use App\Http\Controllers\DatabaseExportController;
 use App\Http\Controllers\Backend\AllCategoryController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Backend\AuctionController;
 
 
 use App\Http\Controllers;
@@ -40,6 +41,8 @@ Route::get('/', function () {
 
 Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
+
+Route::get('/auction', [AuctionController::class, 'ViewAuction'])->name('auction');
 
 // Route::get('shop/{id}', [ProductController::class, 'shopItem'])->name('shop.item');
 // Route for a specific category or product page in the shop that includes an ID
