@@ -38,7 +38,7 @@
 
 
                                     <tbody>
-                                        @foreach ($cartitems as $item)
+                                        @forelse ($cartitems as $item)
                                             <tr class="cart__row border-bottom line1 cart-flex border-top">
                                                 <td class="cart__image-wrapper cart-flex-item">
                                                     <a><img class="cart__image"
@@ -55,25 +55,7 @@
                                                 <td style="display: none">
                                                     <input type="hidden" name="id" value="{{ $item->id }}">
                                                 </td>
-                                                {{-- <td class="cart__price-wrapper cart-flex-item small--hide">
-                                                <span class="money">${{ $item->price }}</span>
-                                            </td>
-                                            <td class="cart__price-wrapper cart-flex-item text-right">
-                                                <div class="cart__qty text-center">
-                                                    <div class="qtyField">
 
-                                                        <input class="cart__qty-input qty numberadd" type="number"
-                                                            name="updates[]" id="qty" value="{{ $item->quantity }}" min="1"
-                                                            max="5">
-
-                                                    </div>
-                                                </div>
-
-
-                                            </td>
-                                            <td class="text-right ">
-                                                <div><span class="money">$50.00</span></div>
-                                            </td> --}}
 
                                                 <td class="cart__price-wrapper cart-flex-item small--hide">
                                                     <span class="money">${{ $item->price }}</span>
@@ -99,7 +81,11 @@
                                                         class="btn btn--secondary cart__remove" title="Remove Item"><i
                                                             class="icon icon anm anm-times-l"></i></a></td>
                                             </tr>
-                                        @endforeach
+                                            @empty
+                                            <tr>
+                                                <td colspan="7" class="text-center">Your Cart is Currently Empty. Shop Now</td>
+                                            </tr>
+                                        @endforelse
 
                                     </tbody>
                                     <tfoot>
