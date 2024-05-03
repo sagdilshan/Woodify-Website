@@ -57,7 +57,7 @@
                                             <div class="form-group col-md-12 col-lg-12 col-xl-12 required">
                                                 <label for="input-address-1">Address <span
                                                         class="required-f">*</span></label>
-                                                <input name="customer_address" value="fdhhdhdh" id="input-address-1"
+                                                <input name="customer_address" value="" id="input-address-1"
                                                     type="text" required>
                                             </div>
                                         </div>
@@ -65,13 +65,13 @@
 
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-city">City <span class="required-f">*</span></label>
-                                                <input name="customer_city" value="dhggnn" id="input-city" type="text"
+                                                <input name="customer_city" value="" id="input-city" type="text"
                                                     required>
                                             </div>
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-province">Province <span
                                                         class="required-f">*</span></label>
-                                                <input name="customer_province" value="bxbfbbffb" id="input-province"
+                                                <input name="customer_province" value="" id="input-province"
                                                     type="text" required>
                                             </div>
                                         </div>
@@ -79,13 +79,13 @@
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-postcode">Postal Code <span
                                                         class="required-f">*</span></label>
-                                                <input name="customer_postal_code" value="35353" id="input-postcode"
+                                                <input name="customer_postal_code" value="" id="input-postcode"
                                                     type="text" required>
                                             </div>
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-country">Country <span class="required-f">*</span></label>
                                                 <select name="customer_country" id="input-country" required>
-                                                    <option value="dssd"> --- Please Select --- </option>
+                                                    <option > --- Please Select --- </option>
                                                     <option value="Sri Lanka">Sri Lanka</option>
                                                     <option value="India">India</option>
                                                     <option value="Australia">Australia</option>
@@ -184,7 +184,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cardname">Name on Card <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="name_on_card" value="ddvdvdv"
+                                                                        <input name="name_on_card" value=""
                                                                             placeholder="Card Name" id="input-cardname"
                                                                             class="form-control" type="text" required>
                                                                     </div>
@@ -194,7 +194,7 @@
                                                                                 class="required-f">*</span></label>
                                                                         <select name="card_type" class="form-control"
                                                                             required>
-                                                                            <option value="dvd"> --- Please Select ---
+                                                                            <option > --- Please Select ---
                                                                             </option>
                                                                             <option value="american">American Express
                                                                             </option>
@@ -209,7 +209,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cardno">Credit Card Number <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="card_number" value="435353535"
+                                                                        <input name="card_number" value=""
                                                                             placeholder="Credit Card Number"
                                                                             id="input-cardno" class="form-control"
                                                                             type="text" required>
@@ -218,7 +218,7 @@
                                                                         class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                                         <label for="input-cvv">CVV Code <span
                                                                                 class="required-f">*</span></label>
-                                                                        <input name="cvv" value="355"
+                                                                        <input name="cvv" value=""
                                                                             placeholder="Card Verification Number"
                                                                             id="input-cvv" class="form-control"
                                                                             type="text" required>
