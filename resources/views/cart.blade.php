@@ -22,55 +22,84 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-sm-12 col-md-8 col-lg-8 main-col">
-                            <form action="#" method="post" class="cart style2">
+                            <form action="{{ route('cart.update') }}" method="post" class="cart style2">
                                 <table>
                                     <thead class="cart__row cart__header">
                                         <tr>
                                             <th colspan="2" class="text-center">Product</th>
                                             <th class="text-center">Price</th>
+                                            <th class="text-center" style="display: none"></th>
                                             <th class="text-center">Quantity</th>
+
                                             <th class="text-right">Total</th>
                                             <th class="action">&nbsp;</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr class="cart__row border-bottom line1 cart-flex border-top">
-                                            <td class="cart__image-wrapper cart-flex-item">
-                                                <a href="#"><img class="cart__image"
-                                                        src="assetss/images/woodify/product1.jpeg"
-                                                        alt="Elastic Waist Dress - Navy / Small"></a>
-                                            </td>
-                                            <td class="cart__meta small--text-left cart-flex-item">
-                                                <div class="list-view-item__title">
-                                                    <a href="#">Round Sofa </a>
-                                                </div>
 
-                                                <div class="cart__meta-text">
-                                                    Color: Navy<br>Size: Large<br>
-                                                </div>
+
+                                    <tbody>
+                                        @foreach ($cartitems as $item)
+                                            <tr class="cart__row border-bottom line1 cart-flex border-top">
+                                                <td class="cart__image-wrapper cart-flex-item">
+                                                    <a><img class="cart__image"
+                                                            src="{{ !empty($item->thumb) ? url('upload/thumb_images/' . $item->thumb) : url('upload/no_product.png') }}"
+                                                            alt=""></a>
+                                                </td>
+                                                <td class="cart__meta small--text-left cart-flex-item">
+                                                    <div class="list-view-item__title">
+                                                        <a>{{ $item->product_name }}</a>
+                                                    </div>
+
+
+                                                </td>
+                                                <td style="display: none">
+                                                    <input type="hidden" name="id" value="{{ $item->id }}">
+                                                </td>
+                                                {{-- <td class="cart__price-wrapper cart-flex-item small--hide">
+                                                <span class="money">${{ $item->price }}</span>
                                             </td>
-                                            <td class="cart__price-wrapper cart-flex-item">
-                                                <span class="money">$40.00</span>
-                                            </td>
-                                            <td class="cart__update-wrapper cart-flex-item text-right">
+                                            <td class="cart__price-wrapper cart-flex-item text-right">
                                                 <div class="cart__qty text-center">
                                                     <div class="qtyField">
-                                                        <a class="qtyBtn minus" href="javascript:void(0);"><i
-                                                                class="icon icon-minus"></i></a>
-                                                        <input class="cart__qty-input qty" type="text" name="updates[]"
-                                                            id="qty" value="1"  pattern="[0-9]*">
-                                                        <a class="qtyBtn plus" href="javascript:void(0);"><i
-                                                                class="icon icon-plus"></i></a>
+
+                                                        <input class="cart__qty-input qty numberadd" type="number"
+                                                            name="updates[]" id="qty" value="{{ $item->quantity }}" min="1"
+                                                            max="5">
+
                                                     </div>
                                                 </div>
+
+
                                             </td>
-                                            <td class="text-right small--hide cart-price">
-                                                <div><span class="money">$40.00</span></div>
-                                            </td>
-                                            <td class="text-center small--hide"><a href="#"
-                                                    class="btn btn--secondary cart__remove" title="Remove Item"><i
-                                                        class="icon icon anm anm-times-l"></i></a></td>
-                                        </tr>
+                                            <td class="text-right ">
+                                                <div><span class="money">$50.00</span></div>
+                                            </td> --}}
+
+                                                <td class="cart__price-wrapper cart-flex-item small--hide">
+                                                    <span class="money">${{ $item->price }}</span>
+                                                </td>
+                                                <td class="cart__price-wrapper cart-flex-item text-right">
+                                                    <div class="cart__qty text-center">
+                                                        <div class="qtyField">
+                                                            <input class="cart__qty-input qty numberadd" type="number"
+                                                                name="updates[]" id="qty_{{ $item->id }}"
+                                                                data-price="{{ $item->price }}"
+                                                                value="{{ $item->quantity }}" min="1" max="5"
+                                                                onchange="updateTotalPrice(this);">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="text-right ">
+                                                    <div id="total_price_{{ $item->id }}"><span
+                                                            class="money">${{ $item->price * $item->quantity }}</span>
+                                                    </div>
+                                                </td>
+
+                                                <td class="text-center "><a href="{{ route('cart.delete', $item->id) }}"
+                                                        class="btn btn--secondary cart__remove" title="Remove Item"><i
+                                                            class="icon icon anm anm-times-l"></i></a></td>
+                                            </tr>
+                                        @endforeach
 
                                     </tbody>
                                     <tfoot>
@@ -84,18 +113,44 @@
                                 </table>
 
 
-
-
                             </form>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
 
+
+
+
+
+                        </div>
+
+
+                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 cart__footer">
                             <form>
+                                @php
+                                    $subtotal = 0;
+                                @endphp
+
+                                @foreach ($cartitems as $item)
+                                    <tr>
+                                        <!-- Your item details here -->
+                                        <td class="text-right">
+                                            <span style="display: none"
+                                                class="money">${{ $item->price * $item->quantity }}</span>
+                                        </td>
+
+                                    </tr>
+                                    @php
+                                        $subtotal += $item->price * $item->quantity;
+                                    @endphp
+                                @endforeach
+
+
+
                                 <div class="solid-border">
                                     <div class="row">
                                         <span class="col-12 col-sm-6 cart__subtotal-title"><strong>Subtotal</strong></span>
-                                        <span class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span
-                                                class="money">$40.00</span></span>
+                                        <span id="total_charges"
+                                            class="col-12 col-sm-6 cart__subtotal-title cart__subtotal text-right"><span
+                                                class="money">${{ number_format($subtotal, 2) }}</span></span>
+
                                     </div>
                                     <div class="cart__shipping">Shipping &amp; taxes calculated at checkout</div>
                                     <p class="cart_tearm">
@@ -104,14 +159,16 @@
                                                 value="tearm" required>
                                             I agree with the terms and conditions</label>
                                     </p>
-                                    <input type="button" name="checkout" id="cartCheckout" onclick="redirectToCheckout()"
-                                        class="btn btn--small-wide checkout" value="Checkout">
+                                    <input type="button" name="checkout" id="cartCheckout"
+                                        class="btn btn--small-wide checkout" value="Checkout"
+                                        onclick="redirectToCheckout()">
                                     <div class="paymnet-img"><img src="assetss/images/payment-img.jpg" alt="Payment">
                                     </div>
                                 </div>
-                            </form>
 
+                            </form>
                         </div>
+
                     </div>
                 </div>
 
@@ -120,6 +177,7 @@
 
 
         </div>
+
         <script>
             function redirectToCheckout() {
                 var checkbox = document.getElementById('cartTearm');
@@ -130,6 +188,61 @@
                     // Checkbox is not checked, alert the user
                     alert('Please agree to the terms and conditions before proceeding to checkout.');
                 }
+            }
+        </script>
+
+
+        <script>
+            function updateTotalPrice(element) {
+                var price = parseFloat(element.dataset.price); // Get the unit price from data attribute
+                var quantity = parseInt(element.value); // Get the current quantity from the input field
+                var total = price * quantity; // Calculate total price
+
+                // Update the total price display
+                document.getElementById('total_price_' + element.id.split('_')[1]).innerHTML =
+                    `<span class="money">$${total.toFixed(2)}</span>`;
+            }
+        </script>
+
+        <script>
+            function updateQuantityInDatabase(itemId, quantity) {
+                fetch('/cart/update-quantity', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                        },
+                        body: JSON.stringify({
+                            id: itemId,
+                            quantity: quantity
+                        })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        // Update individual item's total price
+                        const totalPriceElement = document.getElementById('total_price_' + itemId);
+                        const pricePerItem = parseFloat(totalPriceElement.dataset.price);
+                        totalPriceElement.innerHTML = `<span class="money">$${(pricePerItem * quantity).toFixed(2)}</span>`;
+
+                        // Recalculate and update total charges sum
+                        updateTotalCharges();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            }
+
+            function updateTotalCharges() {
+                const totalChargesElement = document.getElementById('total_charges');
+                const totalPriceElements = document.querySelectorAll('[id^="total_price_"]');
+
+                let total = 0;
+                totalPriceElements.forEach(element => {
+                    total += parseFloat(element.innerText.replace('$', ''));
+                });
+
+                totalChargesElement.innerHTML = `<span class="money">$${total.toFixed(2)}</span>`;
             }
         </script>
 
