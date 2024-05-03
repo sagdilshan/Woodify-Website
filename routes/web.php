@@ -124,7 +124,8 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::post('/cart/update', [ProductController::class, 'UpdateCart'])->name('cart.update');
     Route::get('/cart/delete/{id}', [ProductController::class, 'DeleteCart'])->name('cart.delete');
 
-    Route::get('/checkout', [CustomerController::class, 'Checkout'])->name('checkout');
+    Route::get('/checkout', [CartController::class, 'Checkout'])->name('checkout');
+    Route::post('/checkout/add', [CartController::class, 'CheckoutAdd'])->name('checkout.add');
 
 }); // end group customer middlewere
 
