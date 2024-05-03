@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assetss/css/bootstrap.min.css">
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assetss/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
     <link rel="stylesheet" href="assetss/css/responsive.css">
 </head>
 
@@ -112,7 +113,8 @@
 
                             <li class="lvl1 parent megamenu"><a href="#" style="font-size: 1rem;">About Us </a>
                             </li>
-                            <li class="lvl1 parent dropdown"><a href="{{ route('contactus') }}" style="font-size: 1rem;">Contact Us
+                            <li class="lvl1 parent dropdown"><a href="{{ route('contactus') }}"
+                                    style="font-size: 1rem;">Contact Us
                                 </a>
 
                             </li>
@@ -179,7 +181,7 @@
                             </div>
                         @endauth
                     @endif
-                   
+
                 </div>
 
             </div>
@@ -229,7 +231,30 @@
     <!-- Photoswipe Gallery -->
     <script src="assetss/js/vendor/photoswipe.min.js"></script>
     <script src="assetss/js/vendor/photoswipe-ui-default.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        @if (Session::has('message'))
+            var type = "{{ Session::get('alert-type', 'info') }}"
+            switch (type) {
+                case 'info':
+                    toastr.info(" {{ Session::get('message') }} ");
+                    break;
 
+                case 'success':
+                    toastr.success(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'warning':
+                    toastr.warning(" {{ Session::get('message') }} ");
+                    break;
+
+                case 'error':
+                    toastr.error(" {{ Session::get('message') }} ");
+                    break;
+            }
+        @endif
+    </script>
 </body>
 
 </html>
