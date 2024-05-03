@@ -42,13 +42,13 @@
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>My Products</b> <a class="float-right">1,322</a>
+                                        <b>My Products</b> <a class="float-right">{{ $product_approved }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>My Sale Items</b> <a class="float-right">543</a>
+                                        <b>My Sale Items</b> <a class="float-right">{{ $allorders }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>$ Earn</b> <a class="float-right">255</a>
+                                        <b>$ Earn</b> <a class="float-right">{{ $formattedPrice }}</a>
                                     </li>
                                 </ul>
 
@@ -73,8 +73,8 @@
                                     </li>
 
                                     <li class="nav-item"><a class="nav-link" href="#changepassword" data-toggle="tab">Change
-                                        Password</a>
-                                </li>
+                                            Password</a>
+                                    </li>
                                 </ul>
                             </div><!-- /.card-header -->
                             <div class="card-body">
@@ -200,8 +200,8 @@
                                     </div>
 
                                     <div class="tab-pane" id="changepassword">
-                                        <form method="POST" action="{{route('seller.update.password')}}" class="form-horizontal"
-                                            enctype="multipart/form-data">
+                                        <form method="POST" action="{{ route('seller.update.password') }}"
+                                            class="form-horizontal" enctype="multipart/form-data">
                                             @csrf
 
 
@@ -222,28 +222,27 @@
                                             <div class="form-group row">
                                                 <label for="newpass" class="col-sm-2 col-form-label">New
                                                     Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password"
-                                                            class="form-control @error('new_password') is-invalid @enderror"
-                                                            name="new_password" id="new_password"
-                                                            placeholder="Enter Your New Password">
+                                                <div class="col-sm-10">
+                                                    <input type="password"
+                                                        class="form-control @error('new_password') is-invalid @enderror"
+                                                        name="new_password" id="new_password"
+                                                        placeholder="Enter Your New Password">
 
-                                                        @error('new_password')
-                                                            <span class="text-danger">{{ $message }}</span>
-                                                        @enderror
-                                                    </div>
+                                                    @error('new_password')
+                                                        <span class="text-danger">{{ $message }}</span>
+                                                    @enderror
+                                                </div>
                                             </div>
                                             <div class="form-group row">
                                                 <label for="cpassword" class="col-sm-2 col-form-label">Confirm
                                                     Password</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password"
-                                                            class="form-control"
-                                                            name="new_password_confirmation" id="new_password_confirmation"
-                                                            placeholder="Confirm Your New Password">
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control"
+                                                        name="new_password_confirmation" id="new_password_confirmation"
+                                                        placeholder="Confirm Your New Password">
 
 
-                                                    </div>
+                                                </div>
                                             </div>
 
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartModel;
+
 use App\Models\ProductModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -27,7 +29,25 @@ class SellerController extends Controller
             ->where('status', 'rejected')
             ->count();
 
-        return view('website-pages.seller.index', compact('product_approved', 'product_disapproved', 'product_rejected'));
+        $sellerId = Auth::id();
+        $pending_orders = CartModel::where('status', 'buy')
+            ->where('order_status', 'pending')
+            ->where('seller_id', $sellerId)
+            ->count();
+
+        $allorders = CartModel::where('status', 'buy')
+            ->where('order_status', 'pending')
+            ->where('seller_id', $sellerId)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $totalPrice = CartModel::whereIn('order_status', ['delivery', 'delivered'])
+            ->where('status', 'buy')
+            ->where('seller_id', $sellerId)
+            ->sum('price');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+        return view('website-pages.seller.index', compact('product_approved', 'formattedPrice', 'allorders', 'product_disapproved', 'product_rejected', 'pending_orders'));
 
 
     }
@@ -47,7 +67,24 @@ class SellerController extends Controller
     {
         $id = Auth::user()->id;
         $profileData = user::find($id);
-        return view('website-pages.seller.profile', compact('profileData'));
+
+        $user_id = auth()->id(); // Get the ID of the currently authenticated user
+
+        $product_approved = ProductModel::where('created_by', $user_id)
+            ->where('status', 'approve')
+            ->count();
+        $allorders = CartModel::where('status', 'buy')
+            ->whereIn('order_status', ['delivery', 'delivered'])
+            ->where('seller_id', $user_id)
+            ->count();
+
+        $totalPrice = CartModel::whereIn('order_status', ['delivery', 'delivered'])
+            ->where('status', 'buy')
+            ->where('seller_id', $user_id)
+            ->sum('price');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+        return view('website-pages.seller.profile', compact('profileData', 'formattedPrice', 'allorders', 'product_approved'));
     }
 
     public function SellerProfileStore(Request $request)
@@ -116,10 +153,51 @@ class SellerController extends Controller
     {
         $userId = Auth::id();
         $allcontact = ContactModel::where('status', 'responded')
-            ->where('user_id', $userId )
+            ->where('user_id', $userId)
             ->orderBy('created_at', 'desc')
             ->get();
 
         return view('website-pages.seller.contact.my-contact', compact('allcontact'));
+    }
+
+    public function SellerOrders()
+    {
+        $sellerId = Auth::id();
+        $deliveryorders = CartModel::where('status', 'buy')
+            // ->whereIn('order_status', ['delivery', 'delivered'])
+            ->where('order_status', 'delivery')
+            ->where('seller_id', $sellerId)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        $deliveredorders = CartModel::where('status', 'buy')
+            // ->whereIn('order_status', ['delivery', 'delivered'])
+            ->where('order_status', 'delivered')
+            ->where('seller_id', $sellerId)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.seller.orders.all-orders', compact('deliveryorders', 'deliveredorders'));
+    }
+
+    public function sellerOrderStatus($id)
+    {
+        $order = CartModel::find($id);
+
+        if ($order) {
+            $order->update(['order_status' => 'delivery']);
+            $notification = array(
+                'message' => 'Order Status Updated',
+                'alert-type' => 'success'
+            );
+            return redirect()->back()->with($notification);
+        }
+        $notification = array(
+            'message' => 'Order Status Updated',
+            'alert-type' => 'success'
+        );
+
+
+        return redirect()->back()->with($notification);
     }
 }

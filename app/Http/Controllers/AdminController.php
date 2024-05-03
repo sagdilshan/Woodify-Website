@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\ProductModel;
 use Illuminate\Support\Facades\Hash;
+use App\Models\CartModel;
+
 use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Validator;
 
@@ -34,7 +36,30 @@ class AdminController extends Controller
         $totalcustomers = $fakeTotalcustomers + $realTotalcustomers;
         $formattedTotalcustomers = number_format($totalcustomers);
 
-        return view('website-pages.admin.index', compact('formattedTotalSellers', 'product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
+
+        $totalPrice = CartModel::whereIn('order_status', ['delivery', 'delivered'])
+            ->where('status', 'buy')
+            ->sum('price');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+
+        $all_sales = CartModel::where('status', 'buy')
+            ->whereIn('order_status', ['delivery', 'delivered'])
+            ->count();
+
+        $totalPrice = CartModel::whereIn('order_status', ['delivery', 'delivered'])
+            ->where('status', 'buy')
+            ->sum('price');
+        $formattedPrice = number_format($totalPrice, 0, '.', ',');
+
+        $onePercent = $totalPrice * 0.015;
+
+        $pending_orders = CartModel::where('status', 'buy')
+            ->where('order_status', 'pending')
+            ->count();
+
+
+        return view('website-pages.admin.index', compact('formattedTotalSellers','pending_orders', 'all_sales', 'onePercent', 'formattedPrice', 'product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
     }
 
     public function AdminLogout(Request $request)
@@ -404,6 +429,16 @@ class AdminController extends Controller
         );
 
         return redirect()->route('all.contact')->with($notification);
+    }
+
+    public function AllSales()
+    {
+        $allsales = CartModel::whereIn('order_status', ['delivery', 'pending'])
+            ->where('status', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.admin.sales.all-sales', compact('allsales'));
     }
 
 

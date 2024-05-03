@@ -146,6 +146,18 @@
 </script>
 
 <script>
+    $(function() {
+        $("#example2").DataTable({
+            "responsive": true,
+            "lengthChange": false,
+            "autoWidth": false,
+            "buttons": ["excel", "pdf", "print"]
+        }).buttons().container().appendTo('#example2_wrapper .col-md-6:eq(0)');
+
+    });
+</script>
+
+<script>
     $(document).ready(function() {
       $('.product-image-thumb').on('click', function () {
         var $image_element = $(this).find('img')

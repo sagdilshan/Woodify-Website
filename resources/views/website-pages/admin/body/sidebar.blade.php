@@ -202,7 +202,15 @@
 
 
 
-
+                <li class="nav-item">
+                    <a href="{{ route('all.sales') }}"
+                        class="nav-link {{ Route::is('all.sales') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-poll"></i>
+                        <p>
+                            All Sales
+                        </p>
+                    </a>
+                </li>
 
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">

@@ -237,6 +237,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         Route::get('all/edit/contact/{id}', 'AllEditContact')->name('edit.contact');
         Route::post('all/update/contact/{id}', 'AllUpdateContact')->name('update.contact');
 
+
+        Route::get('/all/sales', 'AllSales')->name('all.sales');
+
     });
 
 
@@ -261,6 +264,9 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
     Route::controller(SellerController::class)->group(function () {
 
         Route::get('/seller/inquires', 'MyInquires')->name('seller.inquires');
+
+        Route::get('/seller/orders', 'SellerOrders')->name('seller.orders');
+        Route::put('/seller/order/status/{id}', 'sellerOrderStatus')->name('seller.order.status');
 
     });
 
