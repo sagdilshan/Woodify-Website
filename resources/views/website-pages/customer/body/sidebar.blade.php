@@ -44,6 +44,7 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="{{route('cart')}}" class="nav-link ">
                         <i class="nav-icon fa fa-shopping-cart"></i>
@@ -52,7 +53,15 @@
                         </p>
                     </a>
                 </li>
-
+                <li class="nav-item">
+                    <a href="{{ route('past.orders') }}"
+                        class="nav-link {{ Route::is('past.orders') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-shopping-basket"></i>
+                        <p>
+                            All Orders
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a href="{{ route('my.inquires') }}"
                         class="nav-link {{ Route::is('my.inquires') ? 'active' : '' }}">
@@ -62,7 +71,7 @@
                         </p>
                     </a>
                 </li>
-               
+
 
 
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CartModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\ContactModel;
@@ -12,7 +13,23 @@ class CustomerController extends Controller
 {
     public function CustomerDashboard()
     {
-        return view('website-pages.customer.index');
+        $userId = Auth::id();
+        $orders = CartModel::where('order_status', 'pending')
+            ->where('customer_id', $userId )
+            ->where('status', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+
+        $total_orders = CartModel::where('status', 'buy')
+        ->where('customer_id', $userId )
+        ->count();
+        $pending_orders = CartModel::where('status', 'buy')
+        ->where('order_status', 'pending')
+        ->where('customer_id', $userId )
+        ->count();
+
+        return view('website-pages.customer.index', compact('orders','total_orders','pending_orders'));
     }
 
     public function CustomerLogout(Request $request)
@@ -101,7 +118,7 @@ class CustomerController extends Controller
     //     return view('cart');
     // }
 
-    
+
 
     public function MyInquires()
     {
@@ -113,4 +130,35 @@ class CustomerController extends Controller
 
         return view('website-pages.customer.contact.my-contact', compact('allcontact'));
     }
+
+
+    public function PastOrders()
+    {
+        $userId = Auth::id();
+        $pastorders = CartModel::where('order_status', 'delivery')
+    //    -> whereIn('order_status', ['delivery', 'delivered'])
+            ->where('customer_id', $userId )
+            ->where('status', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->get();
+            $completeorders = CartModel::where('order_status', 'delivered')
+            ->where('customer_id', $userId )
+            ->where('status', 'buy')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('website-pages.customer.orders.past-orders', compact('pastorders','completeorders'));
+    }
+
+    public function updateOrderStatus($id) {
+        $order = CartModel::find($id);
+
+        if ($order) {
+            $order->update(['order_status' => 'delivered']);
+            return redirect()->back()->with('success', 'Order status updated to delivered');
+        }
+
+        return redirect()->back()->with('error', 'Failed to update order status');
+    }
+
 }

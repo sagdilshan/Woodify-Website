@@ -273,6 +273,9 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
 
         Route::get('/my/inquires', 'MyInquires')->name('my.inquires');
 
+        Route::get('/past/orders', 'PastOrders')->name('past.orders');
+        Route::put('/update-order-status/{id}', 'updateOrderStatus')->name('update.order.status');
+
     });
 
 

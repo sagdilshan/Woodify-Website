@@ -115,12 +115,14 @@ class CartController extends Controller
         // ]);
 
         $notification = array(
-            'message' => 'Your Order Submited',
+            'message' => 'Your Order Placed',
             'alert-type' => 'success'
         );
 
-        return redirect()->route('shop')->with($notification);
+        return redirect()->route('customer.dashboard')->with($notification);
 
     }
+
+
 }
 
