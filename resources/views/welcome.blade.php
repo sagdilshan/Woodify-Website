@@ -683,7 +683,7 @@
                 </div>
                 <!--End Latest Blog-->
 
-                
+
 
                 <!--Store Feature-->
                 <div class="store-feature section">
