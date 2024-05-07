@@ -7,7 +7,7 @@
         <div class="pageWrapper">
 
             <br><br><br>
-            <!--Body Content-->
+            <!--Body Con tent-->
             <div id="page-content">
                 <!--Page Title-->
                 <div class="page section-header text-center">
