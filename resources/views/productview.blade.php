@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../assetss/css/plugins.css">
         <!-- Bootstap CSS -->
         <link rel="stylesheet" href="../assetss/css/bootstrap.min.css">
-        <!-- Main Style CSS -->
+        <!-- Main Style C SS -->
         <link rel="stylesheet" href="../assetss/css/style.css">
         <link rel="stylesheet" href="../assetss/css/responsive.css">
     </head>
