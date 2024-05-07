@@ -11,7 +11,7 @@
 
             <br><br><br>
 
-            <!--Body Content-->
+            <!--Body  Content-->
             <div id="page-content">
                 <!--Page Title-->
                 <div class="page section-header text-center">
