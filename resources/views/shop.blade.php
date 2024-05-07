@@ -21,7 +21,7 @@
                         </div>
                     </div>
                 </div>
-                <!--End Collection Banner-->
+                <!--End Collection  Banner-->
                 <br><br>
                 <div class="container-fluid">
                     <div class="row">
