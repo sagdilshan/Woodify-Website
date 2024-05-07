@@ -8,7 +8,7 @@
         <div class="pageWrapper">
 
             <br><br><br>
-            <!--Body Content-->
+            <!--Body  Content-->
             <div id="page-content">
                 <!--Collection Banner-->
                 <div class="collection-header">
