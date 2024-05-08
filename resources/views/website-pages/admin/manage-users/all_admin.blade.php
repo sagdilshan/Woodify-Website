@@ -19,7 +19,7 @@
                         </ol>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div><!-- /.cont ainer-fluid -->
         </section>
 
         <!-- Main content -->
