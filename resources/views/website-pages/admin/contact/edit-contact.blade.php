@@ -18,7 +18,7 @@
                         </ol>
                     </div>
                 </div>
-            </div><!-- /.container-fluid -->
+            </div><!-- /.conta iner-fluid -->
         </section>
 
         <!-- Main content -->
