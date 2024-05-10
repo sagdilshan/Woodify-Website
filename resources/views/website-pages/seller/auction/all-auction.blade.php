@@ -77,29 +77,12 @@
                                                     @endif
                                                 </td>
 
-                                                {{-- <td>
-                                                    @if ($item->stock_status == 'stock')
-                                                        <span class="badge badge-primary text-uppercase" style="font-size: 1rem;">Stocks</span>
-                                                    @elseif ($item->stock_status == 'out_of_stock')
-                                                        <span class="badge badge-dark text-uppercase" style="font-size: 1rem;">Out of Stocks</span>
-                                                    @else
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">Error</span>
-                                                    @endif
-                                                </td>
-                                                <td>
-                                                    @if ($item->status == 'approve')
-                                                        <span class="badge badge-success text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
-                                                    @elseif ($item->status == 'disapprove')
-                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
-                                                    @else
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
-                                                    @endif
-                                                </td> --}}
+
 
                                                 <td>
-                                                    <a href="{{ route('seller.close.auction', $item->id) }}"
-                                                        class="btn btn-outline-info">Close Auction</a>
-
+                                                    @if ($endDate->isPast())
+                                                        <a href="{{ route('seller.close.auction', $item->id) }}" class="btn btn-outline-info">Close Auction</a>
+                                                    @endif
                                                 </td>
 
                                             </tr>
