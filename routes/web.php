@@ -78,7 +78,15 @@ Route::controller(PostController::class)->group(function () {
 
 Route::controller(ProductController::class)->group(function () {
 
-    Route::get('/product-view/{id}','ProductView')->name('product.view');
+    Route::get('/product-view/{id}', 'ProductView')->name('product.view');
+
+});
+
+Route::controller(AuctionController::class)->group(function () {
+
+    Route::get('/auction-view/{id}', 'AuctionProductView')->name('auction.view');
+    Route::post('/auction/add', 'AuctionAdd')->name('auction.add');
+
 
 });
 
@@ -126,6 +134,8 @@ Route::middleware(['auth', 'role:customer'])->group(function () {
     Route::post('/cart/add', [ProductController::class, 'CartAdd'])->name('cart.add');
     Route::post('/cart/update', [ProductController::class, 'UpdateCart'])->name('cart.update');
     Route::get('/cart/delete/{id}', [ProductController::class, 'DeleteCart'])->name('cart.delete');
+
+
 
     Route::get('/checkout', [CartController::class, 'Checkout'])->name('checkout');
     Route::post('/checkout/add', [CartController::class, 'CheckoutAdd'])->name('checkout.add');
@@ -261,6 +271,18 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
         Route::get('seller/edit/products/{id}', 'SellerEditProduct')->name('seller.edit.products');
         Route::post('seller/update/products/{id}', 'SellerUpdateProduct')->name('seller.update.products');
         Route::get('seller/delete/products/{id}', 'SellerDeleteProduct')->name('seller.delete.products');
+
+    });
+
+    Route::controller(AuctionController::class)->group(function () {
+
+        Route::get('/seller/all/auction', 'SellerAllAuction')->name('seller.all.auction');
+        Route::get('seller/add/auction', 'SellerAddAuction')->name('seller.add.auction');
+        Route::get('seller/close/auction/{id}', 'SellerCloseAuction')->name('seller.close.auction');
+        Route::post('seller/store/auction', 'SellerStoreAuction')->name('seller.store.auction');
+        // Route::get('seller/edit/auction/{id}', 'SellerEditAuction')->name('seller.edit.auction');
+        Route::post('my/close/auction', 'MyCloseAuction')->name('my.close.auction');
+        // Route::get('seller/delete/products/{id}', 'SellerDeleteProduct')->name('seller.delete.products');
 
     });
 
