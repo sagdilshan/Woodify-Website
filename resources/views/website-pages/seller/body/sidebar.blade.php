@@ -1,8 +1,8 @@
 <aside class="main-sidebar sidebar-dark-lightblue elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('seller.dashboard') }}" class="brand-link">
-        <img src="{{ asset('../assets/dist/img/woodify-fav.png') }}" alt="Woodify Logo" class="brand-image img-circle elevation-3"
-            style="opacity: .8">
+        <img src="{{ asset('../assets/dist/img/woodify-fav.png') }}" alt="Woodify Logo"
+            class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-dark">WOODIFY</span>
     </a>
 
@@ -38,7 +38,8 @@
                 <li class="nav-header mb-2">MAIN</li>
 
                 <li class="nav-item">
-                    <a href="{{route('seller.dashboard')}}" class="nav-link {{ Route::is('seller.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('seller.dashboard') }}"
+                        class="nav-link {{ Route::is('seller.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Overview
@@ -47,10 +48,20 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('seller.all.products')}}" class="nav-link {{ Route::is('seller.all.products') ? 'active' : '' }} {{ Route::is('seller.add.products') ? 'active' : '' }}{{ Route::is('seller.edit.products') ? 'active' : '' }}{{ Route::is('seller.view.products') ? 'active' : '' }}">
+                    <a href="{{ route('seller.all.products') }}"
+                        class="nav-link {{ Route::is('seller.all.products') ? 'active' : '' }} {{ Route::is('seller.add.products') ? 'active' : '' }}{{ Route::is('seller.edit.products') ? 'active' : '' }}{{ Route::is('seller.view.products') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-bars"></i>
                         <p>
                             My Products
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('seller.all.auction') }}"
+                        class="nav-link {{ Route::is('seller.all.auction') ? 'active' : '' }} {{ Route::is('seller.add.products') ? 'active' : '' }}{{ Route::is('seller.edit.products') ? 'active' : '' }}{{ Route::is('seller.view.products') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            My Auction Items
                         </p>
                     </a>
                 </li>
@@ -126,7 +137,8 @@
 
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">
-                    <a href="{{ route('seller.profile') }}" class="nav-link {{ Route::is('seller.profile') ? 'active' : '' }}">
+                    <a href="{{ route('seller.profile') }}"
+                        class="nav-link {{ Route::is('seller.profile') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-user-circle"></i>
                         <p>
                             Profile
