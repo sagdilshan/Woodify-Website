@@ -200,4 +200,7 @@ class SellerController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    
+
 }
