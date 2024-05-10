@@ -254,6 +254,7 @@ class AuctionController extends Controller
         $cart->thumb = trim($request->input('thumb'));
         $cart->seller_id = trim($request->input('seller_id'));
         $cart->customer_id = trim($request->input('customer_id'));
+        $cart->status = 'buy';
 
         $cart->save();
 
@@ -265,6 +266,6 @@ class AuctionController extends Controller
         return redirect()->route('seller.all.auction')->with($notification);
     }
 
-    
+
 
 }
