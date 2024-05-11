@@ -42,14 +42,15 @@
 
                                 <ul class="list-group list-group-unbordered mb-3">
                                     <li class="list-group-item">
-                                        <b>My All Orders</b> <a class="float-right">25</a>
+                                        <b>My All Orders</b> <a class="float-right">{{ $total_orders }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Completed Orders</b> <a class="float-right">15</a>
+                                        <b>Pending Orders</b> <a class="float-right">{{ $pending_orders }}</a>
                                     </li>
                                     <li class="list-group-item">
-                                        <b>Canceld Orders</b> <a class="float-right">10</a>
+                                        <b>Completed Orders</b> <a class="float-right">{{ $orders }}</a>
                                     </li>
+
                                 </ul>
 
                                 {{-- <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a> --}}
