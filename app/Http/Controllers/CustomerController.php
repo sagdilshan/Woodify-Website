@@ -15,21 +15,21 @@ class CustomerController extends Controller
     {
         $userId = Auth::id();
         $orders = CartModel::where('order_status', 'pending')
-            ->where('customer_id', $userId )
+            ->where('customer_id', $userId)
             ->where('status', 'buy')
             ->orderBy('created_at', 'desc')
             ->get();
 
 
         $total_orders = CartModel::where('status', 'buy')
-        ->where('customer_id', $userId )
-        ->count();
+            ->where('customer_id', $userId)
+            ->count();
         $pending_orders = CartModel::where('status', 'buy')
-        ->where('order_status', 'pending')
-        ->where('customer_id', $userId )
-        ->count();
+            ->where('order_status', 'pending')
+            ->where('customer_id', $userId)
+            ->count();
 
-        return view('website-pages.customer.index', compact('orders','total_orders','pending_orders'));
+        return view('website-pages.customer.index', compact('orders', 'total_orders', 'pending_orders'));
     }
 
     public function CustomerLogout(Request $request)
@@ -46,9 +46,24 @@ class CustomerController extends Controller
 
     public function CustomerProfile()
     {
-        $id = Auth::user()->id;
-        $profileData = user::find($id);
-        return view('website-pages.customer.profile', compact('profileData'));
+        $userId = Auth::user()->id;
+        $profileData = user::find($userId);
+
+        $orders =  CartModel::where('status', 'buy')
+        ->whereIn('order_status', ['delivered','delivery'])
+        ->where('customer_id', $userId)
+        ->count();
+
+
+        $total_orders = CartModel::where('status', 'buy')
+            ->where('customer_id', $userId)
+            ->count();
+        $pending_orders = CartModel::where('status', 'buy')
+            ->where('order_status', 'pending')
+            ->where('customer_id', $userId)
+            ->count();
+
+        return view('website-pages.customer.profile', compact('profileData', 'orders', 'total_orders', 'pending_orders'));
     }
 
     public function CustomerProfileStore(Request $request)
@@ -124,7 +139,7 @@ class CustomerController extends Controller
     {
         $userId = Auth::id();
         $allcontact = ContactModel::where('status', 'responded')
-            ->where('user_id', $userId )
+            ->where('user_id', $userId)
             ->orderBy('created_at', 'desc')
             ->get();
 
@@ -136,21 +151,22 @@ class CustomerController extends Controller
     {
         $userId = Auth::id();
         $pastorders = CartModel::where('order_status', 'delivery')
-    //    -> whereIn('order_status', ['delivery', 'delivered'])
-            ->where('customer_id', $userId )
+            //    -> whereIn('order_status', ['delivery', 'delivered'])
+            ->where('customer_id', $userId)
             ->where('status', 'buy')
             ->orderBy('created_at', 'desc')
             ->get();
-            $completeorders = CartModel::where('order_status', 'delivered')
-            ->where('customer_id', $userId )
+        $completeorders = CartModel::where('order_status', 'delivered')
+            ->where('customer_id', $userId)
             ->where('status', 'buy')
             ->orderBy('created_at', 'desc')
             ->get();
 
-        return view('website-pages.customer.orders.past-orders', compact('pastorders','completeorders'));
+        return view('website-pages.customer.orders.past-orders', compact('pastorders', 'completeorders'));
     }
 
-    public function updateOrderStatus($id) {
+    public function updateOrderStatus($id)
+    {
         $order = CartModel::find($id);
 
         if ($order) {
