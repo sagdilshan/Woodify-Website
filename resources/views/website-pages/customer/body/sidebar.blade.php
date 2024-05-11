@@ -54,11 +54,27 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{route('shop')}}" class="nav-link ">
+                        <i class="nav-icon fas fa-store"></i>
+                        <p>
+                            Shop
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('auction')}}" class="nav-link ">
+                        <i class="nav-icon fas fa-bullhorn"></i>
+                        <p>
+                            Auction
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('past.orders') }}"
                         class="nav-link {{ Route::is('past.orders') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-shopping-basket"></i>
                         <p>
-                            All Orders
+                            My Orders
                         </p>
                     </a>
                 </li>
