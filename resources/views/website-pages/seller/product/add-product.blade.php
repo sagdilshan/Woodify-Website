@@ -53,7 +53,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Regular Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="price"
-                                                        placeholder="Enter regular price" required id="price" >
+                                                        placeholder="Enter regular price" required id="price" step="0.01">
                                                 </div>
                                             </div>
 
@@ -61,7 +61,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Sale Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="sale_price"
-                                                        placeholder="Enter sale price" required id="sale_price" >
+                                                        placeholder="Enter sale price" required id="sale_price" step="0.01">
                                                 </div>
                                             </div>
 
@@ -81,7 +81,7 @@
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Select Market</label>
                                                 <div class="col-sm-10">
-                                                 
+
                                                     <select class="form-control" id="sale_type" name="sale_type" required>
 
                                                             <option value="normal">Normal Market
