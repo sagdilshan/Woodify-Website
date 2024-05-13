@@ -100,8 +100,9 @@
                                         </li>
                                         <!-- Add comments count if available -->
                                     </ul>
+                                    {{-- {!! $post->content !!} --}}
                                     <div class="rte">
-                                        {!! $post->content !!}
+                                        {!! nl2br(e($post->content)) !!}
                                     </div>
                                     <hr />
 
