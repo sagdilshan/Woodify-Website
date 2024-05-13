@@ -120,7 +120,7 @@
                                     </p>
                                     <br>
                                     <div class="product-single__description rte">
-                                        <p style="font-size: 1rem;">{{ $auctionview->description }}</p>
+                                        <p style="font-size: 1rem;">{!! nl2br(e($auctionview->description)) !!}</p>
                                     </div><br>
                                     <form method="post" action="{{ route('auction.add') }}" accept-charset="UTF-8"
                                         class="product-form product-form-product-template hidedropdown">
