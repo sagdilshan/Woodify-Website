@@ -82,21 +82,20 @@ class PostController extends Controller
     public function indexx()
     {
         $recents = Post::orderBy('id', 'asc')->take(7)->get();
-        $posts = Post::orderBy('id', 'asc')->take(2)->get();
-        $categories = CategoryModel::where('status', 'active')->get();
+        $posts = Post::inRandomOrder()->take(2)->get();
+        $categories = CategoryModel::where('status', 'active')->inRandomOrder()->get();
 
 
         // Retrieve products with their regular price and sale price
         $productss = ProductModel::where('status', 'approve')
         ->where('stock_status', 'stock')
-            ->orderBy('created_at', 'desc')
-            ->take(10)
+        ->inRandomOrder()
             ->get();
 
         $products1 = ProductModel::where('status', 'approve')
             ->where('sale_type', 'sale') // Add condition for sale_type
             ->where('stock_status', 'stock')
-            ->orderBy('created_at', 'desc')
+            ->inRandomOrder()
             ->take(6)
             ->get();
 
