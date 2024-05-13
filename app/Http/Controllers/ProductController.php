@@ -319,7 +319,7 @@ class ProductController extends Controller
         // Retrieve products with their regular price and sale price
         $productss = ProductModel::where('status', 'approve')
             ->where('stock_status', 'stock')
-            ->orderBy('created_at', 'desc')
+            ->inRandomOrder()
             ->take(12)
             ->get();
 
