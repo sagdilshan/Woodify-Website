@@ -91,7 +91,7 @@ Route::controller(AuctionController::class)->group(function () {
 });
 
 
-// Route::view('/shop', 'shop')->name('shop');
+Route::view('/about-us', 'about')->name('about');
 
 // Route::view('/blog', 'blog')->name('blog');
 // Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');

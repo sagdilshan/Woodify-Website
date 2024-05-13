@@ -112,7 +112,7 @@
                             </li>
                             <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}" style="font-size: 1rem;">Auction</a>
                             </li>
-                            <li class="lvl1 parent megamenu"><a href="#" style="font-size: 1rem;">About Us </a>
+                            <li class="lvl1 parent megamenu"><a href="{{ route('about') }}" style="font-size: 1rem;">About Us </a>
                             </li>
                             <li class="lvl1 parent dropdown"><a href="{{ route('contactus') }}"
                                     style="font-size: 1rem;">Contact Us
@@ -202,7 +202,7 @@
             <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}">Auction</a>
 
             </li>
-            <li class="lvl1 parent megamenu"><a href="#">About Us </a>
+            <li class="lvl1 parent megamenu"><a href="{{ route('about') }}">About Us </a>
 
             </li>
             <li class="lvl1 parent megamenu"><a href="{{ route('contactus') }}">Contact Us </a>

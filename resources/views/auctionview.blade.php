@@ -94,7 +94,7 @@
                                         <h1 class="product-single__title">{{ $auctionview->p_name }}</h1>
 
                                         <div class="prInfoRow">
-                                            <div class="product-stock"> <span class="instock ">Aution Start</span> <span
+                                            <div class="product-stock "> <span class="instock">Auction Started</span> <span
                                                     class="outstock hide">Unavailable</span> </div>
                                             <br><span class="instock text-danger">End Date -
                                                 {{ $auctionview->end_date }}</span>
@@ -151,7 +151,7 @@
                                             <input type="hidden" name="seller_id"
                                                 value="{{ $auctionview->created_by }}">
                                             <input type="text" name="customer_price" id="customer_price"
-                                                placeholder="Enter your bid price" onchange="checkBidPrice()">
+                                                placeholder="Enter your bid price" onchange="checkBidPrice()" required>
                                             <div id="price_error" style="color: red;"></div><br>
                                             <div class="product-form__item--submit">
                                                 <button type="submit" name="add" id="submit_button"
