@@ -115,7 +115,7 @@
                                     </p>
                                     <br>
                                     <div class="product-single__description rte">
-                                        <p style="font-size: 1rem;">{{ $productview->description }}</p>
+                                        <p style="font-size: 1rem;">{!! nl2br(e($productview->description)) !!}</p>
                                     </div><br>
                                     <form method="post" action="{{ route('cart.add') }}" accept-charset="UTF-8"
                                         class="product-form product-form-product-template hidedropdown">
