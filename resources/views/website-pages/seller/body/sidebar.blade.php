@@ -58,7 +58,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('seller.all.auction') }}"
-                        class="nav-link {{ Route::is('seller.all.auction') ? 'active' : '' }} {{ Route::is('seller.add.products') ? 'active' : '' }}{{ Route::is('seller.edit.products') ? 'active' : '' }}{{ Route::is('seller.view.products') ? 'active' : '' }}">
+                        class="nav-link {{ Route::is('seller.all.auction') ? 'active' : '' }} ">
                         <i class="nav-icon fas fa-bullhorn"></i>
                         <p>
                             My Auction Items
