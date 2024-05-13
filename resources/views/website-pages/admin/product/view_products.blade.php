@@ -77,7 +77,7 @@
                                     </nav>
                                     <div class="tab-content p-3" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="product-desc" role="tabpanel"
-                                            aria-labelledby="product-desc-tab"> {!! $productt->description !!}</div>
+                                            aria-labelledby="product-desc-tab">{!! nl2br(e($productt->description)) !!}</div>
 
                                     </div>
                                 </div>
