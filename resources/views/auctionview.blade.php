@@ -211,37 +211,63 @@
                             <div class="tab-container">
 
                                 <div id="tab1" class="tab-content">
-                                    <h4>Returns Policy</h4>
-                                    <p>Lorem ipsdrgsgemper volutpat mi sed imperdiet. Ut odio
-                                        lectus, vulputate non ex non, mattis sollicitudin purus. Mauris consequat justo
-                                        a enim interdum, in consequat dolor accumsan. Nulla iaculis diam purus, ut
-                                        vehicula leo efficitur at.</p>
-                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc
-                                        enim, sit amet pharetra erat aliquet ac.</p>
-                                    <h4>Shipping</h4>
-                                    <p>Pellentesque ultrices ut sem sit amet lacinia. Sed nisi dui, ultrices ut turpis
-                                        pulvinar. Sed fringilla ex eget lorem consectetur, consectetur blandit lacus
-                                        varius. Duis vel scelerisque elit, et vestibulum metus. Integer sit amet
-                                        tincidunt tortor. Ut lacinia ullamcorper massa, a fermentum arcu vehicula ut. Ut
-                                        efficitur faucibus dui Nullam tristique dolor eget turpis consequat varius.
-                                        Quisque a interdum augue. Nam ut nibh mauris.</p>
+                                    <h4>Auction Policy</h4>
+                                    <p>Welcome to <strong>Woodify</strong> Auctions! We're excited to offer you
+                                        the opportunity to bid on unique items and experiences. Here's everything you need
+                                        to know about our auction process:</p>
+
+                                    <p><strong>Auction Duration:</strong> Each auction listing will specify the start and
+                                        end date. Bidding will remain open until the specified end time, and any bids placed
+                                        after this time will not be considered.</p>
+
+                                    <p><strong>Bidding Rules:</strong></p>
+                                    <ul>
+                                        <li>Bids must be placed in increments specified by the auction listing.</li>
+                                        <li>The highest bid at the end of the auction wins the item.</li>
+                                        <li>In case of a tie bid, the bid placed first will be considered the winning bid.
+                                        </li>
+                                    </ul>
+
+                                    <p><strong>Winning Bids:</strong></p>
+                                    <ul>
+                                        <li>The winner of the auction will be notified via email within 24 hours of the
+                                            auction's end.</li>
+                                        <li>The winning bid amount will be charged to the winning bidder's payment method.
+                                        </li>
+                                        <li>The winning bidder will have 48 hours to complete the
+                                            purchase by making the payment.</li>
+                                        <li>Failure to complete the purchase within the specified time frame may result in
+                                            forfeiture of the item and potential suspension from future auctions.</li>
+                                    </ul>
+
+                                    <p><strong>Seller Interaction:</strong></p>
+                                    <ul>
+                                        <li>Sellers have the option to set a reserve price for their items. If the reserve
+                                            price is not met by the end of the auction, the item will not be sold.</li>
+                                        <li>Sellers may also choose to set a "Buy It Now" price, allowing buyers to purchase
+                                            the item immediately at a specified price.</li>
+                                    </ul>
+
+                                    <p><strong>Adding Items to Cart:</strong></p>
+                                    <ul>
+                                        <li>Once the auction ends, the winning bid amount will be automatically added to the
+                                            highest bidder's cart.</li>
+                                        <li>The bidder can then proceed to checkout to complete the purchase.</li>
+                                    </ul>
+
+                                    <p>Thank you for participating in our auctions! If you have any questions or concerns,
+                                        please don't hesitate to contact our customer support team.</p>
+
                                 </div>
                                 <div id="tab2" class="tab-content">
                                     <h4>Returns Policy</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros justo,
-                                        accumsan non dui sit amet. Phasellus semper volutpat mi sed imperdiet. Ut odio
-                                        lectus, vulputate non ex non, mattis sollicitudin purus. Mauris consequat justo
-                                        a enim interdum, in consequat dolor accumsan. Nulla iaculis diam purus, ut
-                                        vehicula leo efficitur at.</p>
-                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc
-                                        enim, sit amet pharetra erat aliquet ac.</p>
-                                    <h4>Shipping</h4>
-                                    <p>Pellentesque ultrices ut sem sit amet lacinia. Sed nisi dui, ultrices ut turpis
-                                        pulvinar. Sed fringilla ex eget lorem consectetur, consectetur blandit lacus
-                                        varius. Duis vel scelerisque elit, et vestibulum metus. Integer sit amet
-                                        tincidunt tortor. Ut lacinia ullamcorper massa, a fermentum arcu vehicula ut. Ut
-                                        efficitur faucibus dui Nullam tristique dolor eget turpis consequat varius.
-                                        Quisque a interdum augue. Nam ut nibh mauris.</p>
+                                    <p>Orders typically ship within 2-4 weeks. Shipping rates are calculated at
+                                        checkout, and domestic delivery usually takes 4-5 weeks.</p>
+                                    <p>We do not offer
+                                        international shipping at this time. Tracking information is provided upon shipment,
+                                        and any damages should be reported within 48 hours.</p>
+                                    <p>For further inquiries, please
+                                        contact us via email.</p>
                                 </div>
                             </div>
                         </div>
