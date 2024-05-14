@@ -225,4 +225,24 @@
         }
     </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const endDateInput = document.getElementById('end_date');
+
+        const today = new Date();
+        const threeDaysFromNow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
+        const oneMonthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+
+        // Format dates as "YYYY-MM-DD" for HTML date inputs
+        const formatDate = (date) => {
+            let day = ('0' + date.getDate()).slice(-2); // Ensure two digits
+            let month = ('0' + (date.getMonth() + 1)).slice(-2); // Ensure two digits, and note month is 0-indexed
+            return `${date.getFullYear()}-${month}-${day}`;
+        };
+
+        endDateInput.min = formatDate(threeDaysFromNow);
+        endDateInput.max = formatDate(oneMonthFromNow);
+    });
+</script>
+
 @endsection
