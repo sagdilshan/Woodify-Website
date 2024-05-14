@@ -4,7 +4,7 @@
 
     <head>
 
-        {{-- <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" /> --}}
+        <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" />
         <!-- Plugins CSS -->
         <link rel="stylesheet" href="../../assetss/css/plugins.css">
         <!-- Boo tstap CSS -->
@@ -36,53 +36,7 @@
                 </div>
                 <div class="container">
                     <div class="row">
-                        <!--Main Content-->
-                        {{-- <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col">
-                            <div class="blog--list-view">
-                                <div class="article">
-                                    <!-- Article Image -->
-                                    <a class="article_featured-image" href="#"><img class="blur-up lazyload"
-                                            data-src="../../assetss/images/blog/blog-post-1.jpg"
-                                            src="../../assetss/images/blog/blog-post-1.jpg" alt="It's all about how you wear"></a>
-                                    <h1><a href="blog-left-sidebar.html">It's all about how you wear</a></h1>
-                                    <ul class="publish-detail">
-                                        <li><i class="anm anm-user-al" aria-hidden="true"></i> Admin</li>
-                                        <li><i class="icon anm anm-clock-r"></i> <time datetime="2017-05-02">May 02,
-                                                2017</time></li>
-                                        <li>
-                                            <ul class="inline-list">
-                                                <li><i class="icon anm anm-comments-l"></i> <a href="#"> 0
-                                                        comments</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <div class="rte">
-                                        <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du
-                                            senout cas comparable avec celle du français standard. De
-                                            nombreuses suites logicielles de.</p>
 
-                                        <h3>Sample Text Listing</h3>
-
-                                        <h3>Donec maximus quam at lectus bibendum, non suscipit nunc tristique.</h3>
-                                        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
-                                            </p>
-                                    </div>
-                                    <hr />
-
-                                    <div class="blog-nav">
-                                        <div class="text-left">
-                                            <i class="icon icon-arrow-circle-left"></i>
-                                            <a href="#" title="">Previous</a>
-                                        </div>
-                                        <div class="text-right">
-                                            <a href="#" title="">Next</a>
-                                            <i class="icon icon-arrow-circle-right"></i>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div> --}}
 
                         <div class="col-12 col-sm-12 col-md-9 col-lg-9 main-col">
                             <div class="blog--list-view">
@@ -122,26 +76,7 @@
                                     </div>
                                     <div class="widget-content">
                                         <div class="list list-sidebar-products">
-                                            {{-- <div class="grid">
 
-                                                <div class="grid__item">
-                                                    <div class="mini-list-item">
-                                                        <div class="mini-view_image"> <a class="grid-view-item__link"
-                                                                href="#"><img
-                                                                    class="grid-view-item__image blur-up lazyload"
-                                                                    data-src="../../assetss/images/blog/blog-post-sml-3.jpg"
-                                                                    src="../../assetss/images/blog/blog-post-sml-3.jpg"
-                                                                    alt="" /></a> </div>
-                                                        <div class="details"> <a class="grid-view-item__title"
-                                                                href="#">How to Wear The Folds Trend Four Ways</a>
-                                                            <div class="grid-view-item__meta"><span class="article__date">
-                                                                    <time datetime="2017-05-02T14:14:00Z">May 02,
-                                                                        2017</time> </span></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div> --}}
 
                                             <div class="grid">
                                                 @foreach ($postss as $post)

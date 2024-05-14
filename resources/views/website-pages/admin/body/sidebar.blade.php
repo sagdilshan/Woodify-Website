@@ -99,45 +99,6 @@
 
 
 
-                {{-- <li
-                    class="nav-item {{ Route::is('all.permission') || Route::is('all.roles') || Route::is('add.roles') || Route::is('add.permission') || Route::is('edit.permission') || Route::is('edit.roles') ? 'menu-open' : '' }}">
-                    <a href="#"
-                        class="nav-link {{ Route::is('all.permission') ? 'active' : '' }} {{ Route::is('all.roles') ? 'active' : '' }}   {{ Route::is('edit.permission') ? 'active' : '' }} {{ Route::is('edit.roles') ? 'active' : '' }}"
-                        style="{{ Route::is('all.permission') || Route::is('all.roles') || Route::is('add.roles') || Route::is('add.permission') ? 'background-color: #3c8dbc;' : '' }}">
-                        <i class="nav-icon fas fa-shield-alt"></i>
-                        <p>
-                            Access Levels
-                            <i class="right fas fa-angle-right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('all.permission') }}"
-                                class="nav-link {{ Route::is('all.permission') ? 'active' : '' }} {{ Route::is('edit.permission') ? 'active' : '' }} {{ Route::is('add.permission') ? 'active' : '' }}">
-                                <i class="nav-icon fa fa-lock"></i>
-                                <p>
-                                    Permissions
-                                </p>
-                            </a>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a href="{{ route('all.roles') }}"
-                                class="nav-link {{ Route::is('all.roles') ? 'active' : '' }} {{ Route::is('edit.roles') ? 'active' : '' }} {{ Route::is('add.roles') ? 'active' : '' }}">
-                                <i class="nav-icon fa fa-tasks"></i>
-                                <p>
-                                    Roles
-                                </p>
-                            </a>
-                        </li>
-
-
-
-                    </ul>
-                </li> --}}
-
-
-
-
                 <li
                     class="nav-item {{ Route::is('all.admin') || Route::is('all.seller') || Route::is('all.customer') || Route::is('add.users') || Route::is('edit.admin') || Route::is('edit.seller') || Route::is('edit.customer') || Route::is('edit.users') ? 'menu-open' : '' }}">
                     <a href="#"
@@ -203,8 +164,7 @@
 
 
                 <li class="nav-item">
-                    <a href="{{ route('all.sales') }}"
-                        class="nav-link {{ Route::is('all.sales') ? 'active' : '' }}">
+                    <a href="{{ route('all.sales') }}" class="nav-link {{ Route::is('all.sales') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-poll"></i>
                         <p>
                             All Sales

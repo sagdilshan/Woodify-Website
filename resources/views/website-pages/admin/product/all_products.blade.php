@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'My Products')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Products')
 @section('admin')
 
 
@@ -37,7 +37,8 @@
                                             <th>#</th>
                                             <th>Item Name</th>
                                             <th>Sale Price</th>
-                                            <th>Category</th><th>Stocks</th>
+                                            <th>Category</th>
+                                            <th>Stocks</th>
                                             <th>Status</th>
 
                                             <th>Action</th>
@@ -275,7 +276,6 @@
                                             <th>Item Name</th>
                                             <th>Sale Price</th>
                                             <th>Category</th>
-                                            {{-- <th>Status</th> --}}
                                             <th>Stocks</th>
                                             <th>Action</th>
                                         </tr>

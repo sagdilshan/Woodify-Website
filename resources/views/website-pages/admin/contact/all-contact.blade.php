@@ -39,8 +39,6 @@
                                             <th>Email</th>
                                             <th>Phone</th>
                                             <th>subject</th>
-                                            {{-- <th>Status</th> --}}
-                                            {{-- <th>Stocks</th> --}}
                                             <th>Action</th>
                                         </tr>
                                     </thead>

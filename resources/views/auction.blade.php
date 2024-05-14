@@ -70,7 +70,6 @@
                                                         <!-- End product name -->
                                                         <!-- product price -->
                                                         <div class="product-price">
-                                                            {{-- <span class="old-price">$ {{ $auction->start_price }}</span> --}}
                                                             <span class="price">$ {{ $auction->start_price }}</span>
                                                         </div>
                                                         <!-- End product price -->

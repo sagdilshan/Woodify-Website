@@ -78,12 +78,7 @@
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Role</label>
                                                 <div class="col-sm-10">
-                                                    {{-- <select class="form-control" name="role" required>
-
-                                                        <option value="admin">Admin</option>
-                                                        <option value="seller">Seller</option>
-                                                        <option value="customer">Customer</option>
-                                                      </select> --}}
+                                                    
                                                       <select class="form-control" name="role" >
 
                                                         @foreach ($roles as $role)

@@ -9,7 +9,9 @@
                     <div class="col-sm-6">
 
                         <h4 class="m-0"> Welcome Back <span style="color:red;"> {{ Auth::user()->name }}</span> !!! 🎉🎉🎉
-                         <br><span class="text-bold ">You Earn <span class="text-primary">$ {{$formattedPrice}}</span></span></h4>
+                            <br><span class="text-bold ">You Earn <span class="text-primary">$
+                                    {{ $formattedPrice }}</span></span>
+                        </h4>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -29,7 +31,7 @@
                         <!-- small card -->
                         <div class="small-box bg-gradient-gray">
                             <div class="inner">
-                                <h3>{{$pending_orders}}</h3>
+                                <h3>{{ $pending_orders }}</h3>
 
                                 <p style="font-size: 1.5rem;">Pending Orders</p>
                             </div>
@@ -146,8 +148,8 @@
                                                             action="{{ route('seller.order.status', $item->id) }}">
                                                             @csrf
                                                             @method('PUT')
-                                                            <button type="submit"
-                                                                class="btn btn-outline-danger">Order Deliver</button>
+                                                            <button type="submit" class="btn btn-outline-danger">Order
+                                                                Deliver</button>
                                                         </form>
                                                     @endif
                                                 </td>

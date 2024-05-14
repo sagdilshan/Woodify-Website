@@ -88,53 +88,6 @@
 
 
 
-
-
-                {{-- <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-
-                <li class="nav-header mt-3 mb-2">EXAMPLES</li>
-
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link ">
-                        <i class="nav-icon far fa-image"></i>
-                        <p>
-                            Gallery
-                        </p>
-                    </a>
-                </li> --}}
-
-
                 <li class="nav-header mt-3 mb-2">ACTIONS</li>
                 <li class="nav-item">
                     <a href="{{ route('seller.profile') }}"

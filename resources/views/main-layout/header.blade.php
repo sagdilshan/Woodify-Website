@@ -110,7 +110,8 @@
                             <li class="lvl1 parent megamenu"><a href="{{ route('shop') }}"
                                     style="font-size: 1rem;">Shop </a>
                             </li>
-                            <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}" style="font-size: 1rem;">Auction</a>
+                            <li class="lvl1 parent megamenu"><a href="{{ route('auction') }}"
+                                    style="font-size: 1rem;">Auction</a>
                             </li>
                             {{-- <li class="lvl1 parent megamenu"><a href="{{ route('about') }}" style="font-size: 1rem;">About Us </a>
                             </li> --}}
@@ -137,22 +138,14 @@
                 <!--Mobile Logo-->
 
                 <div class="col-4 col-sm-3 col-md-3 col-lg-2 ">
-                    {{-- @if (Auth::check() && Auth::user()->role == 'customer')
-                        <div class="site-cart">
-                            <a href="#;" class="site-header__cart" title="Cart">
-                                <i class="icon anm anm-bag-l"></i>
 
-                            </a>
-
-                        </div>
-                    @endif --}}
 
                     @if (Route::has('login'))
                         @auth
                             @if (Auth::user()->role == 'admin')
                                 <div class="site-cart">
-                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i class="icon fa fa-power-off"
-                                            style="font-size: 1.5rem;"></i></a>
+                                    <a href="{{ route('admin.logout') }}" title="Log Out"><i
+                                            class="icon fa fa-power-off" style="font-size: 1.5rem;"></i></a>
 
                                 </div>
                             @elseif(Auth::user()->role == 'seller')

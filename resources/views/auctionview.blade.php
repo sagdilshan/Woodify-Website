@@ -4,7 +4,7 @@
 
     <head>
 
-        {{-- <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" /> --}}
+        <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" />
         <!-- Plugins CSS -->
         <link rel="stylesheet" href="../assetss/css/plugins.css">
         <!-- Bootstap CSS -->

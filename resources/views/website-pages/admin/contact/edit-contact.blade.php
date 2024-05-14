@@ -36,12 +36,12 @@
 
 
                                     <div class="active tab-pane">
-                                        <form method="POST"
-                                            action="{{ route('update.contact', ['id' => $contacts->id]) }}"
+                                        <form method="POST" action="{{ route('update.contact', ['id' => $contacts->id]) }}"
                                             class="form-horizontal">
                                             @csrf
-                                            <h3 class="text-center"><a class=" text-danger text-bold" href="mailto:{{ $contacts->email }}" >{{ $contacts->email }}</a></h3>
-<br>
+                                            <h3 class="text-center"><a class=" text-danger text-bold"
+                                                    href="mailto:{{ $contacts->email }}">{{ $contacts->email }}</a></h3>
+                                            <br>
                                             <input type="hidden" class="form-control" name="id"
                                                 value="{{ $contacts->id }}">
 
@@ -49,40 +49,39 @@
 
 
 
-                                                <div class="form-group row">
-                                                    <label for="inputName" class="col-sm-2 col-form-label">User ID</label>
-                                                    <div class="col-sm-10">
-                                                        {{-- <input type="text" class="form-control " name="name" readonly
-                                                            value="{{ $contacts->user_id }}" > --}}
-                                                            <input type="text" class="form-control {{ empty($contacts->user_id) ? 'is-invalid' : '' }}" name="name" readonly
-                                                            value="{{ $contacts->user_id ?? '' }}">
+                                            <div class="form-group row">
+                                                <label for="inputName" class="col-sm-2 col-form-label">User ID</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text"
+                                                        class="form-control {{ empty($contacts->user_id) ? 'is-invalid' : '' }}"
+                                                        name="name" readonly value="{{ $contacts->user_id ?? '' }}">
 
-                                                     @if(empty($contacts->user_id))
-                                                         <div class="invalid-feedback">
-                                                             Danger: This is Unregistered User.
-                                                         </div>
-                                                     @endif
+                                                    @if (empty($contacts->user_id))
+                                                        <div class="invalid-feedback">
+                                                            Danger: This is Unregistered User.
+                                                        </div>
+                                                    @endif
 
-                                                    </div>
                                                 </div>
+                                            </div>
 
 
 
-                                                <div class="form-group row">
-                                                    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control " name="name" readonly
-                                                            value="{{$contacts->name}}" >
+                                            <div class="form-group row">
+                                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control " name="name" readonly
+                                                        value="{{ $contacts->name }}">
 
 
-                                                    </div>
                                                 </div>
+                                            </div>
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Phone</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control " name="phone" readonly
-                                                        value="{{$contacts->phone}}" required>
+                                                        value="{{ $contacts->phone }}" required>
 
 
                                                 </div>
@@ -92,7 +91,7 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Subject</label>
                                                 <div class="col-sm-10">
                                                     <input type="text" class="form-control " name="subject" readonly
-                                                        value="{{$contacts->subject}}" required>
+                                                        value="{{ $contacts->subject }}" required>
 
 
                                                 </div>
@@ -117,16 +116,6 @@
 
                                                 </div>
                                             </div>
-
-
-
-
-
-
-
-
-
-
 
 
                                             <div class="form-group row">

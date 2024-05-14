@@ -38,7 +38,8 @@
                                             <div class="col-md-6 col-sm-6 col-md-4 col-lg-3 grid-view-item style2 item">
                                                 <div class="grid-view_image">
                                                     <!-- start product image -->
-                                                    <a href="{{ route('product.view', ['id' => $product->id]) }}" class="grid-view-item__link">
+                                                    <a href="{{ route('product.view', ['id' => $product->id]) }}"
+                                                        class="grid-view-item__link">
                                                         <!-- image -->
                                                         <img class="grid-view-item__image primary blur-up lazyload"
                                                             data-src="{{ !empty($product->thumb1) ? url('upload/thumb_images/' . $product->thumb1) : url('upload/no_product.png') }}"
@@ -53,8 +54,8 @@
                                                         <!-- End hover image -->
                                                         <!-- product label -->
                                                         <div class="product-labels rectangular"><span
-                                                                class="lbl on-sale">{{ $product->percentage_decrease }}%</span> <span
-                                                                class="lbl pr-label1">new</span></div>
+                                                                class="lbl on-sale">{{ $product->percentage_decrease }}%</span>
+                                                            <span class="lbl pr-label1">new</span></div>
                                                         <!-- End product label -->
                                                     </a>
                                                     <!-- end product image -->
@@ -63,7 +64,8 @@
                                                     <div class="product-details hoverDetails text-center mobile">
                                                         <!-- product name -->
                                                         <div class="product-name">
-                                                            <a href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
+                                                            <a
+                                                                href="{{ route('product.view', ['id' => $product->id]) }}">{{ $product->name }}</a>
                                                         </div>
                                                         <!-- End product name -->
                                                         <!-- product price -->

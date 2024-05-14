@@ -40,12 +40,9 @@
                                             <th>Item Name</th>
                                             <th>Start Price</th>
                                             <th>End Date</th>
-                                            {{-- <th>Description</th> --}}
                                             <th>Auction Status</th>
                                             <th>Close Auction</th>
 
-
-                                            {{-- <th>Action</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -57,10 +54,7 @@
                                                 <td>{{ $item->p_name }}</td>
                                                 <td>{{ $item->start_price }}</td>
                                                 <td>{{ $item->end_date }}</td>
-                                                {{-- <td>{{ $item->description }}</td> --}}
 
-
-                                                {{-- <td>{{ $item->category->name }}</td> --}}
 
                                                 <td>
                                                     @php
@@ -69,11 +63,14 @@
                                                     @endphp
 
                                                     @if ($endDate->isPast())
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">Expired</span>
+                                                        <span class="badge badge-danger text-uppercase"
+                                                            style="font-size: 1rem;">Expired</span>
                                                     @elseif ($endDate->isToday())
-                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">Expires Today</span>
+                                                        <span class="badge badge-warning text-uppercase"
+                                                            style="font-size: 1rem;">Expires Today</span>
                                                     @else
-                                                        <span class="badge badge-success text-uppercase" style="font-size: 1rem;">Active</span>
+                                                        <span class="badge badge-success text-uppercase"
+                                                            style="font-size: 1rem;">Active</span>
                                                     @endif
                                                 </td>
 
@@ -81,7 +78,8 @@
 
                                                 <td>
                                                     @if ($endDate->isPast())
-                                                        <a href="{{ route('seller.close.auction', $item->id) }}" class="btn btn-outline-info">Close Auction</a>
+                                                        <a href="{{ route('seller.close.auction', $item->id) }}"
+                                                            class="btn btn-outline-info">Close Auction</a>
                                                     @endif
                                                 </td>
 
@@ -89,7 +87,7 @@
                                         @endforeach
 
 
-                                    </tfoot>
+                                        </tfoot>
                                 </table>
                             </div>
                             <!-- /.card-body -->

@@ -27,11 +27,7 @@ class CartController extends Controller
 
     public function Checkout()
     {
-        // $buyitems = CartModel::where('customer_id', Auth::user()->id)
-        //     ->where('status', 'cart')
-        //     ->get();
 
-        // return view('checkout', compact('buyitems'));
         $buyitems = CartModel::where('customer_id', Auth::user()->id)
             ->where('status', 'cart')
             ->get();
@@ -69,7 +65,6 @@ class CartController extends Controller
         ]);
 
         // Retrieve all cart items for the authenticated user
-        // $cartItems = CartModel::where('customer_id', auth()->id())->get();
         $cartItems = CartModel::where('customer_id', auth()->id())
             ->where('status', 'cart')
             ->get();

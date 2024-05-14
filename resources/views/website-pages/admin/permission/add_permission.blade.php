@@ -36,18 +36,20 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{route('store.permission')}}"
-                                            class="form-horizontal" >
+                                        <form method="POST" action="{{ route('store.permission') }}"
+                                            class="form-horizontal">
                                             @csrf
 
 
                                             <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">Permission Name</label>
+                                                <label for="inputName" class="col-sm-2 col-form-label">Permission
+                                                    Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                                        placeholder="Enter permission name">
+                                                    <input type="text"
+                                                        class="form-control @error('name') is-invalid @enderror"
+                                                        name="name" placeholder="Enter permission name">
 
-                                                        @error('name')
+                                                    @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -56,13 +58,13 @@
                                             <div class="form-group row">
                                                 <label for="groupName" class="col-sm-2 col-form-label">Group Name</label>
                                                 <div class="col-sm-10">
-                                                    <select class="form-control" name="group_name" >
+                                                    <select class="form-control" name="group_name">
                                                         <option selected="" disabled="">Select Group</option>
                                                         <option value="category">Category</option>
                                                         <option value="product">Product</option>
-                                                      </select>
+                                                    </select>
 
-                                                        @error('group_name')
+                                                    @error('group_name')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

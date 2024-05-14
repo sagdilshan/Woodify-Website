@@ -37,7 +37,8 @@
                 <li class="nav-header mb-2">MAIN</li>
 
                 <li class="nav-item">
-                    <a href="{{ route('customer.dashboard') }}" class="nav-link {{ Route::is('customer.dashboard') ? 'active' : '' }}">
+                    <a href="{{ route('customer.dashboard') }}"
+                        class="nav-link {{ Route::is('customer.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon fa fa-home"></i>
                         <p>
                             Overview
@@ -47,7 +48,7 @@
 
 
                 <li class="nav-item">
-                    <a href="{{route('shop')}}" class="nav-link ">
+                    <a href="{{ route('shop') }}" class="nav-link ">
                         <i class="nav-icon fas fa-store"></i>
                         <p>
                             Shop
@@ -55,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('cart')}}" class="nav-link ">
+                    <a href="{{ route('cart') }}" class="nav-link ">
                         <i class="nav-icon fa fa-shopping-cart"></i>
                         <p>
                             My Cart
@@ -63,7 +64,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('auction')}}" class="nav-link ">
+                    <a href="{{ route('auction') }}" class="nav-link ">
                         <i class="nav-icon fas fa-bullhorn"></i>
                         <p>
                             Auction

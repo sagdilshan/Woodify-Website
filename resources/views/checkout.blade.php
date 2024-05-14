@@ -85,7 +85,7 @@
                                             <div class="form-group col-md-6 col-lg-6 col-xl-6 required">
                                                 <label for="input-country">Country <span class="required-f">*</span></label>
                                                 <select name="customer_country" id="input-country" required>
-                                                    <option > --- Please Select --- </option>
+                                                    <option> --- Please Select --- </option>
                                                     <option value="Sri Lanka">Sri Lanka</option>
                                                     <option value="India">India</option>
                                                     <option value="Australia">Australia</option>
@@ -134,7 +134,8 @@
                                                         <td>${{ $item->price }}</td>
                                                         <td>{{ $item->quantity }}</td>
                                                         <td>${{ $item->price * $item->quantity }}</td>
-                                                        <input name="id" type="hidden" value="{{ $item->id }}"></input>
+                                                        <input name="id" type="hidden"
+                                                            value="{{ $item->id }}"></input>
                                                     </tr>
                                                 @endforeach
 
@@ -194,7 +195,7 @@
                                                                                 class="required-f">*</span></label>
                                                                         <select name="card_type" class="form-control"
                                                                             required>
-                                                                            <option > --- Please Select ---
+                                                                            <option> --- Please Select ---
                                                                             </option>
                                                                             <option value="american">American Express
                                                                             </option>

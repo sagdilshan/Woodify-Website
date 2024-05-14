@@ -40,18 +40,19 @@
                                             class="form-horizontal">
                                             @csrf
 
-                                                    <input type="hidden" class="form-control" name="id"
-                                                        value="{{$posts->id}}" >
+                                            <input type="hidden" class="form-control" name="id"
+                                                value="{{ $posts->id }}">
 
 
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Post Title</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
-                                                        value="{{$posts->title}}" required>
+                                                    <input type="text"
+                                                        class="form-control @error('title') is-invalid @enderror"
+                                                        name="title" value="{{ $posts->title }}" required>
 
-                                                        @error('title')
+                                                    @error('title')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

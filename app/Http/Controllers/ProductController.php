@@ -137,36 +137,7 @@ class ProductController extends Controller
         return redirect()->route('seller.all.products')->with($notification);
     }
 
-    // public function SellerDeleteProduct($id)
-    // {
-    //     $products = ProductModel::findOrFail($id);
 
-    //     // Delete the product's images if they exist
-    //     if ($products->images) {
-    //         // Loop through each image path
-    //         foreach ($products->images as $image) {
-    //             // Determine the file path
-    //             $imagePath = public_path('upload/product_images/' . $image->filename);
-
-    //             // Check if the file exists before attempting to delete it
-    //             if (file_exists($imagePath)) {
-    //                 unlink($imagePath); // Delete the image file
-    //             }
-    //         }
-    //     }
-
-
-    //     // Delete the category from the database
-    //     $products->delete();
-
-    //     // Redirect back with a success message
-    //     $notification = [
-    //         'message' => 'Products Deleted',
-    //         'alert-type' => 'success'
-    //     ];
-
-    //     return redirect()->back()->with($notification);
-    // }
 
     public function SellerDeleteProduct($id)
     {
@@ -211,12 +182,7 @@ class ProductController extends Controller
         return redirect()->back()->with($notification);
     }
 
-    // public function SellerViewProduct()
-    // {
 
-
-    //     return view('website-pages.seller.product.view-product');
-    // }
     public function SellerViewProduct($id)
     {
         $productt = ProductModel::findOrFail($id);
@@ -325,10 +291,6 @@ class ProductController extends Controller
     }
 
 
-    // public function ProductView()
-    // {
-    //     return view('productview');
-    // }
 
 
     public function ProductView($id)

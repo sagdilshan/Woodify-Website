@@ -36,18 +36,18 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{route('store.category')}}"
-                                            class="form-horizontal" >
+                                        <form method="POST" action="{{ route('store.category') }}" class="form-horizontal">
                                             @csrf
 
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Category Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control @error('category_name') is-invalid @enderror" name="category_name"
-                                                        placeholder="Enter catogory name">
+                                                    <input type="text"
+                                                        class="form-control @error('category_name') is-invalid @enderror"
+                                                        name="category_name" placeholder="Enter catogory name">
 
-                                                        @error('category_name')
+                                                    @error('category_name')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

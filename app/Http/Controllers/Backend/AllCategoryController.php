@@ -124,51 +124,6 @@ class AllCategoryController extends Controller
         }
     }
 
-    // public function MainUpdateCategory(Request $request, $id)
-    // {
-
-    //     $category = CategoryModel::findOrFail($id);
-    //     $category->name = $request->name;
-    //     $category->status = $request->status;
-    //     $category->updated_by = Auth::user()->id;
-
-    //     if ($request->file('photo')) {
-    //         $file = $request->file('photo');
-    //         @unlink(public_path('upload/category_images/' . $category->photo)); //delete previous profile image
-    //         $filename = date('YmdHi') . $file->getClientOriginalName(); // 0215.a.gayathr.png
-    //         $file->move(public_path('upload/category_images'), $filename);
-    //         $category['photo'] = $filename;
-    //     }
-
-    //     $category->save();
-
-    //     $notification = array(
-    //         'message' => 'Category Updated Succssfully',
-    //         'alert-type' => 'success'
-    //     );
-
-    //     return redirect()->route('all.category.list')->with($notification);
-    // }
-
-    // public function MainUpdateCategory(Request $request)
-    // {
-    //     $pid = $request->id;
-
-    //     CategoryModel::findOrFail($pid)->update([
-    //         'name' => $request->name,
-    //         'status' => $request->status,
-
-    //     ]);
-
-
-    //     // Redirect back with a success message
-    //     $notification = array(
-    //         'message' => 'Category Updated',
-    //         'alert-type' => 'success'
-    //     );
-
-    //     return redirect()->route('all.category.list')->with($notification);
-    // }
     public function MainUpdateCategory(Request $request)
     {
         $pid = $request->id;
@@ -194,16 +149,5 @@ class AllCategoryController extends Controller
         return redirect()->route('all.category.list')->with($notification);
     }
 
-    // public function ProductView($slug)
-    // {
-    //     $categoryview = CategoryModel::findOrFail($slug);
-    //     $categoryviews = CategoryModel::all();
-    //     $categorys = CategoryModel::where('status', 'approve')
-    //     ->where('stock_status', 'stock')
-    //     ->inRandomOrder()
-    //     ->get();
 
-
-    //     return view('shop', compact('categoryview', 'categoryviews', 'categorys'));
-    // }
 }

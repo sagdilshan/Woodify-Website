@@ -36,22 +36,24 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{ route('update.category.list', ['id' => $category->id]) }}"
+                                        <form method="POST"
+                                            action="{{ route('update.category.list', ['id' => $category->id]) }}"
                                             class="form-horizontal">
                                             @csrf
 
-                                                    <input type="hidden" class="form-control" name="id"
-                                                        value="{{$category->id}}" >
+                                            <input type="hidden" class="form-control" name="id"
+                                                value="{{ $category->id }}">
 
 
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Category Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                                        value="{{$category->name}}">
+                                                    <input type="text"
+                                                        class="form-control @error('name') is-invalid @enderror"
+                                                        name="name" value="{{ $category->name }}">
 
-                                                        @error('name')
+                                                    @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>
@@ -64,8 +66,10 @@
 
 
                                                     <select class="form-control" name="status" required>
-                                                        <option value="0" {{ $category->status == 0 ? 'selected' : '' }}>Active</option>
-                                                        <option value="1" {{ $category->status == 1 ? 'selected' : '' }}>Inactive</option>
+                                                        <option value="0"
+                                                            {{ $category->status == 0 ? 'selected' : '' }}>Active</option>
+                                                        <option value="1"
+                                                            {{ $category->status == 1 ? 'selected' : '' }}>Inactive</option>
                                                     </select>
 
 
@@ -74,25 +78,6 @@
                                                     @enderror
                                                 </div>
                                             </div>
-
-                                            {{-- <div class="form-group row">
-                                                <label for="inputSkills" class="col-sm-2 col-form-label">Category
-                                                    Photo</label>
-                                                <div class="col-sm-10">
-                                                    <input type="file" class="form-lable" name="photo" id="image">
-                                                </div>
-                                            </div>
-                                            <div class="form-group row">
-                                                <label for="inputExperience" class="col-sm-2 col-form-label"></label>
-                                                <div class="col-sm-10">
-                                                    <img id="showImage" class="profile-user-img img-fluid img-circle"
-                                                        src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_image.png') }}"
-                                                        alt="{{ $category->name }}">
-                                                </div>
-                                            </div> --}}
-
-
-
 
                                             <div class="form-group row">
                                                 <div class="offset-sm-2 col-sm-10">

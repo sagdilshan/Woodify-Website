@@ -36,7 +36,8 @@
 
 
                                     <div class="active tab-pane">
-                                        <form method="POST" action="{{ route('seller.update.products', ['id' => $products->id]) }}"
+                                        <form method="POST"
+                                            action="{{ route('seller.update.products', ['id' => $products->id]) }}"
                                             class="form-horizontal">
                                             @csrf
 
@@ -73,7 +74,7 @@
 
                                                     <select class="form-control" id="stock_status" name="stock_status">
 
-                                                       
+
 
                                                         @foreach ($stocks as $stock)
                                                             <option value="{{ $stock }}"

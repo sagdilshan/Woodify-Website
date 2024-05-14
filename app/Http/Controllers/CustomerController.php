@@ -49,10 +49,10 @@ class CustomerController extends Controller
         $userId = Auth::user()->id;
         $profileData = user::find($userId);
 
-        $orders =  CartModel::where('status', 'buy')
-        ->whereIn('order_status', ['delivered','delivery'])
-        ->where('customer_id', $userId)
-        ->count();
+        $orders = CartModel::where('status', 'buy')
+            ->whereIn('order_status', ['delivered', 'delivery'])
+            ->where('customer_id', $userId)
+            ->count();
 
 
         $total_orders = CartModel::where('status', 'buy')
@@ -128,10 +128,7 @@ class CustomerController extends Controller
         return back()->with($notification);
     }
 
-    // public function Cart()
-    // {
-    //     return view('cart');
-    // }
+
 
 
 
@@ -151,7 +148,6 @@ class CustomerController extends Controller
     {
         $userId = Auth::id();
         $pastorders = CartModel::where('order_status', 'delivery')
-            //    -> whereIn('order_status', ['delivery', 'delivered'])
             ->where('customer_id', $userId)
             ->where('status', 'buy')
             ->orderBy('created_at', 'desc')

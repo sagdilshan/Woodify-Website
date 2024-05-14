@@ -62,20 +62,14 @@
                                                 </td>
                                                 <td>{{ $item->price }}</td>
                                                 <td>
-                                                    {{-- @if ($item->order_status == 'delivery')
-                                                        <a href="{{ route('update.order.status', $item->id) }}"
-                                                            class="btn btn-outline-info">Recevied</a>
-                                                    @else
-                                                        <span class="badge badge-danger text-uppercase"
-                                                            style="font-size: 1rem;"></span>
-                                                    @endif --}}
+                                                    
                                                     @if ($item->order_status == 'delivery')
                                                         <form method="POST"
                                                             action="{{ route('update.order.status', $item->id) }}">
                                                             @csrf
                                                             @method('PUT')
-                                                            <button type="submit"
-                                                                class="btn btn-outline-danger">Order Received</button>
+                                                            <button type="submit" class="btn btn-outline-danger">Order
+                                                                Received</button>
                                                         </form>
                                                     @endif
                                                 </td>

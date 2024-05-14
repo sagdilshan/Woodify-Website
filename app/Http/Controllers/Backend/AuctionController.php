@@ -200,15 +200,7 @@ class AuctionController extends Controller
 
         $auctionview = BidModel::findOrFail($id);
 
-        // if ($auctionview->seller_id != auth()->id()) {
-        //     // Redirect or abort with an error message
 
-        //     $notification = [
-        //         'message' => 'You are not authorized to view this product.',
-        //         'alert-type' => 'error'
-        //     ];
-        //     return redirect()->route('seller.all.auction')->with($notification);
-        // }
 
         // Retrieve the maximum customer price for each auction product
         $maxBids = BidModel::select('auction_product_id', DB::raw('MAX(customer_price) as max_price'))

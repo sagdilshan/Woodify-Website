@@ -35,8 +35,8 @@
                                 <h3 class="d-inline-block d-sm-none " style="font-weight: bold;text-transform: uppercase;">
                                     {{ $productt->name }}</h3>
                                 <div class="col-12">
-                                    <img src="{{ !empty($productt->thumb1) ? url('upload/thumb_images/' . $productt->thumb1) : url('upload/no_product.png') }}" class="product-image"
-                                        alt="Product Image">
+                                    <img src="{{ !empty($productt->thumb1) ? url('upload/thumb_images/' . $productt->thumb1) : url('upload/no_product.png') }}"
+                                        class="product-image" alt="Product Image">
                                 </div>
 
 

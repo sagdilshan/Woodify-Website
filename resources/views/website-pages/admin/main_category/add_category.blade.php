@@ -46,7 +46,8 @@
                                                 <div class="col-sm-10">
                                                     <input type="text"
                                                         class="form-control @error('name') is-invalid @enderror"
-                                                        name="name" placeholder="Enter catogory name" required id="name" >
+                                                        name="name" placeholder="Enter catogory name" required
+                                                        id="name">
 
                                                     @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
@@ -54,12 +55,13 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group row" >
+                                            <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Slug Name</label>
                                                 <div class="col-sm-10">
                                                     <input type="text"
                                                         class="form-control @error('slug') is-invalid @enderror"
-                                                        name="slug" placeholder="Enter slug name" id="slug" required readonly>
+                                                        name="slug" placeholder="Enter slug name" id="slug" required
+                                                        readonly>
 
                                                     @error('slug')
                                                         <span class="text-danger">{{ $message }}</span>

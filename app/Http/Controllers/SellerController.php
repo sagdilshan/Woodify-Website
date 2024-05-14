@@ -164,14 +164,12 @@ class SellerController extends Controller
     {
         $sellerId = Auth::id();
         $deliveryorders = CartModel::where('status', 'buy')
-            // ->whereIn('order_status', ['delivery', 'delivered'])
             ->where('order_status', 'delivery')
             ->where('seller_id', $sellerId)
             ->orderBy('created_at', 'desc')
             ->get();
 
         $deliveredorders = CartModel::where('status', 'buy')
-            // ->whereIn('order_status', ['delivery', 'delivered'])
             ->where('order_status', 'delivered')
             ->where('seller_id', $sellerId)
             ->orderBy('created_at', 'desc')

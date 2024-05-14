@@ -49,8 +49,6 @@
                                         @foreach ($alladmin as $key => $item)
                                             <tr>
                                                 <td>{{ $key + 1 }}</td>
-                                                {{-- <td><img src="{{ !empty($item->photo) ? url('upload/admin_images/' . $item->photo) : url('upload/no_image.png') }}"
-                                                        class="img-circle img-size-64 mr-2"></td> --}}
                                                         <td>
                                                             @if (!empty($item->photo) && file_exists(public_path('upload/admin_images/' . $item->photo)))
                                                                 <img src="{{ url('upload/admin_images/' . $item->photo) }}" class="img-circle img-size-50 mr-2">

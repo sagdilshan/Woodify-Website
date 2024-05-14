@@ -4,7 +4,7 @@
 
     <head>
 
-        {{-- <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" /> --}}
+        <link rel="shortcut icon" href="../../assetss/images/woodify-fav.png" />
         <!-- Plugins CSS -->
         <link rel="stylesheet" href="../assetss/css/plugins.css">
         <!-- Bootstap CSS -->
@@ -158,15 +158,7 @@
                                         </div>
                                         <!-- End Product Action -->
                                     </form>
-                                    {{-- <form action="{{ route('cart.add') }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="product_id" value="{{ $productview->id }}">
-                                        <input type="hidden" name="product_name" value="{{ $productview->name }}">
-                                        <input type="hidden" name="thumb" value="{{ $productview->thumb1 }}">
-                                        <input type="hidden" name="price" value="{{ $productview->sale_price }}">
-                                        <input type="number" name="quantity" value="1" min="1" max="10">
-                                        <button type="submit">Add to Cart</button>
-                                    </form> --}}
+                                   
 
                                 </div>
                             </div>

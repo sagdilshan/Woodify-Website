@@ -61,20 +61,26 @@
 
                                                 <td>
                                                     @if ($item->stock_status == 'stock')
-                                                        <span class="badge badge-primary text-uppercase" style="font-size: 1rem;">Stocks</span>
+                                                        <span class="badge badge-primary text-uppercase"
+                                                            style="font-size: 1rem;">Stocks</span>
                                                     @elseif ($item->stock_status == 'out_of_stock')
-                                                        <span class="badge badge-dark text-uppercase" style="font-size: 1rem;">Out of Stocks</span>
+                                                        <span class="badge badge-dark text-uppercase"
+                                                            style="font-size: 1rem;">Out of Stocks</span>
                                                     @else
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">Error</span>
+                                                        <span class="badge badge-danger text-uppercase"
+                                                            style="font-size: 1rem;">Error</span>
                                                     @endif
                                                 </td>
                                                 <td>
                                                     @if ($item->status == 'approve')
-                                                        <span class="badge badge-success text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
+                                                        <span class="badge badge-success text-uppercase"
+                                                            style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @elseif ($item->status == 'disapprove')
-                                                        <span class="badge badge-warning text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
+                                                        <span class="badge badge-warning text-uppercase"
+                                                            style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @else
-                                                        <span class="badge badge-danger text-uppercase" style="font-size: 1rem;">{{ $item->status }}</span>
+                                                        <span class="badge badge-danger text-uppercase"
+                                                            style="font-size: 1rem;">{{ $item->status }}</span>
                                                     @endif
                                                 </td>
 
@@ -82,14 +88,14 @@
                                                     <a href="{{ route('seller.edit.products', $item->id) }}"
                                                         class="btn btn-outline-info">Edit</a>
                                                     <a href="{{ route('seller.view.products', $item->id) }}"
-                                                        class="btn btn-outline-success" >View</a>
+                                                        class="btn btn-outline-success">View</a>
                                                 </td>
 
                                             </tr>
                                         @endforeach
 
 
-                                    </tfoot>
+                                        </tfoot>
                                 </table>
                             </div>
                             <!-- /.card-body -->

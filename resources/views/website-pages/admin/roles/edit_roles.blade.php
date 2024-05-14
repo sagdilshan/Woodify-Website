@@ -36,19 +36,19 @@
 
 
                                     <div class="active tab-pane" id="settings">
-                                        <form method="POST" action="{{route('update.roles')}}"
-                                            class="form-horizontal" >
+                                        <form method="POST" action="{{ route('update.roles') }}" class="form-horizontal">
                                             @csrf
                                             <input type="hidden" class="form-control" name="id"
-                                            value="{{$roles->id}}" >
+                                                value="{{ $roles->id }}">
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Role Name</label>
                                                 <div class="col-sm-10">
-                                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
-                                                        value="{{$roles->name}}" required>
+                                                    <input type="text"
+                                                        class="form-control @error('name') is-invalid @enderror"
+                                                        name="name" value="{{ $roles->name }}" required>
 
-                                                        @error('name')
+                                                    @error('name')
                                                         <span class="text-danger">{{ $message }}</span>
                                                     @enderror
                                                 </div>

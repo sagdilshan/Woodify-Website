@@ -53,7 +53,8 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Regular Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="price"
-                                                        placeholder="Enter regular price" required id="price" step="0.01">
+                                                        placeholder="Enter regular price" required id="price"
+                                                        step="0.01">
                                                 </div>
                                             </div>
 
@@ -61,7 +62,8 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Sale Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="sale_price"
-                                                        placeholder="Enter sale price" required id="sale_price" step="0.01">
+                                                        placeholder="Enter sale price" required id="sale_price"
+                                                        step="0.01">
                                                 </div>
                                             </div>
 
@@ -69,7 +71,8 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Category</label>
                                                 <div class="col-sm-10">
 
-                                                    <select class="form-control" id="category_id" name="category_id" required>
+                                                    <select class="form-control" id="category_id" name="category_id"
+                                                        required>
                                                         @foreach ($categories as $category)
                                                             <option value="{{ $category->id }}">{{ $category->name }}
                                                             </option>
@@ -84,10 +87,10 @@
 
                                                     <select class="form-control" id="sale_type" name="sale_type" required>
 
-                                                            <option value="normal">Normal Market
-                                                            </option>
-                                                            <option value="sale">Sale Market
-                                                            </option>
+                                                        <option value="normal">Normal Market
+                                                        </option>
+                                                        <option value="sale">Sale Market
+                                                        </option>
 
                                                     </select>
                                                 </div>
@@ -114,17 +117,17 @@
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
                                                     Image 1</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable"name="thumb1" required id="thumb1"
-                                                        >
+                                                    <input type="file" class="form-lable"name="thumb1" required
+                                                        id="thumb1">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="inputSkills" class="col-sm-2 col-form-label" >Thumbnail
+                                                <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
                                                     Image 2</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable"name="thumb2" required id="thumb2"
-                                                        >
+                                                    <input type="file" class="form-lable"name="thumb2" required
+                                                        id="thumb2">
                                                 </div>
                                             </div>
 
@@ -133,7 +136,8 @@
                                                     Photos</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-lable"name="images[]" id="images"
-                                                        multiple accept="image/*" onchange="validateImageCount(this)" required>
+                                                        multiple accept="image/*" onchange="validateImageCount(this)"
+                                                        required>
                                                 </div>
                                             </div>
 

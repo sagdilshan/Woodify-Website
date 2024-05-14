@@ -53,39 +53,10 @@
                                                 <label for="inputName" class="col-sm-2 col-form-label">Start Price</label>
                                                 <div class="col-sm-10">
                                                     <input type="number" class="form-control " name="start_price"
-                                                        placeholder="Enter start price" required id="price" >
+                                                        placeholder="Enter start price" required id="price">
                                                 </div>
                                             </div>
 
-
-
-                                            {{-- <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">Category</label>
-                                                <div class="col-sm-10">
-
-                                                    <select class="form-control" id="category_id" name="category_id" required>
-                                                        @foreach ($categories as $category)
-                                                            <option value="{{ $category->id }}">{{ $category->name }}
-                                                            </option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            </div> --}}
-
-                                            {{-- <div class="form-group row">
-                                                <label for="inputName" class="col-sm-2 col-form-label">Select Market</label>
-                                                <div class="col-sm-10">
-
-                                                    <select class="form-control" id="sale_type" name="sale_type" required>
-
-                                                            <option value="normal">Normal Market
-                                                            </option>
-                                                            <option value="sale">Sale Market
-                                                            </option>
-
-                                                    </select>
-                                                </div>
-                                            </div> --}}
 
                                             <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">Description</label>
@@ -97,25 +68,21 @@
                                             </div>
 
 
-
-
-
-
                                             <div class="form-group row">
                                                 <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
                                                     Image 1</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable" name="thumb_1" required id="thumb_1"
-                                                        >
+                                                    <input type="file" class="form-lable" name="thumb_1" required
+                                                        id="thumb_1">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
-                                                <label for="inputSkills" class="col-sm-2 col-form-label" >Thumbnail
+                                                <label for="inputSkills" class="col-sm-2 col-form-label">Thumbnail
                                                     Image 2</label>
                                                 <div class="col-sm-10">
-                                                    <input type="file" class="form-lable" name="thumb_2" required id="thumb_2"
-                                                        >
+                                                    <input type="file" class="form-lable" name="thumb_2" required
+                                                        id="thumb_2">
                                                 </div>
                                             </div>
 
@@ -124,15 +91,16 @@
                                                     Photos</label>
                                                 <div class="col-sm-10">
                                                     <input type="file" class="form-lable"name="images[]" id="images"
-                                                        multiple accept="image/*" onchange="validateImageCount(this)" required>
+                                                        multiple accept="image/*" onchange="validateImageCount(this)"
+                                                        required>
                                                 </div>
                                             </div>
 
-                                             <div class="form-group row">
+                                            <div class="form-group row">
                                                 <label for="inputName" class="col-sm-2 col-form-label">End Date</label>
                                                 <div class="col-sm-10">
-                                                    <input type="date" class="form-control " name="end_date"
-                                                       required id="end_date" >
+                                                    <input type="date" class="form-control " name="end_date" required
+                                                        id="end_date">
                                                 </div>
                                             </div>
 
@@ -225,24 +193,25 @@
         }
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const endDateInput = document.getElementById('end_date');
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const endDateInput = document.getElementById('end_date');
 
-        const today = new Date();
-        const threeDaysFromNow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
-        const oneMonthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+            const today = new Date();
+            const threeDaysFromNow = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 3);
+            const oneMonthFromNow = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
 
-        // Format dates as "YYYY-MM-DD" for HTML date inputs
-        const formatDate = (date) => {
-            let day = ('0' + date.getDate()).slice(-2); // Ensure two digits
-            let month = ('0' + (date.getMonth() + 1)).slice(-2); // Ensure two digits, and note month is 0-indexed
-            return `${date.getFullYear()}-${month}-${day}`;
-        };
+            // Format dates as "YYYY-MM-DD" for HTML date inputs
+            const formatDate = (date) => {
+                let day = ('0' + date.getDate()).slice(-2); // Ensure two digits
+                let month = ('0' + (date.getMonth() + 1)).slice(-
+                2); // Ensure two digits, and note month is 0-indexed
+                return `${date.getFullYear()}-${month}-${day}`;
+            };
 
-        endDateInput.min = formatDate(threeDaysFromNow);
-        endDateInput.max = formatDate(oneMonthFromNow);
-    });
-</script>
+            endDateInput.min = formatDate(threeDaysFromNow);
+            endDateInput.max = formatDate(oneMonthFromNow);
+        });
+    </script>
 
 @endsection

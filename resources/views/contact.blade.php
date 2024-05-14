@@ -3,9 +3,10 @@
 @section('mainpage')
 
 
-<head>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
-</head>
+    <head>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    </head>
+
     <body class="template-collection belle">
         <div class="pageWrapper">
 
@@ -30,19 +31,22 @@
                             <h2>Drop Us A Message</h2>
                             <p>Do you have any woodify system problem... Contact Our Admins</p>
                             <div class="formFeilds contact-form form-vertical">
-                                <form action="{{route('store.contact')}}" method="POST" id="contact_form" class="contact-form">
+                                <form action="{{ route('store.contact') }}" method="POST" id="contact_form"
+                                    class="contact-form">
                                     @csrf
                                     <div class="row">
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
                                                 <input type="text" id="name" name="name"
-                                                    placeholder="Enter Your Name" value="{{ Auth::check() ? Auth::user()->name : '' }}" required="">
+                                                    placeholder="Enter Your Name"
+                                                    value="{{ Auth::check() ? Auth::user()->name : '' }}" required="">
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
                                                 <input type="email" id="email" name="email"
-                                                    placeholder="Enter Your Email" value="{{ Auth::check() ? Auth::user()->email : '' }}" required="">
+                                                    placeholder="Enter Your Email"
+                                                    value="{{ Auth::check() ? Auth::user()->email : '' }}" required="">
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +54,8 @@
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">
                                             <div class="form-group">
                                                 <input required="" type="tel" id="phone" name="phone"
-                                                    pattern="[0-9\-]*" placeholder="Enter Your Phone Number" value="{{ Auth::check() ? Auth::user()->phone : '' }}">
+                                                    pattern="[0-9\-]*" placeholder="Enter Your Phone Number"
+                                                    value="{{ Auth::check() ? Auth::user()->phone : '' }}">
                                             </div>
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-6 col-lg-6">

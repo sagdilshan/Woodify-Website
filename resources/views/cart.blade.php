@@ -81,9 +81,10 @@
                                                         class="btn btn--secondary cart__remove" title="Remove Item"><i
                                                             class="icon icon anm anm-times-l"></i></a></td>
                                             </tr>
-                                            @empty
+                                        @empty
                                             <tr>
-                                                <td colspan="7" class="text-center">Your Cart is Currently Empty. Shop Now</td>
+                                                <td colspan="7" class="text-center">Your Cart is Currently Empty. Shop
+                                                    Now</td>
                                             </tr>
                                         @endforelse
 
