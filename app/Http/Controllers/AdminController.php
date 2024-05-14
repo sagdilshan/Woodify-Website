@@ -59,7 +59,7 @@ class AdminController extends Controller
             ->count();
 
 
-        return view('website-pages.admin.index', compact('formattedTotalSellers','pending_orders', 'all_sales', 'onePercent', 'formattedPrice', 'product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
+        return view('website-pages.admin.index', compact('formattedTotalSellers', 'pending_orders', 'all_sales', 'onePercent', 'formattedPrice', 'product_disapproved_count', 'formattedTotaladmins', 'formattedTotalcustomers'));
     }
 
     public function AdminLogout(Request $request)
@@ -329,9 +329,7 @@ class AdminController extends Controller
     public function AllSeller()
     {
         $allseller = User::where('role', 'seller')->get();
-        // $allseller = User::where('role', 'seller')
-        // ->orderBy('created_at', 'desc')
-        // ->get();
+
         return view('website-pages.admin.manage-users.all_seller', compact('allseller'));
     }
 
@@ -440,8 +438,6 @@ class AdminController extends Controller
 
         return view('website-pages.admin.sales.all-sales', compact('allsales'));
     }
-
-
 
 
 }

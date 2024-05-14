@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Edit Contact')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'Reply Inquiries')
 @section('admin')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -9,12 +9,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Edit Product</h1>
+                        <h1>Reply Inquiries</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('manage.all.products') }}">Back</a></li>
-                            <li class="breadcrumb-item active">Edit Product</li>
+                            <li class="breadcrumb-item active">Reply Inquiries</li>
                         </ol>
                     </div>
                 </div>
@@ -131,7 +131,7 @@
 
                                             <div class="form-group row">
                                                 <div class="offset-sm-2 col-sm-10">
-                                                    <button type="submit" class="btn btn-success">Save Changes</button>
+                                                    <button type="submit" class="btn btn-danger">Reply</button>
                                                 </div>
                                             </div>
                                         </form>

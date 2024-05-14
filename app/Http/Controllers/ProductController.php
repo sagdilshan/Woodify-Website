@@ -42,15 +42,11 @@ class ProductController extends Controller
         $product->name = $validatedData['name'];
         $product->price = $validatedData['price'];
         $product->sale_price = $validatedData['sale_price'];
-        // $product->category_id = $request->category_id;
         $product->category_id = $request->category_id;
         $product->sale_type = $request->sale_type;
         $product->description = $request->description;
         $product->created_by = Auth::user()->id;
         $product->status = 'disapprove';
-
-
-
 
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -60,7 +56,6 @@ class ProductController extends Controller
             }
             $product['images'] = json_encode($imagePaths); // Save array of image paths as JSON string in database
         }
-
         if ($request->file('thumb1')) {
             $file = $request->file('thumb1');
 
@@ -68,7 +63,6 @@ class ProductController extends Controller
             $file->move(public_path('upload/thumb_images'), $filename);
             $product['thumb1'] = $filename;
         }
-
         if ($request->file('thumb2')) {
             $file = $request->file('thumb2');
 
@@ -76,8 +70,6 @@ class ProductController extends Controller
             $file->move(public_path('upload/thumb_images'), $filename);
             $product['thumb2'] = $filename;
         }
-
-
         $product->save();
 
         //Redirect back with a success message
@@ -85,7 +77,6 @@ class ProductController extends Controller
             'message' => 'Product Created',
             'alert-type' => 'success'
         );
-
         return redirect()->route('seller.all.products')->with($notification);
     }
 
@@ -206,12 +197,8 @@ class ProductController extends Controller
                 }
             }
         } else {
-            // If the product has no images, delete other things here
-            // For example, delete related records or other data
-            // Example:
-            // $product->relatedRecords()->delete();
-        }
 
+        }
         // Delete the product from the database
         $product->delete();
 
@@ -360,7 +347,6 @@ class ProductController extends Controller
 
 
     public function CartAdd(Request $request)
-
     {
         $cart = new CartModel;
         $cart->product_name = trim($request->product_name);

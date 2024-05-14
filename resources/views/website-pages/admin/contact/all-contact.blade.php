@@ -1,5 +1,5 @@
 @extends('website-pages.admin.admin_dashboard')
-@section('pageTitle', isset($pageTitle) ? $pageTitle : 'My Products')
+@section('pageTitle', isset($pageTitle) ? $pageTitle : 'All Contact')
 @section('admin')
 
 
@@ -10,12 +10,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>All Products</h1>
+                        <h1>All Contact</h1>
                     </div>
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Home</a></li>
-                            <li class="breadcrumb-item active">All Products</li>
+                            <li class="breadcrumb-item active">All Contact</li>
                         </ol>
                     </div>
                 </div>

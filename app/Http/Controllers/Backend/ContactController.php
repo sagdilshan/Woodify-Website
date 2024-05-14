@@ -32,8 +32,6 @@ class ContactController extends Controller
             // Assign a default value or handle differently
             $contacts->user_id = null; // or some other default value
         }
-
-
         $contacts->save();
 
         $notification = array(

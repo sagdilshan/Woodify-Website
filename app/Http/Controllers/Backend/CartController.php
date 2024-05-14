@@ -94,25 +94,6 @@ class CartController extends Controller
         }
 
 
-        // Retrieve or create a new cart instance for the authenticated user
-        // $cart = CartModel::firstOrCreate(['customer_id' => auth()->id()]);
-        // $cart = CartModel::findOrFail(['customer_id' => auth()->id(), 'status' => 'cart']);
-        // // Update the cart with the new data
-        // $cart->update([
-        //     'customer_name' => $request->customer_name,
-        //     'customer_email' => $request->customer_email,
-        //     'customer_phone' => $request->customer_phone,
-        //     'customer_address' => $request->customer_address,
-        //     'customer_city' => $request->customer_city,
-        //     'customer_province' => $request->customer_province,
-        //     'customer_postal_code' => $request->customer_postal_code,
-        //     'customer_country' => $request->customer_country,
-        //     'note' => $request->note,
-        //     'name_on_card' => $request->name_on_card,
-        //     'card_type' => $request->card_type,
-        //     'card_number' => $request->card_number,
-        //     'status' => 'buy',
-        // ]);
 
         $notification = array(
             'message' => 'Your Order Placed',

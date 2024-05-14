@@ -535,7 +535,7 @@
 
                             @foreach ($categories as $category)
                                 <div class="collection-grid-item">
-                                    <a  class="collection-grid-item__link">
+                                    <a class="collection-grid-item__link">
                                         <img data-src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_product.png') }}"
                                             src="{{ !empty($category->photo) ? url('upload/category_images/' . $category->photo) : url('upload/no_product.png') }}"
                                             alt="{{ $category->name }}" title="{{ $category->name }}"

@@ -196,11 +196,9 @@ class SellerController extends Controller
             'message' => 'Order Status Updated',
             'alert-type' => 'success'
         );
-
-
         return redirect()->back()->with($notification);
     }
 
-    
+
 
 }

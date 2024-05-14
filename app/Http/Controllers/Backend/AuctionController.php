@@ -212,8 +212,8 @@ class AuctionController extends Controller
 
         // Retrieve the maximum customer price for each auction product
         $maxBids = BidModel::select('auction_product_id', DB::raw('MAX(customer_price) as max_price'))
-        // ->where('seller_id', $userId)
-        ->groupBy('auction_product_id')
+            // ->where('seller_id', $userId)
+            ->groupBy('auction_product_id')
             ->get();
 
         // Initialize an array to store bid table IDs
