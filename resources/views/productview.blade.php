@@ -99,7 +99,8 @@
 
                                         </div>
                                         <div class="prInfoRow">
-                                            <div class="product-stock" style="display: none"> <span class="instock ">{{ $productview->created_by }}</span> </div>
+                                            <div class="product-stock" style="display: none"> <span
+                                                    class="instock ">{{ $productview->created_by }}</span> </div>
 
                                         </div>
 
@@ -125,7 +126,7 @@
                                         @csrf
                                         <!-- Product Action -->
                                         <div class="product-action clearfix">
-                                            <div class="product-form__item--quantity" >
+                                            <div class="product-form__item--quantity">
                                                 <div class="wrapQtyBtn">
                                                     <div class="qtyField">
                                                         <a class="qtyBtn minus" href="javascript:void(0);"><i
@@ -141,7 +142,8 @@
                                             <input type="hidden" name="product_name" value="{{ $productview->name }}">
                                             <input type="hidden" name="thumb" value="{{ $productview->thumb1 }}">
                                             <input type="hidden" name="price" value="{{ $productview->sale_price }}">
-                                            <input type="hidden" name="seller_id" value="{{ $productview->created_by }}">
+                                            <input type="hidden" name="seller_id"
+                                                value="{{ $productview->created_by }}">
                                             <div class="product-form__item--submit">
                                                 <button type="submit" name="add"
                                                     class="btn product-form__cart-submit">
@@ -212,21 +214,16 @@
 
 
                                 <div id="tab2" class="tab-content">
-                                    <h4>Returns Policy</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eros justo,
-                                        accumsan non dui sit amet. Phasellus semper volutpat mi sed imperdiet. Ut odio
-                                        lectus, vulputate non ex non, mattis sollicitudin purus. Mauris consequat justo
-                                        a enim interdum, in consequat dolor accumsan. Nulla iaculis diam purus, ut
-                                        vehicula leo efficitur at.</p>
-                                    <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. In blandit nunc
-                                        enim, sit amet pharetra erat aliquet ac.</p>
-                                    <h4>Shipping</h4>
-                                    <p>Pellentesque ultrices ut sem sit amet lacinia. Sed nisi dui, ultrices ut turpis
-                                        pulvinar. Sed fringilla ex eget lorem consectetur, consectetur blandit lacus
-                                        varius. Duis vel scelerisque elit, et vestibulum metus. Integer sit amet
-                                        tincidunt tortor. Ut lacinia ullamcorper massa, a fermentum arcu vehicula ut. Ut
-                                        efficitur faucibus dui Nullam tristique dolor eget turpis consequat varius.
-                                        Quisque a interdum augue. Nam ut nibh mauris.</p>
+                                    <h4>Returns & Shipping Policy </h4>
+                                    <p>Orders typically ship within 2-4 weeks. Shipping rates are calculated at
+                                        checkout, and domestic delivery usually takes 4-5 weeks.</p>
+                                    <p>We do not offer
+                                        international shipping at this time. Tracking information is provided upon shipment,
+                                        and any damages should be reported within 48 hours.</p>
+                                    <p>For further inquiries, please
+                                        contact us via email.</p>
+
+
                                 </div>
                             </div>
                         </div>
