@@ -86,7 +86,7 @@
                 <!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
                     <a href="{{ url('/') }}">
-                        <img src="../assetss/images/woodify-logo.png" alt="Woodify Logo" title="Woodify Logo" />
+                        <img src="../../assetss/images/woodify-logo.png" alt="Woodify Logo" title="Woodify Logo" />
                     </a>
                 </div>
                 <!--End Desktop Logo-->
