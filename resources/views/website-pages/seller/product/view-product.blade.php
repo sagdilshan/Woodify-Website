@@ -66,7 +66,7 @@
 
 
                                 <hr>
-                                <div class="row mt-4">
+                                <div class="row mt-4 ">
                                     <nav class="w-100">
                                         <div class="nav nav-tabs" id="product-tab" role="tablist">
                                             <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab"
