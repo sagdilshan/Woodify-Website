@@ -81,7 +81,7 @@
 
     <!--Header-->
     <div class="header-wrap classicHeader animated d-flex">
-        <div class="container-fluid">
+        <div class="container-fluid" style="background-color: white;">
             <div class="row align-items-center">
                 <!--Desktop Logo-->
                 <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
