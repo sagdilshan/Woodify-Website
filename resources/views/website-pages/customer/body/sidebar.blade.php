@@ -45,19 +45,20 @@
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{route('cart')}}" class="nav-link ">
-                        <i class="nav-icon fa fa-shopping-cart"></i>
-                        <p>
-                            My Cart
-                        </p>
-                    </a>
-                </li>
+
                 <li class="nav-item">
                     <a href="{{route('shop')}}" class="nav-link ">
                         <i class="nav-icon fas fa-store"></i>
                         <p>
                             Shop
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('cart')}}" class="nav-link ">
+                        <i class="nav-icon fa fa-shopping-cart"></i>
+                        <p>
+                            My Cart
                         </p>
                     </a>
                 </li>
