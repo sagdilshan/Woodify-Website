@@ -18,7 +18,6 @@ class AuctionController extends Controller
 
         // Retrieve products with their regular price and sale price
         $auctions = AuctionModel::where('end_date', '>', now())
-            ->orderBy('created_at', 'desc')
             ->inRandomOrder()
             ->get();
 
@@ -53,7 +52,7 @@ class AuctionController extends Controller
             'p_name' => 'required|string|max:255',
             'start_price' => 'required|numeric|min:0',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-            'end_date' => 'required|date|after_or_equal:' . Carbon::today()->addDays(3)->format('Y/m/d'),
+            'end_date' => 'required|date|after_or_equal:' . Carbon::today()->format('Y/m/d'),
 
         ]);
 
@@ -197,11 +196,24 @@ class AuctionController extends Controller
 
     public function SellerCloseAuction($id)
     {
-        $userId = Auth::id();
+
+
         $auctionview = BidModel::findOrFail($id);
+
+        // if ($auctionview->seller_id != auth()->id()) {
+        //     // Redirect or abort with an error message
+
+        //     $notification = [
+        //         'message' => 'You are not authorized to view this product.',
+        //         'alert-type' => 'error'
+        //     ];
+        //     return redirect()->route('seller.all.auction')->with($notification);
+        // }
+
         // Retrieve the maximum customer price for each auction product
         $maxBids = BidModel::select('auction_product_id', DB::raw('MAX(customer_price) as max_price'))
-            ->groupBy('auction_product_id')
+        // ->where('seller_id', $userId)
+        ->groupBy('auction_product_id')
             ->get();
 
         // Initialize an array to store bid table IDs
@@ -254,7 +266,7 @@ class AuctionController extends Controller
         $cart->thumb = trim($request->input('thumb'));
         $cart->seller_id = trim($request->input('seller_id'));
         $cart->customer_id = trim($request->input('customer_id'));
-        $cart->status = 'buy';
+        $cart->status = 'cart';
 
         $cart->save();
 
