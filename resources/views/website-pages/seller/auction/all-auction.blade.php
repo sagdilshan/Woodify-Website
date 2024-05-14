@@ -40,7 +40,7 @@
                                             <th>Item Name</th>
                                             <th>Start Price</th>
                                             <th>End Date</th>
-                                            <th>Description</th>
+                                            {{-- <th>Description</th> --}}
                                             <th>Auction Status</th>
                                             <th>Close Auction</th>
 
@@ -57,7 +57,7 @@
                                                 <td>{{ $item->p_name }}</td>
                                                 <td>{{ $item->start_price }}</td>
                                                 <td>{{ $item->end_date }}</td>
-                                                <td>{{ $item->description }}</td>
+                                                {{-- <td>{{ $item->description }}</td> --}}
 
 
                                                 {{-- <td>{{ $item->category->name }}</td> --}}
