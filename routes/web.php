@@ -278,7 +278,7 @@ Route::middleware(['auth', 'role:seller'])->group(function () {
 
         Route::get('/seller/all/auction', 'SellerAllAuction')->name('seller.all.auction');
         Route::get('seller/add/auction', 'SellerAddAuction')->name('seller.add.auction');
-        Route::get('seller/close/auction/{id}', 'SellerCloseAuction')->name('seller.close.auction');
+        Route::get('/seller/close/auction/{id}', 'SellerCloseAuction')->name('seller.close.auction');
         Route::post('seller/store/auction', 'SellerStoreAuction')->name('seller.store.auction');
         // Route::get('seller/edit/auction/{id}', 'SellerEditAuction')->name('seller.edit.auction');
         Route::post('my/close/auction', 'MyCloseAuction')->name('my.close.auction');
