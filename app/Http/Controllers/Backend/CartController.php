@@ -38,7 +38,7 @@ class CartController extends Controller
         } else {
             // Handle the case where no items with the specified conditions are found
             $notification = array(
-                'message' => 'Your cart is empty',
+                'message' => 'Your cart is empty. Can not proceed checkout',
                 'alert-type' => 'error'
             );
 
