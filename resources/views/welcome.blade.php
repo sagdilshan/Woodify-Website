@@ -20,8 +20,8 @@
                         <div class="slide">
                             <div class="blur-up lazyload bg-size">
                                 <img class="blur-up lazyload bg-img"
-                                    data-src="assetss/images/slideshow-banners/belle-banner2.jpg"
-                                    src="assetss/images/slideshow-banners/belle-banner2.jpg"
+                                    data-src="assetss/images/slideshow-banners/banner-01.jpg"
+                                    src="assetss/images/slideshow-banners/banner-01.jpg"
                                     alt="Create a Design of Your Choice" title="Create a Design of Your Choice" />
                                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                                     <div class="slideshow__text-content bottom">
@@ -41,8 +41,8 @@
                         <div class="slide">
                             <div class="blur-up lazyload bg-size">
                                 <img class="blur-up lazyload bg-img"
-                                    data-src="assetss/images/slideshow-banners/belle-banner02.png"
-                                    src="assetss/images/slideshow-banners/belle-banner02.png" alt="Summer Bikini Collection"
+                                    data-src="assetss/images/slideshow-banners/banner-02.jpg"
+                                    src="assetss/images/slideshow-banners/banner-02.jpg" alt="Summer Bikini Collection"
                                     title="Summer Bikini Collection" />
                                 <div class="slideshow__text-wrap slideshow__overlay classic bottom">
                                     <div class="slideshow__text-content bottom">
