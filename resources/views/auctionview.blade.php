@@ -124,9 +124,6 @@
                                     </div><br>
                                     <form method="post" action="{{ route('auction.add') }}" accept-charset="UTF-8"
                                         class="product-form product-form-product-template hidedropdown">
-
-
-
                                         @csrf
                                         <!-- Product Action -->
                                         <div class="product-action clearfix">
@@ -159,11 +156,9 @@
                                                     <span id="AddToCartText-product-template">My BID Price Add</span>
                                                 </button>
                                             </div>
-
                                         </div>
-                                        <!-- End Product Action -->
                                     </form>
-
+                                    <!-- End Product Auction -->
 
                                 </div>
                             </div>
@@ -406,6 +401,7 @@
                     }
                 }
             </script>
+
 
 
 

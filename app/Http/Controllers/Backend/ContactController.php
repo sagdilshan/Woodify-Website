@@ -17,7 +17,6 @@ class ContactController extends Controller
 
     public function StoreContact(Request $request)
     {
-
         $contacts = new ContactModel;
         $contacts->name = trim($request->name);
         $contacts->email = trim($request->email);
@@ -40,6 +39,5 @@ class ContactController extends Controller
         );
 
         return redirect()->route('contactus')->with($notification);
-
     }
 }
