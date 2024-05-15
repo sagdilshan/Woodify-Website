@@ -37,23 +37,17 @@ Route::get('/', function () {
 
 
 
-// Route::get('/', [AllCategoryController::class, 'index1']);
 
 Route::get('/', [PostController::class, 'indexx']);
 Route::get('shop', [ProductController::class, 'shopindex'])->name('shop');
 
 Route::get('/auction', [AuctionController::class, 'ViewAuction'])->name('auction');
 
-// Route::get('shop/{id}', [ProductController::class, 'shopItem'])->name('shop.item');
-// Route for a specific category or product page in the shop that includes an ID
-// Route::get('shop/category/{id}', [CategoryController::class, 'ShowProducts'])->name('shop.product');
-
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -93,11 +87,6 @@ Route::controller(AuctionController::class)->group(function () {
 
 Route::view('/about-us', 'about')->name('about');
 
-// Route::view('/blog', 'blog')->name('blog');
-// Route::get('/blog/{id}', [PostController::class, 'ShowBlog'])->name('blog.show');
-
-
-// Route::get('/blog/{id}', [AllCategoryController::class, 'blog']);
 
 
 //prevent unatherized access(illegale action.. seller log admin acc )
