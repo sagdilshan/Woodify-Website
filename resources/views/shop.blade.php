@@ -70,7 +70,7 @@
                                                         <!-- End product name -->
                                                         <!-- product price -->
                                                         <div class="product-price">
-                                                            <span class="old-price">$ {{ $product->price }}</span>
+                                                            <span class="old-price">$ {{ $product->price }}</span><br>
                                                             <span class="price">$ {{ $product->sale_price }}</span>
                                                         </div>
                                                         <!-- End product price -->
