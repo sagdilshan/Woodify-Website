@@ -25,7 +25,7 @@
 
         <!-- /.content-header -->
 
-       
+
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
@@ -119,9 +119,9 @@
                         <!-- small card -->
                         <div class="small-box bg-gradient-teal">
                             <div class="inner">
-                                <h3>{{ $formattedPrice }}</h3>
+                                <h3>$ {{ $formattedPrice }}</h3>
 
-                                <p style="font-size: 1.5rem;">Total Earn</p>
+                                <p style="font-size: 1.5rem;">Total Earn $ (Sellers)</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-users"></i>
@@ -135,9 +135,9 @@
                         <!-- small card -->
                         <div class="small-box bg-gradient-purple">
                             <div class="inner">
-                                <h3>{{ $onePercent }}</h3>
+                                <h3>$ {{ $onePercent }}</h3>
 
-                                <p style="font-size: 1.5rem;">Woodify's Earn (1.5%)</p>
+                                <p style="font-size: 1.5rem;">Woodify's Earn $ (1.5%)</p>
                             </div>
                             <div class="icon">
                                 <i class="fas fa-user-tie"></i>
